@@ -12,41 +12,44 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.cinema.models.Filme;
-import br.com.senai.cinema.repositories.FilmeRepository;
+import br.com.senai.cinema.services.FilmeService;
+import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
 @RequestMapping(value="/filmes")
 public class FilmeResource {
 	
 	@Autowired
-	private FilmeRepository filmeRepository;
+	private FilmeService filmeService;
 	
-	@GetMapping("/Filmes")
+	@GetMapping("/filmes")
 	public List<Filme> listFilmes(){
-		return filmeRepository.findAll();
+		return filmeService.findAll();
 	}
 	
-	@GetMapping("/Filme/{id}")
-	public Filme getFilme(@PathVariable(value="id") Integer id){
-		return filmeRepository.findById(id);
+//	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	@GetMapping(value="/{id}")
+	public Filme findById(@PathVariable(value="id") Integer id) throws ObjectNotFoundException{
+		return filmeService.findById(id);
 	}
 	
-	@PostMapping("/Filme")
-	public Filme salvar(@RequestBody @Valid Filme filme) {
-		return filmeRepository.save(filme);
+	@PostMapping("/filmes")
+	public Filme save(@RequestBody @Valid Filme filme) {
+		return filmeService.save(filme);
 	}
 	
-	@DeleteMapping("/Filme")
-	public void deletar(@RequestBody @Valid Filme filme) {
-		filmeRepository.delete(filme);
+	@DeleteMapping("/filmes")
+	public void delete(@RequestBody @Valid Integer id) {
+		filmeService.delete(id);
 	}
 	
-	@PutMapping("/Filme")
-	public Filme atualizar(@RequestBody @Valid Filme filme) {
-		return filmeRepository.save(filme);
+	@PutMapping("/filmes")
+	public Filme update(@RequestBody @Valid Filme filme) {
+		return filmeService.save(filme);
 	}
 
 }

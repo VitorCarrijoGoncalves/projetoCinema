@@ -8,4 +8,8 @@ import br.com.senai.cinema.models.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
+	Usuario findById(Integer id);
+	
+	void deleteById(Integer id);
+	
 }

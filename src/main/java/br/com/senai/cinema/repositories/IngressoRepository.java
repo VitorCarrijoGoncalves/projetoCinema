@@ -8,4 +8,8 @@ import br.com.senai.cinema.models.Ingresso;
 @Repository
 public interface IngressoRepository extends JpaRepository<Ingresso, Integer> {
 
+	Ingresso findById(Integer id);
+	
+	void deleteById(Integer id);
+	
 }

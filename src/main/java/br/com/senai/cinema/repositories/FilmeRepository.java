@@ -12,6 +12,4 @@ public interface FilmeRepository extends JpaRepository<Filme, Integer> {
 	
 	void deleteById(Integer id);
 	
-//	Optional <Filme> findById(Integer id);
-	
 }

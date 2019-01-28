@@ -8,4 +8,8 @@ import br.com.senai.cinema.models.Secao;
 @Repository
 public interface SecaoRepository extends JpaRepository<Secao, Integer> {
 
+	Secao findById(Integer id);
+	
+	void deleteById(Integer id);
+	
 }
