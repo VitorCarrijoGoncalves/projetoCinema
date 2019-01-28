@@ -13,3 +13,4 @@ public interface SecaoRepository extends JpaRepository<Secao, Integer> {
 	void deleteById(Integer id);
 	
 }
+
