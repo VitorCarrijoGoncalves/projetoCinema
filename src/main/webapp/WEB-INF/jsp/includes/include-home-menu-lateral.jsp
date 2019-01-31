@@ -191,8 +191,8 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/filmes">Cadastro</a></li>
-				<li><a href="/filme">Visualizações</a></li>
+				<li><a href="/filme">Cadastro</a></li>
+				<li><a href="/filmes">Visualizações</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
@@ -258,7 +258,7 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/usuario">About</a></li>
+				<li><a href="/usuario">Cadastro</a></li>
 				<li><a href="/usuarios">Visualização</a></li>
 			</ul>
 		</li>
@@ -272,3 +272,6 @@
 				<span class="media-body">Sair</span>
 			</a> 
 		</li>
+		</ul>
+		</aside>
+		

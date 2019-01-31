@@ -6,6 +6,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SiteController {
+	
+	@RequestMapping(method=RequestMethod.GET, value="/")
+	public String login1() {
+		return "redirect:/login";
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/login")
+	public String login2() {
+		return "login";
+	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/home")
 	public String home() {

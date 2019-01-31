@@ -9,18 +9,10 @@
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
 <!-- Propeller css -->
-<!-- build:[href] assets/css/ -->
 <link rel="stylesheet" type="text/css" href="assets/css/propeller.min.css">
-<!-- /build -->
-
-<!-- Propeller date time picker css-->
-<link rel="stylesheet" type="text/css" href="components/datetimepicker/css/bootstrap-datetimepicker.css" />
-<link rel="stylesheet" type="text/css" href="components/datetimepicker/css/pmd-datetimepicker.css" />
 
 <!-- Propeller theme css-->
 <link rel="stylesheet" type="text/css" href="themes/css/propeller-theme.css" />
 
 <!-- Propeller admin theme css-->
 <link rel="stylesheet" type="text/css" href="themes/css/propeller-admin.css">
-
-</head>
