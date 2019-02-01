@@ -18,7 +18,7 @@ public class Ingresso {
 	private float valorDoIngresso;
 	
 	@ManyToOne
-	private Usuario idPessoa;
+	private Usuario idUsuario;
 	
 	@ManyToOne
 	private Secao idSecao;
@@ -41,12 +41,12 @@ public class Ingresso {
 		this.valorDoIngresso = valorDoIngresso;
 	}
 
-	public Usuario getIdPessoa() {
-		return idPessoa;
+	public Usuario getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setIdPessoa(Usuario idPessoa) {
-		this.idPessoa = idPessoa;
+	public void setIdUsuario(Usuario idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public Secao getIdSecao() {

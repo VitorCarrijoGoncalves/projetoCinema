@@ -174,7 +174,7 @@
 		</li>
 		
 		<li class="dropdown pmd-dropdown"> 
-			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="/filmes">	
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="#">	
 				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="18px" height="18.001px" viewBox="0 0 18 18.001" enable-background="new 0 0 18 18.001" xml:space="preserve">
 <path fill="#C9C8C8" d="M6.188,0.001C5.232,0.001,4.5,0.732,4.5,1.688c0,0.394,0.166,0.739,0.334,1.02L5.45,3.71
 	c0.113,0.113,0.176,0.341,0.176,0.51v0.281c0,0.619-0.506,1.125-1.125,1.125H0.282c-0.169,0-0.281,0.112-0.281,0.281V17.72
@@ -191,7 +191,7 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/filme">Cadastro</a></li>
+				<li><a href="/cadastro-de-filmes">Cadastro</a></li>
 				<li><a href="/filmes">Visualizações</a></li>
 			</ul>
 		</li>
@@ -202,13 +202,13 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/ingresso">Cadastro</a></li>
+				<li><a href="/cadastro-de-ingressos">Cadastro</a></li>
 				<li><a href="/ingressos">Visualização</a></li>
 			</ul>
 		</li>
 		
 		<li class="dropdown pmd-dropdown"> 
-			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="/salas">	
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="#">	
 				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="14.187px" height="18px" viewBox="0 0 14.187 18" enable-background="new 0 0 14.187 18" xml:space="preserve">
 <path fill="#C9C8C8" d="M0,0v18h14.187V0H0z M3.121,3.293h2.023v4.767H3.121V3.293z M11.211,14.764H2.948v-2.022h8.263V14.764
 	L11.211,14.764z M11.211,11.585H2.948V9.563h8.263V11.585L11.211,11.585z M11.211,8.407H7.455V6.385h3.756V8.407z M11.211,5.229
@@ -218,12 +218,12 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/sala">Cadastro</a></li>
+				<li><a href="/cadastro-de-salas">Cadastro</a></li>
 				<li><a href="/salas">Visualização</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
-			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="/secoes">	
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="#">	
 				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="18px" height="12.706px" viewBox="0 0 18 12.706" enable-background="new 0 0 18 12.706" xml:space="preserve">
 <path fill="#C9C8C8" d="M0,0v12.706h18V0H0z M12.706,4.235v3.176H9.108V4.235H12.706z M8.049,4.235v3.176h-6.99V4.235H8.049z
 	 M1.059,8.47h6.99v3.177h-6.99V8.47z M9.108,11.647V8.47h3.599v3.177H9.108z M13.766,11.647V8.47h3.176v3.177H13.766z M16.942,7.412
@@ -233,13 +233,13 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="secao">Cadastro</a></li>
+				<li><a href="cadastro-de-secoes">Cadastro</a></li>
 				<li><a href="/secoes">Visualização</a></li>
 			</ul>
 		</li>
 	
 		<li class="dropdown pmd-dropdown"> 
-			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="/usuarios">	
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="#">	
 				<i class="media-left media-middle">
 				<svg x="0px" y="0px" width="18px" height="18px" viewBox="288.64 337.535 18 18" enable-background="new 288.64 337.535 18 18" xml:space="preserve">
 					<title>022-layout view</title>
@@ -258,7 +258,7 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/usuario">Cadastro</a></li>
+				<li><a href="/cadastro-de-usuarios">Cadastro</a></li>
 				<li><a href="/usuarios">Visualização</a></li>
 			</ul>
 		</li>
@@ -274,4 +274,3 @@
 		</li>
 		</ul>
 		</aside>
-		

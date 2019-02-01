@@ -72,14 +72,11 @@
   				styleText:           true
 			}));
 		}
-  <!-- javascript for total sales chart-->
 	</script>
 
-<!--staked column chart for payment-->
 <script src="themes/js/highcharts.js"></script>
 <script src="themes/js/highcharts-more.js"></script>
 
-<!-- Payment chart js-->
 <script>
 $(function paymentChart(){
     $('#payment-chart').highcharts({

@@ -27,9 +27,19 @@ public class SiteController {
 		return "filmes";
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-filmes")
+	public String cadastroDeFilmes() {
+		return "cadastro-de-filmes";
+	}
+	
 	@RequestMapping(method=RequestMethod.GET, value="/ingressos")
 	public String ingressos() {
 		return "ingressos";
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-ingressos")
+	public String cadastroDeIngressos() {
+		return "cadastro-de-ingressos";
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/salas")
@@ -37,14 +47,29 @@ public class SiteController {
 		return "salas";
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-salas")
+	public String cadastroDeSalas() {
+		return "cadastro-de-salas";
+	}
+	
 	@RequestMapping(method=RequestMethod.GET, value="/secoes")
 	public String secoes() {
 		return "secoes";
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-secoes")
+	public String cadastroDeSecoes() {
+		return "cadastro-de-secoes";
+	}
+	
 	@RequestMapping(method=RequestMethod.GET, value="/usuarios")
 	public String usuarios() {
 		return "usuarios";
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-usuarios")
+	public String cadastroDeUsuarios() {
+		return "cadastro-de-usuarios";
 	}
 	
 }

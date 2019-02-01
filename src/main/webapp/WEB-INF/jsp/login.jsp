@@ -1,7 +1,7 @@
 <!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="">
+<html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
 					<div class="loginlogo">
 						<a href="javascript:void(0);"><img src="themes/images/logo-icon.png" alt="Logo"></a>
 					</div>
-					<h3>Sign In <span>with <strong>PROPELLER</strong></span></h3>
+<!-- 					<h3>Sign In <span>with <strong>PROPELLER</strong></span></h3> -->
 				</div>
 				
 				<div class="pmd-card-body">
@@ -30,7 +30,7 @@
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="inputError1" class="control-label pmd-input-group-label">Nome de Usuário</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
+<!--                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div> -->
                             <input type="text" class="form-control" id="exampleInputAmount">
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="inputError1" class="control-label pmd-input-group-label">Senha</label>
                         <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
+<!--                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div> -->
                             <input type="text" class="form-control" id="exampleInputAmount">
                         </div>
                     </div>
@@ -75,7 +75,7 @@
 			  <div class="pmd-card-body">
               
               	<div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Nome de Usuário</label>
+                        <label for="nome-de-usuario" class="control-label pmd-input-group-label">Nome de Usuário</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
                             <input type="text" class="form-control" id="exampleInputAmount">
@@ -124,8 +124,8 @@
                     </div>
 				</div>
 			  <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-			  	<a href="index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Submit</a>
-			  	<p class="redirection-link">Already registered? <a href="javascript:void(0);" class="register-login">Sign In</a></p>
+			  	<a href="index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Enviar</a>
+			  	<p class="redirection-link">Ja é registrado? <a href="javascript:void(0);" class="register-login">Acessar</a></p>
 			  </div>
 			</form>
 		</div>

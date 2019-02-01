@@ -15,8 +15,8 @@ import javax.persistence.SequenceGenerator;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(generator="pessoa_seq", strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name="pessoa_seq", sequenceName="pessoa_seq", allocationSize=1, initialValue=1)
+	@GeneratedValue(generator="usuario_seq", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name="usuario_seq", sequenceName="usuario_seq", allocationSize=1, initialValue=1)
 	private Integer id;
 	
 	private String login;
@@ -25,10 +25,8 @@ public class Usuario {
 
 	private String nome;
 
-	private String cpf;
-	
 	@OneToMany(
-			mappedBy = "idPessoa",
+			mappedBy = "idusuario",
 			cascade = CascadeType.REMOVE, 
 			orphanRemoval = true,
 			targetEntity = Ingresso.class,
@@ -65,14 +63,6 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public List<Ingresso> getIngressos() {

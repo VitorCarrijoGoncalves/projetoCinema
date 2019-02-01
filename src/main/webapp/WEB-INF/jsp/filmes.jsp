@@ -257,6 +257,7 @@
 </div>
 
 <!-- Footer Ends -->
+<jsp:include page="includes/include-home-footer.jsp"/>
 <jsp:include page="includes/include-filmes-scripts.jsp"/>
 
 </body>
