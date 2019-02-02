@@ -13,7 +13,7 @@
 
 <body>
 
-<jsp:include page="includes/include-home-menu-lateral.jsp"/>
+<jsp:include page="includes/include-sidebar.jsp"/>
 
 <!--content area start-->
 <div id="content" class="pmd-content inner-page">
@@ -167,7 +167,7 @@
 	</div>
 </div>
 
-<jsp:include page="includes/include-home-footer.jsp"/>
+<jsp:include page="includes/include-footer.jsp"/>
 
 <jsp:include page="includes/include-formulario-scripts.jsp"/>
 

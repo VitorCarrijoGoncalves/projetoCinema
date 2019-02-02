@@ -35,9 +35,9 @@ public class UsuarioService {
 		return null;
 	}
 	
-	public void delete(Integer id) {
-		if (id != null) {
-			UsuarioRepository.deleteById(id);
+	public void delete(Usuario usuario) {
+		if (usuario != null) {
+			UsuarioRepository.delete(usuario);
 		}
 	}
 	

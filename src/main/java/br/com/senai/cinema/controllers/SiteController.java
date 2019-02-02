@@ -22,54 +22,54 @@ public class SiteController {
 		return "home";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/filmes")
-	public String filmes() {
-		return "filmes";
+	@RequestMapping(method=RequestMethod.GET, value="/filme")
+	public String filme() {
+		return "filme";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-filmes")
+	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-filme")
 	public String cadastroDeFilmes() {
-		return "cadastro-de-filmes";
+		return "formulario-de-filme";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/ingressos")
-	public String ingressos() {
-		return "ingressos";
+	@RequestMapping(method=RequestMethod.GET, value="/ingresso")
+	public String ingresso() {
+		return "ingresso";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-ingressos")
+	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-ingresso")
 	public String cadastroDeIngressos() {
-		return "cadastro-de-ingressos";
+		return "formulario-de-ingresso";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/salas")
-	public String salas() {
-		return "salas";
+	@RequestMapping(method=RequestMethod.GET, value="/sala")
+	public String sala() {
+		return "sala";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-salas")
+	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-sala")
 	public String cadastroDeSalas() {
-		return "cadastro-de-salas";
+		return "formulario-de-sala";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/secoes")
-	public String secoes() {
-		return "secoes";
+	@RequestMapping(method=RequestMethod.GET, value="/secao")
+	public String secao() {
+		return "secao";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-secoes")
+	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-secao")
 	public String cadastroDeSecoes() {
-		return "cadastro-de-secoes";
+		return "formulario-de-secao";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/usuarios")
-	public String usuarios() {
-		return "usuarios";
+	@RequestMapping(method=RequestMethod.GET, value="/usuario")
+	public String usuario() {
+		return "usuario";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cadastro-de-usuarios")
+	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-usuario")
 	public String cadastroDeUsuarios() {
-		return "cadastro-de-usuarios";
+		return "formulario-de-usuario";
 	}
 	
 }

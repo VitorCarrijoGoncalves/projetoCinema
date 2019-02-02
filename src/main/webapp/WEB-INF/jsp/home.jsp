@@ -14,7 +14,7 @@
 
 <body>
 
-<jsp:include page="includes/include-home-menu-lateral.jsp"/>
+<jsp:include page="includes/include-sidebar.jsp"/>
 	
 <div id="content" class="pmd-content content-area dashboard">
 
@@ -38,29 +38,17 @@
 			
 		 </div><!-- end User Details-->
 		 
-		 <!--Todo Lists -->
-		
-		 
-			 
-		 
 		 <!--Browser Usage card-->
 		 <div class="col-lg-4 col-sm-6 col-xs-12 value-added-service-card">
 			
 		 </div><!--end Browser Usage card-->
 		 
-		 
-		 
-		 <!--Recent Posts-->
-		 
-		 
-		 <!--project progress -->
-	 	 	
 	</div>
 </div>
 
 </div><!--end content area-->
 
-<jsp:include page="includes/include-home-footer.jsp"/>
+<jsp:include page="includes/include-footer.jsp"/>
 
 <jsp:include page="includes/include-home-scripts.jsp"/>
 </body>

@@ -26,7 +26,7 @@ public class Usuario {
 	private String nome;
 
 	@OneToMany(
-			mappedBy = "idusuario",
+			mappedBy = "idUsuario",
 			cascade = CascadeType.REMOVE, 
 			orphanRemoval = true,
 			targetEntity = Ingresso.class,

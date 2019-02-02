@@ -35,9 +35,9 @@ public class SecaoService {
 		return null;
 	}
 	
-	public void delete(Integer id) {
-		if (id != null) {
-			SecaoRepository.deleteById(id);
+	public void delete(Secao secao) {
+		if (secao != null) {
+			SecaoRepository.delete(secao);
 		}
 	}
 	

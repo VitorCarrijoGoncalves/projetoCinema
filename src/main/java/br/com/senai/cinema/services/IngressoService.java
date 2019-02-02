@@ -35,9 +35,9 @@ public class IngressoService {
 		return null;
 	}
 	
-	public void delete(Integer id) {
-		if (id != null) {
-			IngressoRepository.deleteById(id);
+	public void delete(Ingresso ingresso) {
+		if (ingresso != null) {
+			IngressoRepository.delete(ingresso);
 		}
 	}
 	

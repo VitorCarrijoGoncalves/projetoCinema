@@ -35,9 +35,9 @@ public class SalaService {
 		return null;
 	}
 	
-	public void delete(Integer id) {
-		if (id != null) {
-			SalaRepository.deleteById(id);
+	public void delete(Sala sala) {
+		if (sala != null) {
+			SalaRepository.delete(sala);
 		}
 	}
 	

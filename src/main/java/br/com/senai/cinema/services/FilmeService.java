@@ -35,9 +35,9 @@ public class FilmeService {
 		return null;
 	}
 	
-	public void delete(Integer id) {
-		if (id != null) {
-			filmeRepository.deleteById(id);
+	public void delete(Filme filme) {
+		if (filme != null) {
+			filmeRepository.delete(filme);
 		}
 	}
 	

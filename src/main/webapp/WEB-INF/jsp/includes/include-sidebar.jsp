@@ -191,8 +191,8 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/cadastro-de-filmes">Cadastro</a></li>
-				<li><a href="/filmes">Visualizações</a></li>
+				<li><a href="/formulario-de-filme">Cadastro</a></li>
+				<li><a href="/filme">Visualização</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
@@ -202,8 +202,8 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/cadastro-de-ingressos">Cadastro</a></li>
-				<li><a href="/ingressos">Visualização</a></li>
+				<li><a href="/formulario-de-ingresso">Cadastro</a></li>
+				<li><a href="/ingresso">Visualização</a></li>
 			</ul>
 		</li>
 		
@@ -218,8 +218,8 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/cadastro-de-salas">Cadastro</a></li>
-				<li><a href="/salas">Visualização</a></li>
+				<li><a href="/formulario-de-sala">Cadastro</a></li>
+				<li><a href="/sala">Visualização</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
@@ -233,8 +233,8 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="cadastro-de-secoes">Cadastro</a></li>
-				<li><a href="/secoes">Visualização</a></li>
+				<li><a href="formulario-de-secao">Cadastro</a></li>
+				<li><a href="/secao">Visualização</a></li>
 			</ul>
 		</li>
 	
@@ -259,7 +259,7 @@
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="/cadastro-de-usuarios">Cadastro</a></li>
-				<li><a href="/usuarios">Visualização</a></li>
+				<li><a href="/usuario">Visualização</a></li>
 			</ul>
 		</li>
 		<li> 

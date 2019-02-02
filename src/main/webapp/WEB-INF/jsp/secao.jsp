@@ -7,29 +7,28 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Filmes</title>
+<title>Listagem de Seções</title>
 
-<jsp:include page="includes/include-filmes-head.jsp"/>
+<jsp:include page="includes/include-listagem-head.jsp"/>
 
 <body>
 
+<jsp:include page="includes/include-sidebar.jsp"/>
 
-<jsp:include page="includes/include-home-menu-lateral.jsp"/>
-<!-- Aqui fica o menu sidebar -->
-
+<!--content area start-->
 <div id="content" class="pmd-content inner-page">
 
 <!--tab start-->
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Listagem de Filmes</span>
+			<span>Data Table</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
-		  <li><a href="/home">Home</a></li>
-		  <li class="active">Visualização</li>
+		  <li><a href="index.html">Dashboard</a></li>
+		  <li class="active">Data Table</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -38,14 +37,9 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Descrição</h2>
+					<h2>Propeller Data table</h2>
 				</div>
-				<p>
-				Aqui fica a parte de Listagem de filmes, onde posso alterar ou pesquisar
-				 por um filme específico na minha listagem, marcando
-				 o checkbox, posso excluir o filme escolhido, 
-				 clicando nas setas posso filtrar a minha tabela.
-				</p>
+				<p>In its simplest form, a data table contains a top row of column names, and rows for data. Checkboxes should accompany each row if the user needs to select or manipulate data.</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -242,23 +236,14 @@
 					</table>
 						</div>
 					</div> <!-- table card example end -->
-				
 				</div>
 			</div> <!-- table card code and example end -->
 		</section> <!-- table card end -->
-		
-		
-	
 	</div>
-<!--tab start-->
-
-<!--content area end-->
 
 </div>
-
-<!-- Footer Ends -->
-<jsp:include page="includes/include-home-footer.jsp"/>
-<jsp:include page="includes/include-filmes-scripts.jsp"/>
+<jsp:include page="includes/include-footer.jsp"/>
+<jsp:include page="includes/include-listagem-scripts.jsp"/>
 
 </body>
 </html>

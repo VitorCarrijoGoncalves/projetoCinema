@@ -1,7 +1,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- Google icon -->
 <link rel="shortcut icon" type="image/x-icon" href="themes/images/favicon.ico">
+
+<!-- Google icon -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Bootstrap css -->
@@ -16,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/select.dataTables.min.css">
 <!-- Propeller dataTables css-->
 
-<link rel="stylesheet" type="text/css" href="components/data-table/css/pmd-datatable.css">
+<link rel="stylesheet" type="text/css" href="assets/css/pmd-datatable.css">
 
 <!-- Propeller theme css-->
 <link rel="stylesheet" type="text/css" href="themes/css/propeller-theme.css" />
