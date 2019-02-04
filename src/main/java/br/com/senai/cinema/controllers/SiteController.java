@@ -2,73 +2,72 @@ package br.com.senai.cinema.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SiteController {
 	
-	@RequestMapping(method=RequestMethod.GET, value="/")
+	@RequestMapping(value="/")
 	public String login1() {
 		return "redirect:/login";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/login")
+	@RequestMapping(value="/login")
 	public String login2() {
 		return "login";
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/home")
+	@RequestMapping(value="/home")
 	public String home() {
 		return "home";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/filme")
+	@RequestMapping(value="/filme")
 	public String filme() {
 		return "filme";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-filme")
-	public String cadastroDeFilmes() {
+	@RequestMapping(value="/formulario-de-filme")
+	public String formularioDeFilmes() {
 		return "formulario-de-filme";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/ingresso")
+	@RequestMapping(value="/ingresso")
 	public String ingresso() {
 		return "ingresso";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-ingresso")
-	public String cadastroDeIngressos() {
+	@RequestMapping(value="/formulario-de-ingresso")
+	public String formularioDeIngressos() {
 		return "formulario-de-ingresso";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/sala")
+	@RequestMapping(value="/sala")
 	public String sala() {
 		return "sala";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-sala")
-	public String cadastroDeSalas() {
+	@RequestMapping(value="/formulario-de-sala")
+	public String formularioDeSalas() {
 		return "formulario-de-sala";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/secao")
+	@RequestMapping(value="/secao")
 	public String secao() {
 		return "secao";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-secao")
-	public String cadastroDeSecoes() {
+	@RequestMapping(value="/formulario-de-secao")
+	public String formularioDeSecoes() {
 		return "formulario-de-secao";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/usuario")
+	@RequestMapping(value="/usuario")
 	public String usuario() {
 		return "usuario";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/formulario-de-usuario")
-	public String cadastroDeUsuarios() {
+	@RequestMapping(value="/formulario-de-usuario")
+	public String formularioDeUsuarios() {
 		return "formulario-de-usuario";
 	}
 	

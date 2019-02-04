@@ -22,13 +22,13 @@
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Data Table</span>
+			<span>Seções</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
-		  <li><a href="index.html">Dashboard</a></li>
-		  <li class="active">Data Table</li>
+		  <li><a href="/home">Home</a></li>
+		  <li class="active">Visualização</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -37,9 +37,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Propeller Data table</h2>
+					<h2>Descrição</h2>
 				</div>
-				<p>In its simplest form, a data table contains a top row of column names, and rows for data. Checkboxes should accompany each row if the user needs to select or manipulate data.</p>
+				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necessário</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -52,186 +53,26 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>First name</th>
-								<th>Last name</th>
-								<th>Position</th>
-								<th>Office</th>
-								<th>Age</th>
-								<th>Start date</th>
+								<th>Início</th>
+								<th>Filme</th>
+								<th>Sala</th>
+								<th>Término</th>
+								<th>Ingressos</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td></td>
-								<td>Tiger</td>
-								<td>Nixon</td>
-								<td>System Architect</td>
-								<td>Edinburgh</td>
-								<td>61</td>
-								<td>2011/04/25</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Garrett</td>
-								<td>Winters</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>63</td>
-								<td>2011/07/25</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Ashton</td>
-								<td>Cox</td>
-								<td>Junior Technical Author</td>
-								<td>San Francisco</td>
-								<td>66</td>
-								<td>2009/01/12</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Cedric</td>
-								<td>Kelly</td>
-								<td>Senior Javascript Developer</td>
-								<td>Edinburgh</td>
-								<td>22</td>
-								<td>2012/03/29</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Airi</td>
-								<td>Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Brielle</td>
-								<td>Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Herrod</td>
-								<td>Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Airi</td>
-								<td>Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Brielle</td>
-								<td>Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Herrod</td>
-								<td>Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Airi</td>
-								<td>Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Brielle</td>
-								<td>Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Herrod</td>
-								<td>Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Airi</td>
-								<td>Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Brielle</td>
-								<td>Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Herrod</td>
-								<td>Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Airi</td>
-								<td>Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Brielle</td>
-								<td>Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>Herrod</td>
-								<td>Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-							</tr>
+						
+						<c:forEach var="secao" items="${secoes}">
+						<tr>
+							<td></td>
+							<td>${ secao.horaDeInicio }</td>
+							<td>${ secao.idFilme.nome }</td>
+							<td>${ secao.idSala.numero }</td>
+							<td>23:45</td>
+							<td><a href="#"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+						</tr>
+				</c:forEach>
+							
 						</tbody>
 					</table>
 						</div>

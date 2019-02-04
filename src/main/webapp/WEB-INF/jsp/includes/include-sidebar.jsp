@@ -258,7 +258,7 @@
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="/cadastro-de-usuarios">Cadastro</a></li>
+				<li><a href="/formulario-de-usuario">Cadastro</a></li>
 				<li><a href="/usuario">Visualização</a></li>
 			</ul>
 		</li>

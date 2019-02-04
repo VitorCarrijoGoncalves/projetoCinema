@@ -57,9 +57,9 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Rows per page:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
-			"sSearchPlaceholder": "Search",
+			"sSearchPlaceholder": "Buscar",
 			"paginate": {
 				"sNext": " ",
 				"sPrevious": " "
@@ -94,7 +94,7 @@ $(document).ready(function() {
 			$(this).closest('.dataTables_wrapper').find('.custom-select-info').hide();
 		}
 	} );
-	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Propeller Data table</h2>');
+	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Listagem de Usuários</h2>');
 	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">more_vert</button>');
 	
 } );
@@ -124,9 +124,9 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Rows per page:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
-			"sSearchPlaceholder": "Search",
+			"sSearchPlaceholder": "Buscar",
 			"paginate": {
 				"sNext": " ",
 				"sPrevious": " "
@@ -175,9 +175,9 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Rows per page:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
-			"sSearchPlaceholder": "Search",
+			"sSearchPlaceholder": "Buscar",
 			"paginate": {
 				"sNext": " ",
 				"sPrevious": " "
@@ -213,7 +213,7 @@ $(document).ready(function() {
 		}
 	});
 	$("div.data-table-inverse").html('<h2 class="pmd-card-title-text">Inverse Table</h2>');
-	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">more_vert</i></button>');
+	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons md-dark pmd-sm">edit</i></button>');
 	
 } );
 </script>

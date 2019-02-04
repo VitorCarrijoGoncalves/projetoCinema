@@ -24,6 +24,8 @@ public class Usuario {
 	private String senha;
 
 	private String nome;
+	
+	private String email;
 
 	@OneToMany(
 			mappedBy = "idUsuario",
@@ -63,6 +65,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<Ingresso> getIngressos() {
