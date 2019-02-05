@@ -23,6 +23,9 @@
 <!-- Propeller theme css-->
 <link rel="stylesheet" type="text/css" href="themes/css/propeller-theme.css" />
 
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="assets/	css/pmd-datetimepicker.css" />
+
 <!-- Propeller admin theme css-->
 <link rel="stylesheet" type="text/css" href="themes/css/propeller-admin.css">
 

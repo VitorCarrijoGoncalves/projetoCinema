@@ -27,6 +27,8 @@ public class Filme {
 	
 	private String duracao;
 	
+	private String tipo;
+	
 	@OneToMany(
 			mappedBy = "idFilme",
 			cascade = CascadeType.REMOVE, 
@@ -75,6 +77,14 @@ public class Filme {
 
 	public void setDuracao(String duracao) {
 		this.duracao = duracao;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public List<Secao> getSecoes() {
