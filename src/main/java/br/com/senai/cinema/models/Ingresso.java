@@ -15,8 +15,6 @@ public class Ingresso {
 	@SequenceGenerator(name="ingresso_seq", sequenceName="ingresso_seq", allocationSize=1, initialValue=1)
 	private Integer id;
 	
-	private float valorDoIngresso;
-	
 	@ManyToOne
 	private Usuario idUsuario;
 	
@@ -33,14 +31,6 @@ public class Ingresso {
 		this.id = id;
 	}
 	
-	public float getValorDoIngresso() {
-		return valorDoIngresso;
-	}
-
-	public void setValorDoIngresso(float valorDoIngresso) {
-		this.valorDoIngresso = valorDoIngresso;
-	}
-
 	public Usuario getIdUsuario() {
 		return idUsuario;
 	}

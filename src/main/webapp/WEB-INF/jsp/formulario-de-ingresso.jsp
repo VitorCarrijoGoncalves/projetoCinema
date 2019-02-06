@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Form Examples | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Cadastro de Filmes</title>
+<title>Cadastro de Ingressos</title>
 
 <jsp:include page="includes/include-formulario-head.jsp"/>
 
@@ -15,7 +15,6 @@
 
 <jsp:include page="includes/include-sidebar.jsp"/>
 
-<!--content area start-->
 <div id="content" class="pmd-content inner-page">
 
 	<!--tab start-->
@@ -23,100 +22,43 @@
 	
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Cadastro de Filmes</span>
-		</h1><!-- End Title -->
+			<span>Cadastro de Ingressos</span>
+		</h1>
 			
-		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
 		  <li class="active">Cadastro</li>
-		</ol><!--breadcrum end-->
-	
+		</ol>
+		
 		<div class="section section-custom billinfo"> 
-			<form id="validationForm" action="" method="post">
 			<div class="pmd-card pmd-z-depth">
-				<div class="pmd-card-body">
-					<div class="group-fields clearfix row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">
-									Name*
-								</label>
-								<input type="text" id="regular1" class="form-control">
+				<div class="pmd-card-body">	
+					<form class="form-horizontal" role="form">
+						<div class="form-group pmd-textfield">
+							<label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
+							<div class="col-sm-10">
+								<input class="form-control input-sm" id="inputEmail3" placeholder="" type="email">
 							</div>
 						</div>
-					</div>
-					<div class="group-fields clearfix row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
-								<label>City*</label>
-								<select class="select-simple form-control pmd-select2">
-									<option></option>
-									
-								</select>
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Seção</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<select class="select-simple form-control pmd-select2">
+										<option></option>
+										<option>aaaaaa</option>
+									</select>
+								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
-								<label>State*</label>
-								<select class="select-simple form-control pmd-select2">
-									<option></option>
-									
-								</select>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary pmd-checkbox-ripple-effect">Enviar</button>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">
-									Zip Code*
-								</label>
-								<input type="text" id="regular1" class="form-control">
-							</div>
-						</div>
-					</div>
-					<div class="group-fields clearfix row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							   <label for="regular1" class="control-label">
-								 Phone*
-							   </label>
-							   <input type="text" id="regular1" class="form-control">
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-						   <div class="form-group pmd-textfield pmd-textfield-floating-label">
-							   <label for="regular1" class="control-label">
-								 Email*
-							   </label>
-							   <input type="text" id="regular1" class="form-control">
-							</div>
-						</div>
-					</div>
-					<div class="group-fields clearfix row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							  <label class="control-label">Endereço</label>
-							  <textarea required class="form-control"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="group-fields clearfix row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="checkbox pmd-default-theme">
-								<label class="pmd-checkbox checkbox-pmd-ripple-effect">
-									<input type="checkbox" value="">
-									<span>Salvar Detalhes</span>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>		
-				<div class="pmd-card-actions">
-					<a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
-<!-- 					<a href="javascript:void(0);" class="btn btn-default">Cancel</a> -->
+					</form>
 				</div>
 			</div> 
-			</form>
 		</div>
 	</div>
 </div>

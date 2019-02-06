@@ -68,7 +68,7 @@
 							<td></td>
 							<td>${ ingresso.idUsuario.nome }</td>
 							<td>${ ingresso.idSecao.horaDeInicio }</td>
-							<td>${ ingresso.valorDoIngresso }</td>
+							<td>${ ingresso.idSecao.valorDoIngresso }</td>
 							<td>${ ingresso.idSecao.idFilme.nome }</td>
 							<td>${ ingresso.idSecao.idSala.numero }</td>
 							<td>23:45</td>

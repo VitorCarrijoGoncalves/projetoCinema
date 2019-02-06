@@ -23,6 +23,8 @@ public class Secao {
 	
 	private String horaDeInicio;
 	
+	private float valorDoIngresso;
+	
 	@ManyToOne
 	private Sala idSala;
 	
@@ -51,6 +53,14 @@ public class Secao {
 
 	public void setHoraDeInicio(String horaDeInicio) {
 		this.horaDeInicio = horaDeInicio;
+	}
+	
+	public float getValorDoIngresso() {
+		return valorDoIngresso;
+	}
+
+	public void setValorDoIngresso(float valorDoIngresso) {
+		this.valorDoIngresso = valorDoIngresso;
 	}
 
 	public Sala getIdSala() {

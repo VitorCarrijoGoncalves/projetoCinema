@@ -59,15 +59,6 @@
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
-								
-								
-<!-- 								<div class="col-md-9">  -->
-<!-- 				<div class="component-box">  -->
-				
-<!-- 					<div class="pmd-card pmd-z-depth pmd-card-custom-view"> -->
-<!-- 						<div class="pmd-card-body">  -->
-<!-- 							<div class="form-group pmd-textfield pmd-textfield-floating-label"> -->
-<!-- 								<label for="regular1" class="control-label">Select Time</label> -->
 								<input type="text" id="timepicker" class="form-control" />
 							</div>
 						</div>
@@ -80,24 +71,6 @@
 							</div>
 						</div>
 					</div>
-<!-- 					<div class="group-fields clearfix row"> -->
-<!-- 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
-<!-- 							<div class="form-group pmd-textfield pmd-textfield-floating-label"> -->
-<!-- 							   <label for="regular1" class="control-label"> -->
-<!-- 								 Phone* -->
-<!-- 							   </label> -->
-<!-- 							   <input type="text" id="regular1" class="form-control"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
-<!-- 						   <div class="form-group pmd-textfield pmd-textfield-floating-label"> -->
-<!-- 							   <label for="regular1" class="control-label"> -->
-<!-- 								 Email* -->
-<!-- 							   </label> -->
-<!-- 							   <input type="text" id="regular1" class="form-control"> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
 					<div class="group-fields clearfix row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -106,16 +79,6 @@
 							</div>
 						</div>
 					</div>
-<!-- 					<div class="group-fields clearfix row"> -->
-<!-- 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
-<!-- 							<div class="checkbox pmd-default-theme"> -->
-<!-- 								<label class="pmd-checkbox checkbox-pmd-ripple-effect"> -->
-<!-- 									<input type="checkbox" value=""> -->
-<!-- 									<span>Salvar Detalhes</span> -->
-<!-- 								</label> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
 				</div>		
 				<div class="pmd-card-actions">
 					<a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
