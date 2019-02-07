@@ -37,7 +37,6 @@
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Filme</label>
 							<div class="col-sm-10">
-<!-- 								<input class="form-control input-sm" id="inputEmail3" placeholder="" type="email"> -->
 								<select class="select-simple form-control pmd-select2">
 									<option></option>
 									<option>aaaa</option>
@@ -48,7 +47,6 @@
 							<label for="inputPassword3" class="col-sm-2 control-label">Sala</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
-<!-- 									<input class="form-control input-sm" id="inputPassword3" placeholder="" type="password"> -->
 									<select class="select-simple form-control pmd-select2">
 										<option></option>
 										<option>aaaa</option>

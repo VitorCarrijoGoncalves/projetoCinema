@@ -54,6 +54,7 @@
 							<tr>
 								<th></th>
 								<th>Início</th>
+								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
 								<th>Término</th>
@@ -66,6 +67,7 @@
 						<tr>
 							<td></td>
 							<td>${ secao.horaDeInicio }</td>
+							<td>${ secao.valorDoIngresso }</td>
 							<td>${ secao.idFilme.nome }</td>
 							<td>${ secao.idSala.numero }</td>
 							<td>23:45</td>
@@ -81,8 +83,48 @@
 			</div> <!-- table card code and example end -->
 		</section> <!-- table card end -->
 	</div>
-
 </div>
+
+<div tabindex="-1" class="modal fade" id="form-dialog" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Seção</h2>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Filme</label>
+						<select class="select-simple form-control pmd-select2">
+							<option></option>
+							<option>aaaa</option>
+						</select>
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Sala</label>
+						<select class="select-simple form-control pmd-select2">
+							<option></option>
+							<option>aaaa</option>
+						</select>
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Data</label>
+						<input type="date" id="mobil" class="form-control" />
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Valor do Ingresso</label>
+						<input type="text" class="mat-input form-control" id="mobil" value="">
+					</div>
+				</form>
+			</div>
+			<div class="pmd-modal-action">
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 

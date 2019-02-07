@@ -79,8 +79,44 @@
 			</div> 
 		</section> 
 	</div>
-
 </div>
+
+<div tabindex="-1" class="modal fade" id="form-dialog" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Usuário</h2>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Nome Completo</label>
+						<input type="text" class="mat-input form-control" id="name" value="">
+<!-- 						<span class="help-text">Input is required!</span>  -->
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Nome de Usuário</label>
+						<input type="text" class="mat-input form-control" id="email" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">E-mail</label>
+						<input type="text" class="mat-input form-control" id="mobil" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Senha</label>
+						<input type="text" class="mat-input form-control" id="mobil" value="">
+					</div>
+				</form>
+			</div>
+			<div class="pmd-modal-action">
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+<!-- 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button> -->
+			</div>
+		</div>
+	</div>
+</div>
+
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 

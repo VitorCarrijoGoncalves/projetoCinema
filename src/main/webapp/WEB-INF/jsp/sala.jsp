@@ -77,8 +77,34 @@
 			</div> <!-- table card code and example end -->
 		</section> <!-- table card end -->
 	</div>
-
 </div>
+
+<div tabindex="-1" class="modal fade" id="form-dialog" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Sala</h2>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Número</label>
+						<input type="text" class="mat-input form-control" id="name" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Quantidade de Lugares</label>
+						<input type="text" class="mat-input form-control" id="email" value="">
+					</div>
+				</form>
+			</div>
+			<div class="pmd-modal-action">
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 

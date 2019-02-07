@@ -213,8 +213,7 @@ $(document).ready(function() {
 		}
 	});
 	$("div.data-table-inverse").html('<h2 class="pmd-card-title-text">Inverse Table</h2>');
-	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons md-dark pmd-sm">edit</i></button>');
+	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons md-dark pmd-sm">edit</i></button>');
 	
 } );
 </script>
-

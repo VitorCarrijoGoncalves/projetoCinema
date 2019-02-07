@@ -67,9 +67,9 @@
 							<td></td>
 							<td>${ filme.nome }</td>
 							<td>${ filme.genero }</td>
-							<td>${ filme.sinopse }</td>
+							<td><a href="#" data-target="#bs-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 							<td>${ filme.duracao }</td>
-							<td><a href="#"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+							<td><a href="#" data-target="#form-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 						</tr>
 				</c:forEach>
 						
@@ -83,6 +83,56 @@
 	</div>
 
 </div>
+
+<div tabindex="-1" class="modal fade" id="bs-dialog" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<p>${filme.sinopse }</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div tabindex="-1" class="modal fade" id="form-dialog" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Filme</h2>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Nome</label>
+						<input type="text" class="mat-input form-control" id="name" value="">
+<!-- 						<span class="help-text">Input is required!</span>  -->
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Gênero</label>
+						<input type="text" class="mat-input form-control" id="email" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Duração</label>
+						<input type="text" class="mat-input form-control" id="mobil" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label for="first-name">Tipo</label>
+						<input type="text" class="mat-input form-control" id="mobil" value="">
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<label class="control-label">Sinopse</label>
+						<textarea required class="form-control"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="pmd-modal-action">
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 

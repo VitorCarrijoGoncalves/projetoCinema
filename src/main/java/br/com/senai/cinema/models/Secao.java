@@ -21,7 +21,7 @@ public class Secao {
 	@SequenceGenerator(name="secao_seq", sequenceName="secao_seq", allocationSize=1, initialValue=1)
 	private Integer id;
 	
-	private String horaDeInicio;
+	private String dataHora;
 	
 	private float valorDoIngresso;
 	
@@ -47,12 +47,12 @@ public class Secao {
 		this.id = id;
 	}
 
-	public String getHoraDeInicio() {
-		return horaDeInicio;
+	public String getDataHora() {
+		return dataHora;
 	}
 
-	public void setHoraDeInicio(String horaDeInicio) {
-		this.horaDeInicio = horaDeInicio;
+	public void setHoraDataHora(String dataHora) {
+		this.dataHora = dataHora;
 	}
 	
 	public float getValorDoIngresso() {
