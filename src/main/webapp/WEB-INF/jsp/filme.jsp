@@ -67,9 +67,9 @@
 							<td></td>
 							<td>${ filme.nome }</td>
 							<td>${ filme.genero }</td>
-							<td><a href="#" data-target="#bs-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+							<td><a href="#" data-target="#bs-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">content_paste</i></a></td>
 							<td>${ filme.duracao }</td>
-							<td><a href="#" data-target="#form-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+							<td><a href="#" data-target="#tabela-secoes" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 						</tr>
 				</c:forEach>
 						
@@ -88,7 +88,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-body">
-				<p>${filme.sinopse }</p>
+<%-- 				<p>${filme.sinopse }</p> --%>
+				<p>jkhjkhjk</p>
 			</div>
 		</div>
 	</div>
@@ -128,6 +129,35 @@
 			</div>
 			<div class="pmd-modal-action">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div tabindex="-1" class="modal fade" id="tabela-secoes" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Filme</h2>
+			</div>
+			<div class="modal-body">
+				<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
+					<thead>
+						<th></th>
+						<th>FILME</th>
+						<th>DATA</th>
+						<th>INGRESSO</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td>aaa</td>
+							<td>aaa</td>
+							<td>aaa</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

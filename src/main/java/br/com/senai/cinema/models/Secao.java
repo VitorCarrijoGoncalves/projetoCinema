@@ -112,9 +112,9 @@ public class Secao {
 		return true;
 	}
 	
-	public String getDadosFilme() {
-		return this.getIdFilme().getNome() + " - Sala: " + this.getIdSala().getNumero() + " Data: " + this.getHoraDeInicio();
-	}
+//	public String getDadosFilme() {
+//		return this.getIdFilme().getNome() + " - Sala: " + this.getIdSala().getNumero() + " Data: " + this.getHoraDeInicio();
+//	}
 	
 	
 	

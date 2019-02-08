@@ -54,11 +54,11 @@
 							<tr>
 								<th></th>
 								<th>NOME</th>
-								<th>INÍCIO</th>
+								<th>DATA</th>
 								<th>VALOR</th>
 								<th>FILME</th>
 								<th>SALA</th>
-								<th>TÉRMINO</th>
+<!-- 								<th>TÉRMINO</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -67,11 +67,11 @@
 						<tr>
 							<td></td>
 							<td>${ ingresso.idUsuario.nome }</td>
-							<td>${ ingresso.idSecao.horaDeInicio }</td>
+							<td>${ ingresso.idSecao.dataHora }</td>
 							<td>${ ingresso.idSecao.valorDoIngresso }</td>
 							<td>${ ingresso.idSecao.idFilme.nome }</td>
 							<td>${ ingresso.idSecao.idSala.numero }</td>
-							<td>23:45</td>
+<!-- 							<td>23:45</td> -->
 						</tr>
 				</c:forEach>
 							

@@ -22,7 +22,7 @@
 					<div class="loginlogo">
 						<img src="themes/images/logo-icon.png" alt="Logo">
 					</div>
-					<h3><span><strong>Cinema Perto de Você</strong></span></h3>
+					<h3><span><strong>Cinema Propeller</strong></span></h3>
 				</div>
 				
 				<div class="pmd-card-body">

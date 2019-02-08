@@ -53,11 +53,11 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Início</th>
+								<th>Data</th>
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
-								<th>Término</th>
+<!-- 								<th>Término</th> -->
 								<th>Ingressos</th>
 							</tr>
 						</thead>
@@ -66,12 +66,12 @@
 						<c:forEach var="secao" items="${secoes}">
 						<tr>
 							<td></td>
-							<td>${ secao.horaDeInicio }</td>
+							<td>${ secao.dataHora }</td>
 							<td>${ secao.valorDoIngresso }</td>
 							<td>${ secao.idFilme.nome }</td>
 							<td>${ secao.idSala.numero }</td>
-							<td>23:45</td>
-							<td><a href="#"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+<!-- 							<td>23:45</td> -->
+							<td><a href="#" data-target="#tabela-usuarios" data-toggle="modal"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
 						</tr>
 				</c:forEach>
 							
@@ -120,6 +120,32 @@
 			</div>
 			<div class="pmd-modal-action">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div tabindex="-1" class="modal fade" id="tabela-usuarios" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bordered">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h2 class="pmd-card-title-text">Alterar Sala</h2>
+			</div>
+			<div class="modal-body">
+				<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
+					<thead>
+						<th></th>
+						<th>NOME</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td>aaa</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
