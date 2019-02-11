@@ -18,10 +18,8 @@
 <!--content area start-->
 <div id="content" class="pmd-content inner-page">
 
-	<!--tab start-->
 	<div class="container-fluid full-width-container">
 	
-		<!-- Title -->
 		<h1 class="section-title" id="services">
 			<span>Cadastro de Filmes</span>
 		</h1><!-- End Title -->
@@ -33,16 +31,22 @@
 		</ol><!--breadcrum end-->
 	
 		<div class="section section-custom billinfo"> 
-			<form id="validationForm" action="" method="post">
+			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post">
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">
+				 <div class="alert alert-success" id="mensagem-sucesso">
+	    				Filme cadastrado com sucesso!
+	  				</div>
+	  				  <div class="alert alert-danger" id="mensagem-erro">
+    					 Filme não cadastrado!
+  					</div>
 					<div class="group-fields clearfix row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
 								<label for="regular1" class="control-label">
 									Nome
 								</label>
-								<input type="text" id="regular1" class="form-control">
+								<input type="text" id="nome" name="nome" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -50,16 +54,14 @@
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Gênero</label>
-								<input type="text" id="regular1" class="form-control">
-<!-- 								<select class="select-simple form-control pmd-select2"> -->
-<!-- 									<option></option> -->
-<!-- 								</select> -->
+								<input type="text" id="genero" name="genero" class="form-control">
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
-								<input type="text" id="timepicker" class="form-control" />
+<!-- 								<input type="text" id="timepicker" class="form-control" /> -->
+								<input type="text" id="duracao" name="duracao" class="form-control">
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -67,7 +69,7 @@
 								<label for="regular1" class="control-label">
 									Tipo
 								</label>
-								<input type="text" id="regular1" class="form-control">
+								<input type="text" id="tipo" name="tipo" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -75,14 +77,13 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							  <label class="control-label">Sinopse</label>
-							  <textarea required class="form-control"></textarea>
+							  <textarea required class="form-control" id="sinopse" name="sinopse"></textarea>
 							</div>
 						</div>
 					</div>
 				</div>		
 				<div class="pmd-card-actions">
-					<a href="javascript:void(0);" class="btn btn-primary next">Enviar</a>
-<!-- 					<a href="javascript:void(0);" class="btn btn-default">Cancel</a> -->
+					<button type="submit" class="btn btn-primary next">Enviar</button>
 				</div>
 			</div> 
 			</form>

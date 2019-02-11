@@ -46,7 +46,6 @@
 			<!-- table card code and example -->
 			<div class="col-md-9">
 				<div class="component-box">
-					<!-- table card example -->
 					<div  class="pmd-card pmd-z-depth pmd-card-custom-view">
 						<div class="table-responsive">
 						<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
@@ -139,25 +138,43 @@
 		<div class="modal-content">
 			<div class="modal-header bordered">
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Alterar Filme</h2>
+				<h2 class="pmd-card-title-text">Listagem de Seções</h2>
 			</div>
 			<div class="modal-body">
-				<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
-					<thead>
-						<th></th>
-						<th>FILME</th>
-						<th>DATA</th>
-						<th>INGRESSO</th>
-					</thead>
-					<tbody>
+			
+			
+			
+		<section class="row component-section">
+			<div class="col-md-12">
+				<div class="component-box">
+					<div  class="pmd-card pmd-z-depth pmd-card-custom-view">
+						<div class="table-responsive">
+						<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th></th>
+								<th>FILME</th>
+								<th>DATA</th>
+								<th>INGRESSO</th>
+							</tr>
+						</thead>
+						<tbody>
 						<tr>
 							<td></td>
-							<td>aaa</td>
-							<td>aaa</td>
-							<td>aaa</td>
+							<td>aaaa</td>
+							<td>aaaaaaaa</td>
+							<td>aaaaaa</td>
 						</tr>
-					</tbody>
-				</table>
+						
+						</tbody>
+					</table>
+						</div>
+					</div> <!-- table card example end -->
+				</div>
+			</div> 
+		</section> 
+		
+		
 			</div>
 		</div>
 	</div>

@@ -58,7 +58,6 @@
 								<th>VALOR</th>
 								<th>FILME</th>
 								<th>SALA</th>
-<!-- 								<th>TÉRMINO</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -71,7 +70,6 @@
 							<td>${ ingresso.idSecao.valorDoIngresso }</td>
 							<td>${ ingresso.idSecao.idFilme.nome }</td>
 							<td>${ ingresso.idSecao.idSala.numero }</td>
-<!-- 							<td>23:45</td> -->
 						</tr>
 				</c:forEach>
 							
@@ -96,7 +94,10 @@
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Nome</label>
-						<input type="text" class="mat-input form-control" id="mobil" value="">
+							<select class="select-simple form-control pmd-select2">
+								<option></option>
+								<option>aaaa</option>
+							</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Seção</label>

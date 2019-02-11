@@ -51,7 +51,7 @@ public class Secao {
 		return dataHora;
 	}
 
-	public void setHoraDataHora(String dataHora) {
+	public void setDataHora(String dataHora) {
 		this.dataHora = dataHora;
 	}
 	

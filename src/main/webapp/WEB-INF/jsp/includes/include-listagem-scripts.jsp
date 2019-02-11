@@ -57,7 +57,7 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por pÃ¡gina:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
 			"sSearchPlaceholder": "Buscar",
 			"paginate": {
@@ -94,7 +94,7 @@ $(document).ready(function() {
 			$(this).closest('.dataTables_wrapper').find('.custom-select-info').hide();
 		}
 	} );
-	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Listagem de Usuários</h2>');
+	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Listagem de UsuÃ¡rios</h2>');
 	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">more_vert</button>');
 	
 } );
@@ -124,7 +124,7 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por pÃ¡gina:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
 			"sSearchPlaceholder": "Buscar",
 			"paginate": {
@@ -175,7 +175,7 @@ $(document).ready(function() {
 		"searching": true,
 		"language": {
 			"info": " _START_ - _END_ of _TOTAL_ ",
-			"sLengthMenu": "<span class='custom-select-title'>Linhas por página:</span> <span class='custom-select'> _MENU_ </span>",
+			"sLengthMenu": "<span class='custom-select-title'>Linhas por pÃ¡gina:</span> <span class='custom-select'> _MENU_ </span>",
 			"sSearch": "",
 			"sSearchPlaceholder": "Buscar",
 			"paginate": {
@@ -217,3 +217,45 @@ $(document).ready(function() {
 	
 } );
 </script>
+
+<script>
+
+$(document).ready(function() {
+	
+	$(".btn-delete").click(function(e) {
+		e.preventDefault();// quando a pessoa clicar em alguns deste botï¿½es, a tela
+		// nï¿½o sobe para cima 
+
+		// o closest serve para pegar o elemento mais perto de onde eu cliquei na pï¿½g
+		// o text pega o texto da tag
+		var tableRow = $(this).closest("tr");
+		var idFilme = tableRow.find(".id-contato").text();
+
+		if (confirm("Deseja excluir?")) { 
+
+			$.ajax({
+				url : "/formulario-de-filme/delete-registro",
+				type : "POST",
+				data : {
+					id : idContato
+				},
+				success : function(data) {
+					tableRow.remove();
+				},
+				error : function(data) {
+					
+				}
+			});
+
+		} else {
+			// apenas fechar o modal
+		}
+
+
+	});
+
+});
+
+</script>
+
+

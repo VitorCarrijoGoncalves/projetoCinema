@@ -57,54 +57,14 @@
 					</div>
 					<a href="/home" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Login</a>
                     
-					<p class="redirection-link">Não tem conta? <a href="javascript:void(0);" class="login-register">Registrar</a>. </p>
+<!-- 					<p class="redirection-link">Não tem conta? <a href="javascript:void(0);" class="login-register">Registrar</a>. </p> -->
                     
 				</div>
 				
 			</form>
 		</div>
 		
-		<div class="register-card">
-			<div class="pmd-card-title card-header-border text-center">
-				<div class="loginlogo">
-					<a href="javascript:void(0);"><img src="themes/images/logo-icon.png" alt="Logo"></a>
-				</div>
-				<h3><span><strong>Cinema Perto de Você</strong></span></h3>
-			</div>
-			<form>	
-			  <div class="pmd-card-body">
-              
-              	<div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Nome de Usuário</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
-                            <input type="text" class="form-control" id="exampleInputAmount">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">E-mail</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">email</i></div>
-                            <input type="text" class="form-control" id="exampleInputAmount">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Senha</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
-                            <input type="text" class="form-control" id="exampleInputAmount">
-                        </div>
-                    </div>
-              </div>
-			  
-			  <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-				<a href="index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Registrar</a>
-			  	<p class="redirection-link">Já tem uma conta? <a href="javascript:void(0);" class="register-login">Acessar</a>. </p>
-			  </div>
-			</form>
-		</div>
+		
 		
 		<div class="forgot-password-card">
 			<form>	
@@ -125,7 +85,7 @@
 				</div>
 			  <div class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
 			  	<a href="index.html" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Enviar</a>
-			  	<p class="redirection-link">Já está registrado? <a href="javascript:void(0);" class="register-login">Clique aqui</a></p>
+<!-- 			  	<p class="redirection-link">Já está registrado? <a href="javascript:void(0);" class="register-login">Clique aqui</a></p> -->
 			  </div>
 			</form>
 		</div>

@@ -33,13 +33,21 @@
 		<div class="section section-custom billinfo"> 
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
-					<form class="form-horizontal" role="form">
+					 <div class="alert alert-success" id="mensagem-sucesso">
+	    				Seção cadastrada com sucesso!
+	  				</div>
+	  				  <div class="alert alert-danger" id="mensagem-erro">
+    					 Seção não cadastrada!
+  					</div>
+					<form class="form-horizontal" role="form" method="post" action="/formulario-de-secao/novo-cadastro">
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Filme</label>
 							<div class="col-sm-10">
-								<select class="select-simple form-control pmd-select2">
+								<select class="select-simple form-control pmd-select2" id="idFilme" name="idFilme">
 									<option></option>
-									<option>aaaa</option>
+									<c:forEach var="filme" items="${filmes}">
+										<option value="${filme.id }">${filme.nome }</option>
+									</c:forEach>
 								</select>
 							</div>
 						</div>
@@ -47,10 +55,12 @@
 							<label for="inputPassword3" class="col-sm-2 control-label">Sala</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
-									<select class="select-simple form-control pmd-select2">
+									<select class="select-simple form-control pmd-select2" id="idSala" name="idSala">
 										<option></option>
-										<option>aaaa</option>
-								</select>
+										<c:forEach var="sala" items="${salas}">
+											<option value="${sala.id }">${sala.numero }</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -58,7 +68,7 @@
 							<label for="inputPassword3" class="col-sm-2 control-label">Data</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
-									<input type="text" id="datetimepicker-default" class="form-control" />
+									<input type="text" name="data" id="datetimepicker-default" class="form-control" />
 								</div>
 							</div>
 						</div>
@@ -66,13 +76,13 @@
 							<label for="inputPassword3" class="col-sm-2 control-label">Valor do Ingresso</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
-									<input class="form-control input-sm" id="inputEmail3" placeholder="" type="text">
+									<input class="form-control input-sm" name="valorDoIngresso" id="valorDoIngresso" type="text">
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-primary pmd-checkbox-ripple-effect">Enviar</button>
+								<button type="submit" class="btn btn-primary pmd-checkbox-ripple-effect" id="btn-submit">Enviar</button>
 							</div>
 						</div>
 					</form>

@@ -92,4 +92,17 @@ $(document).ready(function(){
 });
 </script> 
 
+<script>
+
+	$('#mensagem-sucesso').hide();
+	$('#mensagem-erro').hide();
+
+	$('#btn-submit').click(function() {
+		// Validar para que se o envio de dados tiver funcionado, mostrar a mensagem de sucesso, se não, mostrar a de erro
+	});
+		
+
+
+</script>
+
 <!-- Scripts Ends -->

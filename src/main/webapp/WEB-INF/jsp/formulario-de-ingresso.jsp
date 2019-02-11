@@ -33,20 +33,33 @@
 		<div class="section section-custom billinfo"> 
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
-					<form class="form-horizontal" role="form">
+					 <div class="alert alert-success" id="mensagem-sucesso">
+	    				Ingresso cadastrado com sucesso!
+	  				</div>
+	  				  <div class="alert alert-danger" id="mensagem-erro">
+    					 Ingresso não cadastrado!
+  					</div>
+					<form class="form-horizontal" role="form" method="post" action="/formulario-de-ingresso/novo-cadastro">
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
 							<div class="col-sm-10">
-								<input class="form-control input-sm" id="inputEmail3" placeholder="" type="email">
+								<select class="select-simple form-control pmd-select2" id="idUsuario" name="idUsuario">
+									<option></option>
+									<c:forEach var="usuario" items="${usuarios}">
+										<option value="${usuario.id }">${usuario.nome }</option>
+									</c:forEach>
+								</select>
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
 							<label for="inputPassword3" class="col-sm-2 control-label">Seção</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
-									<select class="select-simple form-control pmd-select2">
+									<select class="select-simple form-control pmd-select2" id="idSecao" name="idSecao">
 										<option></option>
-										<option>aaaaaa</option>
+										<c:forEach var="secao" items="${secoes}">
+											<option value="${secao.id }">${secao.idFilme.nome } - ${secao.valorDoIngresso } - ${secao.idSala.numero }</option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>

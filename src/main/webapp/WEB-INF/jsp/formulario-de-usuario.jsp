@@ -33,34 +33,38 @@
 		<div class="section section-custom billinfo"> 
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
-					<form class="form-horizontal" role="form">
+					 <div class="alert alert-success" id="mensagem-sucesso">
+	    				Usuário cadastrado com sucesso!
+	  				</div>
+	  				  <div class="alert alert-danger" id="mensagem-erro">
+    					 Usuário não cadastrada!
+  					</div>
+					<form class="form-horizontal" role="form" method="post" action="/formulario-de-usuario/novo-cadastro">
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Nome Completo</label>
 							<div class="col-sm-10">
-								<input class="form-control input-sm" id="inputEmail3" placeholder="" type="email">
+								<input class="form-control input-sm" name="nome" id="nome" type="text">
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
 							<label for="inputPassword3" class="col-sm-2 control-label">Nome de Usuário</label>
 							<div class="col-sm-10">
-
 								<div class="fg-line">
-									<input class="form-control input-sm" id="inputPassword3" placeholder="" type="password">
+									<input class="form-control input-sm" name="login" id="login" type="text">
 								</div>
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
 							<div class="col-sm-10">
-								<input class="form-control input-sm" id="inputEmail3" placeholder="" type="email">
+								<input class="form-control input-sm" name="email" id="email" type="email">
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
 							<label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
 							<div class="col-sm-10">
-
 								<div class="fg-line">
-									<input class="form-control input-sm" id="inputPassword3" placeholder="" type="password">
+									<input class="form-control input-sm" name="senha" id="senha" type="password">
 								</div>
 							</div>
 						</div>
