@@ -72,7 +72,7 @@
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>
-							<td><a href="#" data-target="#tabela-secaos" data-toggle="modal"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+							<td><a href="/secao/ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
 						</tr>
 				</c:forEach>
 							
@@ -122,47 +122,6 @@
 			</div>
 			<div class="pmd-modal-action">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar Alterações</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div tabindex="-1" class="modal fade" id="tabela-secaos" style="display: none;" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Listagem de Usuários</h2>
-			</div>
-			<div class="modal-body">
-			
-				<section class="row component-section">
-			<div class="col-md-12">
-				<div class="component-box">
-					<div  class="pmd-card pmd-z-depth pmd-card-custom-view">
-						<div class="table-responsive">
-						<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
-						<thead>
-							<tr>
-								<th>CÓDIGO</th>
-								<th>NOME</th>
-							</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td>1</td>
-							<td>aaaa</td>
-						</tr>
-						
-						</tbody>
-					</table>
-						</div>
-					</div> <!-- table card example end -->
-				</div>
-			</div> 
-		</section> 
-		
 			</div>
 		</div>
 	</div>

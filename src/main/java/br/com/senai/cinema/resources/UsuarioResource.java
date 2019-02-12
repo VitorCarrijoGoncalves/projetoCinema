@@ -3,6 +3,7 @@ package br.com.senai.cinema.resources;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,15 +38,6 @@ public class UsuarioResource {
 		return "usuario";
 	}
 	
-//	@RequestMapping(value = "/ilionnet/blog", method = RequestMethod.GET)
-//	public String index(HttpServletRequest request) { // metodo para deixar a tabela do BD na tela do Ilionet
-//
-//		List<Blog> blogs = blogNegocio.getAllBlog();
-//
-//		request.setAttribute("blogs", blogs);
-//		return "/ilionnet/modulos/admin/admin-blog";
-//	}
-	
 //	@GetMapping("/listagem")
 //	public List<Usuario> usuarios() {
 //		return  usuarioService.findAll();
@@ -57,7 +49,7 @@ public class UsuarioResource {
 	}
 	
 	@PutMapping("/update-usuario")
-	public @ResponseBody String updateReturningJson(HttpServletRequest request) throws ObjectNotFoundException {
+	public @ResponseBody String updateReturningJson(HttpServletRequest request, HttpServletResponse response) throws ObjectNotFoundException {
 
 		Integer idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
 		Usuario usuario = usuarioService.findById(idUsuario);
@@ -80,10 +72,11 @@ public class UsuarioResource {
 	}
 	
 	@DeleteMapping("/delete-usuario") // @RequestBody = obj vem no corpo da requisição
-	public void deleteById(HttpServletRequest request) {
+	public String deleteById(HttpServletRequest request) {
 		String idUsuario = request.getParameter("idUsuario");
 		System.out.println("Id Usuario" + idUsuario);
 		usuarioService.deleteById(Integer.parseInt(idUsuario));
+		return "usuario";
 	}
 	
 }

@@ -27,7 +27,7 @@ public class Filme {
 	
 	private String duracao;
 	
-	private String tipo;
+	private boolean status;
 	
 	@OneToMany(
 			mappedBy = "idFilme",
@@ -78,13 +78,13 @@ public class Filme {
 	public void setDuracao(String duracao) {
 		this.duracao = duracao;
 	}
-	
-	public String getTipo() {
-		return tipo;
+
+	public boolean isStatus() {
+		return status;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	public List<Secao> getSecoes() {

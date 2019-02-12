@@ -57,6 +57,7 @@
 								<th>GÊNERO</th>
 								<th>SINOPSE</th>
 								<th>DURAÇÃO</th>
+								<th>STATUS</th>
 								<th>SEÇÕES</th>
 							</tr>
 						</thead>
@@ -71,7 +72,11 @@
 							<td id="genero">${ filme.genero }</td>
 							<td><a href="#" data-target="#bs-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">content_paste</i></a></td>
 							<td id="duracao">${ filme.duracao }</td>
-							<td><a href="#" data-target="#tabela-secoes" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+							<c:if test="${filme.status } == TRUE">
+							<td id="status">Filme em Lançamento</td>
+							</c:if>
+							<td id="status">Filme fora de Lançamento</td>
+							<td><a href="/filme/secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 						</tr>
 				</c:forEach>
 						
@@ -131,53 +136,6 @@
 			</div>
 			<div class="pmd-modal-action">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar Alterações</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div tabindex="-1" class="modal fade" id="tabela-secoes" style="display: none;" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Listagem de Seções</h2>
-			</div>
-			<div class="modal-body">
-			
-			
-			
-		<section class="row component-section">
-			<div class="col-md-12">
-				<div class="component-box">
-					<div  class="pmd-card pmd-z-depth pmd-card-custom-view">
-						<div class="table-responsive">
-						<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
-						<thead>
-							<tr>
-								<th></th>
-								<th>FILME</th>
-								<th>DATA</th>
-								<th>INGRESSO</th>
-							</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td></td>
-							<td>aaaa</td>
-							<td>aaaaaaaa</td>
-							<td>aaaaaa</td>
-						</tr>
-						
-						</tbody>
-					</table>
-						</div>
-					</div> <!-- table card example end -->
-				</div>
-			</div> 
-		</section> 
-		
-		
 			</div>
 		</div>
 	</div>

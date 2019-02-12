@@ -8,7 +8,7 @@
 <meta name="description" content="Propeller Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 
-<title>Cinema Perto de Você</title>
+<title>Cinema Propeller</title>
 
 <jsp:include page="includes/include-home-head.jsp"/>
 

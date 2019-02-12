@@ -71,4 +71,19 @@ public class SiteController {
 		return "formulario-de-usuario";
 	}
 	
+	@RequestMapping(value="/filme/secoes")
+	public String listagemDeSecaoPorFilme() {
+		return "listagem-de-secao-por-filme";
+	}
+	
+	@RequestMapping(value="/sala/secoes")
+	public String listagemDeSecaoPorSala() {
+		return "listagem-de-secao-por-sala";
+	}
+	
+	@RequestMapping(value="/secao/ingressos")
+	public String listagemDeIngressosPorSecao() {
+		return "listagem-de-ingressos-por-secao";
+	}
+	
 }

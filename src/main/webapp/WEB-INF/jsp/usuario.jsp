@@ -63,9 +63,9 @@
 						<tbody>
 						
 				<c:forEach var="usuario" items="${usuarios}">
+						<input type="hidden" id="idUsuario" name="idUsuario">
 					<tr>
 						<td></td>
-						<input type="hidden" id="idUsuario" name="idUsuario">
 <%-- 						<td id="idUsuario">${usuario.id }</td> --%>
 						<td id="login">${ usuario.login }</td>
 						<td id="nome">${ usuario.nome }</td>

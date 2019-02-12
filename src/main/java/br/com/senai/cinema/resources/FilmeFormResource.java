@@ -42,7 +42,7 @@ public class FilmeFormResource {
 		filme.setGenero(genero);
 		filme.setSinopse(sinopse);
 		filme.setDuracao(duracao);
-		filme.setTipo(tipo);
+		filme.setStatus(true);
 		filmeService.save(filme);
 		
 		return "formulario-de-filme";
