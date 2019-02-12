@@ -13,15 +13,15 @@ import javassist.tools.rmi.ObjectNotFoundException;
 public class SecaoService {
 
 	@Autowired
-	private SecaoRepository SecaoRepository;
+	private SecaoRepository secaoRepository;
 	
 	public Secao save(Secao obj) {
 		obj.setId(null); // o Objeto novo a ser inserido precisa o ter p id nulo
-		return SecaoRepository.save(obj);
+		return secaoRepository.save(obj);
 	}
 	
 	public Secao findById(Integer id) throws ObjectNotFoundException {
-		Secao Secao = SecaoRepository.findById(id);
+		Secao Secao = secaoRepository.findById(id);
 		if (Secao == null) {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Secao.class.getName());
 		}
@@ -30,24 +30,30 @@ public class SecaoService {
 	
 	public Secao update(Secao obj) {
 		if (obj.getId() != null) {
-			return SecaoRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
+			return secaoRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
 		}
 		return null;
 	}
 	
 	public void delete(Secao secao) {
 		if (secao != null) {
-			SecaoRepository.delete(secao);
+			secaoRepository.delete(secao);
+		}
+	}
+	
+	public void deleteById(Integer id) {
+		if (id != null ) {
+			secaoRepository.deleteById(id);
 		}
 	}
 	
 	public List<Secao> findAll() {
-		return SecaoRepository.findAll();
+		return secaoRepository.findAll();
 	}
 	
 //	public Page<Secao> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 //		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return SecaoRepository.findAll(pageRequest);
+//		return secaoRepository.findAll(pageRequest);
 //	} // método utilizado para fazer a paginação(exibição) das Secaos, por página
 	
 }

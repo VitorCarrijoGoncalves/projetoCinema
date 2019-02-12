@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.services.UsuarioService;
@@ -53,14 +56,34 @@ public class UsuarioResource {
 		return  usuarioService.findById(id);
 	}
 	
-	@DeleteMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-	public void delete(@RequestBody Usuario usuario) {
-		usuarioService.delete(usuario);
+	@PutMapping("/update-usuario")
+	public @ResponseBody String updateReturningJson(HttpServletRequest request) throws ObjectNotFoundException {
+
+		Integer idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+		Usuario usuario = usuarioService.findById(idUsuario);
+		request.setAttribute("usuario", usuario);
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(usuario);
+		
+		return json;
 	}
 	
 	@PutMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
 	public Usuario update(@RequestBody Usuario usuario) {
 		return usuarioService.update(usuario);
 	}
-
+	
+	@DeleteMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
+	public void delete(@RequestBody Usuario usuario) {
+		usuarioService.delete(usuario);
+	}
+	
+	@DeleteMapping("/delete-usuario") // @RequestBody = obj vem no corpo da requisição
+	public void deleteById(HttpServletRequest request) {
+		String idUsuario = request.getParameter("idUsuario");
+		System.out.println("Id Usuario" + idUsuario);
+		usuarioService.deleteById(Integer.parseInt(idUsuario));
+	}
+	
 }

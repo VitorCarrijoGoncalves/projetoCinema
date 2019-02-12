@@ -28,7 +28,7 @@
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
-		  <li class="active">Visualização</li>
+		  <li class="active">VisualizaÃ§Ã£o</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -37,10 +37,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Descrição</h2>
+					<h2>DescriÃ§Ã£o</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
-				posso alterar, ou deletar algum registro, caso seja necessário</p>
+				<p>Esta Ã© a tabela de visualizaÃ§Ã£o de filmes jÃ¡ cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necessÃ¡rio</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -53,9 +53,10 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>Número</th>
+<!-- 								<th>Id</th> -->
+								<th>NÃºmero</th>
 								<th>Qtde. de Lugares</th>
-								<th>Seções</th>
+								<th>SeÃ§Ãµes</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,8 +64,10 @@
 						<c:forEach var="sala" items="${salas}">
 							<tr>
 								<td></td>
-								<td>${ sala.numero }</td>
-								<td>${ sala.quantidadeDeLugares }</td>
+								<input type="hidden" id="idSala" name="idSala">
+<%-- 								<td id="idSala">${sala.id }</td> --%>
+								<td id="numero">${ sala.numero }</td>
+								<td id="quantidadeDeLugares">${ sala.quantidadeDeLugares }</td>
 								<td><a href="#" data-target="#tabela-secoes" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 							</tr>
 					</c:forEach>
@@ -83,23 +86,24 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
 				<h2 class="pmd-card-title-text">Alterar Sala</h2>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
-						<label for="first-name">Número</label>
-						<input type="text" class="mat-input form-control" id="name" value="">
+						<label for="first-name">NÃºmero</label>
+						<input type="hidden" id="idSalaModal" name="idSalaModal">
+						<input type="text" class="mat-input form-control" id="numeroModal" name="numeroModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Quantidade de Lugares</label>
-						<input type="text" class="mat-input form-control" id="email" value="">
+						<input type="text" class="mat-input form-control" id="quantidadeDeLugaresModal" name="quantidadeDeLugaresModal">
 					</div>
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar AlteraÃ§Ãµes</button>
 			</div>
 		</div>
 	</div>
@@ -110,8 +114,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Listagem de Seções</h2>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
+				<h2 class="pmd-card-title-text">Listagem de SeÃ§Ãµes</h2>
 			</div>
 			<div class="modal-body">
 			
@@ -152,6 +156,84 @@
 
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
+
+<script>
+
+
+$(document).ready(function() {
+	
+	$("#btn-delete").click(function(e) {
+		e.preventDefault();// quando a pessoa clicar em alguns deste botï¿½es, a tela
+		
+		var tableRow = $(this).closest("tr");
+		var idSala = tableRow.find("#idSala").text();
+		if (confirm("Deseja excluir?")) { 
+
+			console.log(idSala);
+			$.ajax({
+				url : "/sala/delete-sala",
+				type : "DELETE",
+				data : {
+					idSala : idSala
+				},
+				success : function(data) {
+					tableRow.remove();
+				},
+				error : function(data) {
+					
+				}
+			});
+
+		} else {
+			// apenas fechar o modal
+		}
+
+
+	});
+
+});
+
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+
+	$("#btn-update").click(function(e) {
+		e.preventDefault();
+	
+		var idSala = $(this).closest("tr").find("#idSala").text();
+		var numero = $(this).closest("tr").find("#numero").text();
+		var quantidadeDeLugares = $(this).closest("tr").find("#quantidadeDeLugares").text();
+		
+		$("#idSalaModal").val(idSala);
+		$("#numeroModal").val(nome);
+		$("#quantidadeDeLugaresModal").val(login);
+		
+		console.log(idSala);
+		$.ajax({
+			method : "PUT",
+			url : "/sala/update-sala",
+			data : {
+				"idSala" : idSala
+			},
+			success : function(response) {
+				var objSala = new Object();
+				objSala = JSON.parse(response);
+				console.log(objSala);
+			},
+			error : function(errResponse) {
+				console.log("error",errResponse);
+			}
+		});
+		
+		
+	});
+
+});
+
+</script>
 
 </body>
 </html>

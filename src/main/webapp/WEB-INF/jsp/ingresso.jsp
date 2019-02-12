@@ -28,7 +28,7 @@
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
-		  <li class="active">Visualização</li>
+		  <li class="active">VisualizaÃ§Ã£o</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -37,10 +37,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Descrição</h2>
+					<h2>DescriÃ§Ã£o</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
-				posso alterar, ou deletar algum registro, caso seja necessário</p>
+				<p>Esta Ã© a tabela de visualizaÃ§Ã£o de filmes jÃ¡ cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necessÃ¡rio</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -53,6 +53,7 @@
 						<thead>
 							<tr>
 								<th></th>
+<!-- 								<th>ID</th> -->
 								<th>NOME</th>
 								<th>DATA</th>
 								<th>VALOR</th>
@@ -65,11 +66,13 @@
 				<c:forEach var="ingresso" items="${ingressos}">
 						<tr>
 							<td></td>
-							<td>${ ingresso.idUsuario.nome }</td>
-							<td>${ ingresso.idSecao.dataHora }</td>
-							<td>${ ingresso.idSecao.valorDoIngresso }</td>
-							<td>${ ingresso.idSecao.idFilme.nome }</td>
-							<td>${ ingresso.idSecao.idSala.numero }</td>
+							<input type="hidden" id="idIngresso" name="idIngresso">
+<%-- 							<td id="idIngresso">${ingresso.id }</td> --%>
+							<td id="nome">${ ingresso.idUsuario.nome }</td>
+							<td id="data">${ ingresso.idSecao.dataHora }</td>
+							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td>
+							<td id="filme">${ ingresso.idSecao.idFilme.nome }</td>
+							<td id="sala">${ ingresso.idSecao.idSala.numero }</td>
 						</tr>
 				</c:forEach>
 							
@@ -87,21 +90,22 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
 				<h2 class="pmd-card-title-text">Alterar Ingresso</h2>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Nome</label>
-							<select class="select-simple form-control pmd-select2">
+							<input type="hidden" id="idIngressoModal" name="idIngressoModal">
+							<select class="select-simple form-control pmd-select2" id="nomeModal" name="nomeModal">
 								<option></option>
 								<option>aaaa</option>
 							</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
-						<label for="first-name">Seção</label>
-						<select class="select-simple form-control pmd-select2">
+						<label for="first-name">SeÃ§Ã£o</label>
+						<select class="select-simple form-control pmd-select2" id="secaoModal" name="secaoModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
@@ -109,7 +113,7 @@
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar AlteraÃ§Ãµes</button>
 			</div>
 		</div>
 	</div>
@@ -117,6 +121,88 @@
 
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
+
+<script>
+
+
+$(document).ready(function() {
+	
+	$("#btn-delete").click(function(e) {
+		e.preventDefault();// quando a pessoa clicar em alguns deste botï¿½es, a tela
+		// nï¿½o sobe para cima 
+
+		// o closest serve para pegar o elemento mais perto de onde eu cliquei na pï¿½g
+		// o text pega o texto da tag
+		var tableRow = $(this).closest("tr");
+		var idIngresso = tableRow.find("#idIngresso").text();
+		if (confirm("Deseja excluir?")) { 
+
+			console.log(idIngresso);
+			$.ajax({
+				url : "/ingresso/delete-usuario",
+				type : "DELETE",
+				data : {
+					idIngresso : idIngresso
+				},
+				success : function(data) {
+					tableRow.remove();
+				},
+				error : function(data) {
+					
+				}
+			});
+
+		} else {
+			// apenas fechar o modal
+		}
+
+
+	});
+
+});
+
+
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+
+	$("#btn-update").click(function(e) {
+		e.preventDefault();
+	
+		var idIngresso = $(this).closest("tr").find("#idIngresso").text();
+		var nome = $(this).closest("tr").find("#nome").text();
+		var secao = $(this).closest("tr").find("#secao").text();
+		
+		$("#idIngressoModal").val(idIngresso);
+		$("#nomeModal").val(nome);
+		$("#secaoModal").val(login);
+		
+		console.log(idIngresso);
+		$.ajax({
+			method : "PUT",
+			url : "/ingresso/update-ingresso",
+			data : {
+				"idIngresso" : idIngresso
+			},
+			success : function(response) {
+				var objIngresso = new Object();
+				objIngresso = JSON.parse(response);
+				console.log(objIngresso);
+			},
+			error : function(errResponse) {
+				console.log("error",errResponse);
+			}
+		});
+		
+		
+	});
+
+});
+
+</script>
 
 </body>
 </html>

@@ -53,5 +53,11 @@ public class IngressoResource {
 	public Ingresso update(@RequestBody Ingresso Ingresso) {
 		return ingressoService.update(Ingresso);
 	}
+	
+	@DeleteMapping("/delete-ingresso") // @RequestBody = obj vem no corpo da requisição
+	public void deleteById(HttpServletRequest request) {
+		String idIngresso = request.getParameter("idIngresso");
+		ingressoService.deleteById(Integer.parseInt(idIngresso));
+	}
 
 }

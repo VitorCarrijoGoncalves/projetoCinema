@@ -53,5 +53,11 @@ public class SalaResource {
 	public Sala update(@RequestBody Sala sala) {
 		return salaService.update(sala);
 	}
+	
+	@DeleteMapping("/delete-sala") // @RequestBody = obj vem no corpo da requisição
+	public void deleteById(HttpServletRequest request) {
+		String idSala = request.getParameter("idSala");
+		salaService.deleteById(Integer.parseInt(idSala));
+	}
 
 }

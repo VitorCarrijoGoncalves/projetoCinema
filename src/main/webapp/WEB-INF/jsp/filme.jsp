@@ -28,7 +28,7 @@
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
-		  <li class="active">Visualização</li>
+		  <li class="active">VisualizaÃ§Ã£o</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -37,10 +37,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Descrição</h2>
+					<h2>DescriÃ§Ã£o</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
-				posso alterar, ou deletar algum registro, caso seja necessário</p>
+				<p>Esta Ã© a tabela de visualizaÃ§Ã£o de filmes jÃ¡ cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necessÃ¡rio</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -52,11 +52,12 @@
 						<thead>
 							<tr>
 								<th></th>
+<!-- 								<th>ID</th> -->
 								<th>NOME</th>
-								<th>GÊNERO</th>
+								<th>GÃŠNERO</th>
 								<th>SINOPSE</th>
-								<th>DURAÇÃO</th>
-								<th>SEÇÕES</th>
+								<th>DURAÃ‡ÃƒO</th>
+								<th>SEÃ‡Ã•ES</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -64,10 +65,12 @@
 					<c:forEach var="filme" items="${filmes}">
 						<tr>
 							<td></td>
-							<td>${ filme.nome }</td>
-							<td>${ filme.genero }</td>
+							<input type="hidden" id="idFilme" name="idFilme">
+<%-- 							<td id="idFilme">${filme.id }</td> --%>
+							<td id="nome">${ filme.nome }</td>
+							<td id="genero">${ filme.genero }</td>
 							<td><a href="#" data-target="#bs-dialog" data-toggle="modal"><i class="material-icons md-dark pmd-sm">content_paste</i></a></td>
-							<td>${ filme.duracao }</td>
+							<td id="duracao">${ filme.duracao }</td>
 							<td><a href="#" data-target="#tabela-secoes" data-toggle="modal"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 						</tr>
 				</c:forEach>
@@ -98,36 +101,36 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
 				<h2 class="pmd-card-title-text">Alterar Filme</h2>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Nome</label>
-						<input type="text" class="mat-input form-control" id="name" value="">
-<!-- 						<span class="help-text">Input is required!</span>  -->
+						<input type="hidden" id="idFilmeModal" name="idFilmeModal">
+						<input type="text" class="mat-input form-control" id="nomeModal" name="nomeModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
-						<label for="first-name">Gênero</label>
-						<input type="text" class="mat-input form-control" id="email" value="">
+						<label for="first-name">GÃªnero</label>
+						<input type="text" class="mat-input form-control" id="generoModal" name="generoModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
-						<label for="first-name">Duração</label>
-						<input type="text" class="mat-input form-control" id="mobil" value="">
+						<label for="first-name">DuraÃ§Ã£o</label>
+						<input type="text" class="mat-input form-control" id="duracaoModal" name="duracaoModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Tipo</label>
-						<input type="text" class="mat-input form-control" id="mobil" value="">
+						<input type="text" class="mat-input form-control" id="tipoModal" name="tipoModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Sinopse</label>
-						<textarea required class="form-control"></textarea>
+						<textarea required class="form-control" id="sinopseModal" name="sinopseModal"></textarea>
 					</div>
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar AlteraÃ§Ãµes</button>
 			</div>
 		</div>
 	</div>
@@ -137,8 +140,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Listagem de Seções</h2>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
+				<h2 class="pmd-card-title-text">Listagem de SeÃ§Ãµes</h2>
 			</div>
 			<div class="modal-body">
 			
@@ -182,6 +185,93 @@
 
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
+
+<script>
+
+
+$(document).ready(function() {
+	
+	$("#btn-delete").click(function(e) {
+		e.preventDefault();// quando a pessoa clicar em alguns deste botï¿½es, a tela
+		// nï¿½o sobe para cima 
+
+		// o closest serve para pegar o elemento mais perto de onde eu cliquei na pï¿½g
+		// o text pega o texto da tag
+		var tableRow = $(this).closest("tr");
+		var idFilme = tableRow.find("#idFilme").text();
+		if (confirm("Deseja excluir?")) { 
+
+			console.log(idUsuario);
+			$.ajax({
+				url : "/filme/delete-usuario",
+				type : "DELETE",
+				data : {
+					idFilme : idFilme
+				},
+				success : function(data) {
+					tableRow.remove();
+				},
+				error : function(data) {
+					
+				}
+			});
+
+		} else {
+			// apenas fechar o modal
+		}
+
+
+	});
+
+});
+
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+
+	$("#btn-update").click(function(e) {
+		e.preventDefault();
+	
+		var idFilme = $(this).closest("tr").find("#idFilme").text();
+		var nome = $(this).closest("tr").find("#nome").text();
+		var genero = $(this).closest("tr").find("#genero").text();
+		var duracao = $(this).closest("tr").find("#duracao").text();
+		var tipo = $(this).closest("tr").find("#tipo").text();
+		var sinopse = $(this).closest("tr").find("#sinopse").text();
+		
+		$("#idUsuarioModal").val(idUsuario);
+		$("#nomeModal").val(nome);
+		$("#generoModal").val(genero);
+		$("#duracaoModal").val(duracao);
+		$("#tipoModal").val(tipo);
+		$("#sinopseModal").val(sinopse);
+		
+		console.log(idFilme);
+		$.ajax({
+			method : "PUT",
+			url : "/filme/update-filme",
+			data : {
+				"idFilme" : idFilme
+			},
+			success : function(response) {
+				var objFilme = new Object();
+				objFilme = JSON.parse(response);
+				console.log(objFilme);
+			},
+			error : function(errResponse) {
+				console.log("error",errResponse);
+			}
+		});
+		
+		
+	});
+
+});
+
+</script>
 
 </body>
 </html>

@@ -53,5 +53,11 @@ public class SecaoResource {
 	public Secao update(@RequestBody Secao secao) {
 		return secaoService.update(secao);
 	}
+	
+	@DeleteMapping("/delete-secao") // @RequestBody = obj vem no corpo da requisição
+	public void deleteById(HttpServletRequest request) {
+		String idSecao = request.getParameter("idSecao");
+		secaoService.deleteById(Integer.parseInt(idSecao));
+	}
 
 }

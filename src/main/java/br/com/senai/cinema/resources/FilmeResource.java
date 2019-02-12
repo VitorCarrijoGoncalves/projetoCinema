@@ -49,6 +49,12 @@ public class FilmeResource {
 		filmeService.delete(filme);
 	}
 	
+	@DeleteMapping("/delete-sala") // @RequestBody = obj vem no corpo da requisição
+	public void deleteById(HttpServletRequest request) {
+		String idFilme = request.getParameter("idFilme");
+		filmeService.deleteById(Integer.parseInt(idFilme));
+	}
+	
 	@PutMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
 	public Filme update(@RequestBody Filme filme) {
 		return filmeService.update(filme);

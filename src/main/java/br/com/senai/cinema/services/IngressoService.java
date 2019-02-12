@@ -13,15 +13,15 @@ import javassist.tools.rmi.ObjectNotFoundException;
 public class IngressoService {
 
 	@Autowired
-	private IngressoRepository IngressoRepository;
+	private IngressoRepository ingressoRepository;
 	
 	public Ingresso save(Ingresso obj) {
 		obj.setId(null); // o Objeto novo a ser inserido precisa o ter p id nulo
-		return IngressoRepository.save(obj);
+		return ingressoRepository.save(obj);
 	}
 	
 	public Ingresso findById(Integer id) throws ObjectNotFoundException {
-		Ingresso Ingresso = IngressoRepository.findById(id);
+		Ingresso Ingresso = ingressoRepository.findById(id);
 		if (Ingresso == null) {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Ingresso.class.getName());
 		}
@@ -30,24 +30,30 @@ public class IngressoService {
 	
 	public Ingresso update(Ingresso obj) {
 		if (obj.getId() != null) {
-			return IngressoRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
+			return ingressoRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
 		}
 		return null;
 	}
 	
 	public void delete(Ingresso ingresso) {
 		if (ingresso != null) {
-			IngressoRepository.delete(ingresso);
+			ingressoRepository.delete(ingresso);
+		}
+	}
+	
+	public void deleteById(Integer id) {
+		if (id != null ) {
+			ingressoRepository.deleteById(id);
 		}
 	}
 	
 	public List<Ingresso> findAll() {
-		return IngressoRepository.findAll();
+		return ingressoRepository.findAll();
 	}
 	
 //	public Page<Ingresso> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 //		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return IngressoRepository.findAll(pageRequest);
+//		return ingressoRepository.findAll(pageRequest);
 //	} // método utilizado para fazer a paginação(exibição) das Ingressos, por página
 	
 }

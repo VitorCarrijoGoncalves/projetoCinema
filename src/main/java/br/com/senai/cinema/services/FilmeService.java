@@ -41,6 +41,12 @@ public class FilmeService {
 		}
 	}
 	
+	public void deleteById(Integer id) {
+		if (id != null ) {
+			filmeRepository.deleteById(id);
+		}
+	}
+	
 	public List<Filme> findAll() {
 		return filmeRepository.findAll();
 	}

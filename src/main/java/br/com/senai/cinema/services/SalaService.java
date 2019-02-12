@@ -13,15 +13,15 @@ import javassist.tools.rmi.ObjectNotFoundException;
 public class SalaService {
 
 	@Autowired
-	private SalaRepository SalaRepository;
+	private SalaRepository salaRepository;
 	
 	public Sala save(Sala obj) {
 		obj.setId(null); // o Objeto novo a ser inserido precisa o ter p id nulo
-		return SalaRepository.save(obj);
+		return salaRepository.save(obj);
 	}
 	
 	public Sala findById(Integer id) throws ObjectNotFoundException {
-		Sala Sala = SalaRepository.findById(id);
+		Sala Sala = salaRepository.findById(id);
 		if (Sala == null) {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Sala.class.getName());
 		}
@@ -30,24 +30,30 @@ public class SalaService {
 	
 	public Sala update(Sala obj) {
 		if (obj.getId() != null) {
-			return SalaRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
+			return salaRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
 		}
 		return null;
 	}
 	
 	public void delete(Sala sala) {
 		if (sala != null) {
-			SalaRepository.delete(sala);
+			salaRepository.delete(sala);
+		}
+	}
+	
+	public void deleteById(Integer id) {
+		if (id != null ) {
+			salaRepository.deleteById(id);
 		}
 	}
 	
 	public List<Sala> findAll() {
-		return SalaRepository.findAll();
+		return salaRepository.findAll();
 	}
 	
 //	public Page<Sala> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 //		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return SalaRepository.findAll(pageRequest);
+//		return salaRepository.findAll(pageRequest);
 //	} // método utilizado para fazer a paginação(exibição) das Salas, por página
 	
 }

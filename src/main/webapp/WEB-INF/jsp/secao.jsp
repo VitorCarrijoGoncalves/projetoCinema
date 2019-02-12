@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Seções</title>
+<title>Listagem de SeÃ§Ãµes</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -22,13 +22,13 @@
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Seções</span>
+			<span>SeÃ§Ãµes</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
-		  <li class="active">Visualização</li>
+		  <li class="active">VisualizaÃ§Ã£o</li>
 		</ol><!--breadcrum end-->
 	
 		<!-- table card -->
@@ -37,10 +37,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>Descrição</h2>
+					<h2>DescriÃ§Ã£o</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
-				posso alterar, ou deletar algum registro, caso seja necessário</p>
+				<p>Esta Ã© a tabela de visualizaÃ§Ã£o de filmes jÃ¡ cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necessÃ¡rio</p>
 			</div> <!-- table card title and description end -->
 			
 			<!-- table card code and example -->
@@ -53,11 +53,11 @@
 						<thead>
 							<tr>
 								<th></th>
+<!-- 								<th>Id</th> -->
 								<th>Data</th>
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
-<!-- 								<th>Término</th> -->
 								<th>Ingressos</th>
 							</tr>
 						</thead>
@@ -66,12 +66,13 @@
 						<c:forEach var="secao" items="${secoes}">
 						<tr>
 							<td></td>
-							<td>${ secao.dataHora }</td>
-							<td>${ secao.valorDoIngresso }</td>
-							<td>${ secao.idFilme.nome }</td>
-							<td>${ secao.idSala.numero }</td>
-<!-- 							<td>23:45</td> -->
-							<td><a href="#" data-target="#tabela-usuarios" data-toggle="modal"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+							<input type="hidden" id="idSecao" name="idSecao">
+<%-- 							<td id="idSecao">${secao.id }</td> --%>
+							<td id="data">${ secao.dataHora }</td>
+							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
+							<td id="filme">${ secao.idFilme.nome }</td>
+							<td id="sala">${ secao.idSala.numero }</td>
+							<td><a href="#" data-target="#tabela-secaos" data-toggle="modal"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
 						</tr>
 				</c:forEach>
 							
@@ -89,49 +90,50 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Alterar Seção</h2>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
+				<h2 class="pmd-card-title-text">Alterar SeÃ§Ã£o</h2>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Filme</label>
-						<select class="select-simple form-control pmd-select2">
+						<input type="hidden" id="idSecaoModal" name="idSecaoModal">
+						<select class="select-simple form-control pmd-select2" id="filmeModal" name="filmeModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Sala</label>
-						<select class="select-simple form-control pmd-select2">
+						<select class="select-simple form-control pmd-select2" id="salaModal" name="salaModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Data</label>
-						<input type="date" id="mobil" class="form-control" />
+						<input type="date" class="form-control" id="dataModal" name="dataModal" />
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Valor do Ingresso</label>
-						<input type="text" class="mat-input form-control" id="mobil" value="">
+						<input type="text" class="mat-input form-control" id="valorDoIngressoModal" name="valorDoIngressoModal">
 					</div>
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Salvar Alterações</button>
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar AlteraÃ§Ãµes</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 
-<div tabindex="-1" class="modal fade" id="tabela-usuarios" style="display: none;" aria-hidden="true">
+<div tabindex="-1" class="modal fade" id="tabela-secaos" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
-				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Listagem de Usuários</h2>
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">Ã—</button>
+				<h2 class="pmd-card-title-text">Listagem de UsuÃ¡rios</h2>
 			</div>
 			<div class="modal-body">
 			
@@ -143,7 +145,7 @@
 						<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>CÓDIGO</th>
+								<th>CÃ“DIGO</th>
 								<th>NOME</th>
 							</tr>
 						</thead>
@@ -168,6 +170,92 @@
 
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
+
+<script>
+
+
+$(document).ready(function() {
+	
+	$("#btn-delete").click(function(e) {
+		e.preventDefault();// quando a pessoa clicar em alguns deste botï¿½es, a tela
+		// nï¿½o sobe para cima 
+
+		// o closest serve para pegar o elemento mais perto de onde eu cliquei na pï¿½g
+		// o text pega o texto da tag
+		var tableRow = $(this).closest("tr");
+		var idSecao = tableRow.find("#idSecao").text();
+		if (confirm("Deseja excluir?")) { 
+
+			console.log(idSecao);
+			$.ajax({
+				url : "/secao/delete-secao",
+				type : "DELETE",
+				data : {
+					idSecao : idSecao
+				},
+				success : function(data) {
+					tableRow.remove();
+				},
+				error : function(data) {
+					
+				}
+			});
+
+		} else {
+			// apenas fechar o modal
+		}
+
+
+	});
+
+});
+
+
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+
+	$("#btn-update").click(function(e) {
+		e.preventDefault();
+	
+		var idSecao = $(this).closest("tr").find("#idSecao").text();
+		var filme = $(this).closest("tr").find("#filme").text();
+		var sala = $(this).closest("tr").find("#sala").text();
+		var data = $(this).closest("tr").find("#data").text();
+		var valorDoIngresso = $(this).closest("tr").find("#valorDoIngresso").text();
+		
+		$("#idSecaoModal").val(idSecao);
+		$("#filmeModal").val(nome);
+		$("#salaModal").val(sala);
+		$("#dataModal").val(data);
+		$("#valorDoIngressoModal").val(valorDoIngresso);
+		
+		console.log(idSecao);
+		$.ajax({
+			method : "PUT",
+			url : "/secao/update-secao",
+			data : {
+				"idSecao" : idSecao
+			},
+			success : function(response) {
+				var objSecao = new Object();
+				objSecao = JSON.parse(response);
+				console.log(objSecao);
+			},
+			error : function(errResponse) {
+				console.log("error",errResponse);
+			}
+		});
+		
+		
+	});
+
+});
+
+</script>
 
 </body>
 </html>

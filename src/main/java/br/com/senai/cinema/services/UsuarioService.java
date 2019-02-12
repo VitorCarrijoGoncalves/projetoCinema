@@ -13,15 +13,15 @@ import javassist.tools.rmi.ObjectNotFoundException;
 public class UsuarioService {
 
 	@Autowired
-	private UsuarioRepository UsuarioRepository;
+	private UsuarioRepository usuarioRepository;
 	
 	public Usuario save(Usuario obj) {
 		obj.setId(null); // o Objeto novo a ser inserido precisa o ter p id nulo
-		return UsuarioRepository.save(obj);
+		return usuarioRepository.save(obj);
 	}
 	
 	public Usuario findById(Integer id) throws ObjectNotFoundException {
-		Usuario Usuario = UsuarioRepository.findById(id);
+		Usuario Usuario = usuarioRepository.findById(id);
 		if (Usuario == null) {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Usuario.class.getName());
 		}
@@ -30,24 +30,30 @@ public class UsuarioService {
 	
 	public Usuario update(Usuario obj) {
 		if (obj.getId() != null) {
-			return UsuarioRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
+			return usuarioRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
 		}
 		return null;
 	}
 	
 	public void delete(Usuario usuario) {
 		if (usuario != null) {
-			UsuarioRepository.delete(usuario);
+			usuarioRepository.delete(usuario);
+		}
+	}
+	
+	public void deleteById(Integer id) {
+		if (id != null ) {
+			usuarioRepository.deleteById(id);
 		}
 	}
 	
 	public List<Usuario> findAll() {
-		return UsuarioRepository.findAll();
+		return usuarioRepository.findAll();
 	}
 	
 //	public Page<Usuario> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 //		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return UsuarioRepository.findAll(pageRequest);
+//		return usuarioRepository.findAll(pageRequest);
 //	} // método utilizado para fazer a paginação(exibição) das Usuarios, por página
 	
 }
