@@ -1,4 +1,4 @@
-package br.com.senai.cinema.controllers;
+package br.com.senai.cinema.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,12 +73,12 @@ public class SiteController {
 	
 	@RequestMapping(value="/filme/secoes")
 	public String listagemDeSecaoPorFilme() {
-		return "listagem-de-secao-por-filme";
+		return "listagem-de-secoes-por-filme";
 	}
 	
 	@RequestMapping(value="/sala/secoes")
 	public String listagemDeSecaoPorSala() {
-		return "listagem-de-secao-por-sala";
+		return "listagem-de-secoes-por-sala";
 	}
 	
 	@RequestMapping(value="/secao/ingressos")

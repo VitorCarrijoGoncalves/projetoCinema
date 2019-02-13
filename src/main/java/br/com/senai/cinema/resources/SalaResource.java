@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.senai.cinema.models.Sala;
+import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.services.SalaService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -58,6 +59,17 @@ public class SalaResource {
 	public void deleteById(HttpServletRequest request) {
 		String idSala = request.getParameter("idSala");
 		salaService.deleteById(Integer.parseInt(idSala));
+	}
+	
+	@GetMapping
+	public String listarSecoesPorSala(@PathVariable Integer idSala, HttpServletRequest request) throws ObjectNotFoundException { 
+
+		Sala sala = salaService.findById(idSala);
+		
+		List<Secao> secoes = salaService.listAllSecoesBySala(sala);
+
+		request.setAttribute("secoes", secoes);
+		return "listagem-de-secoes-por-sala";
 	}
 
 }

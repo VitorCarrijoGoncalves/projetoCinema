@@ -148,7 +148,7 @@
 		<li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
 			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);">
 				<div class="media-left">
-					<img src="themes/images/user-icon.png" alt="New User">
+					<img src="/themes/images/user-icon.png" alt="New User">
 				</div>
 				<div class="media-body media-middle">Vitor Carrijo</div>
 				<div class="media-right media-middle"><i class="dic-more-vert dic"></i></div>

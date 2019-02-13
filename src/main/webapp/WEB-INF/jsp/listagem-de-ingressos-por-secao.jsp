@@ -58,11 +58,11 @@
 							</thead>
 						<tbody>
 						
-					<c:forEach var="filme" items="${filmes}">
+					<c:forEach var="ingresso" items="${ingressos}">
 						<tr>
 							<td></td>
-							<td id="idUsuario">${filme.id }</td>
-							<td id="nome">${ filme.nome }</td>
+							<td id="idUsuario">${ingresso.idUsuario.id }</td>
+							<td id="nome">${ ingresso.idUsuario.nome }</td>
 						</tr>
 				</c:forEach>
 						

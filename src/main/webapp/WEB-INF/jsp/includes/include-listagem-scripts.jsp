@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- Scripts Starts -->
-<script src="assets/js/jquery-1.12.2.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/propeller.min.js"></script>
+<script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/propeller.min.js"></script>
 <script>
 	$(document).ready(function() {
 		var sPath=window.location.pathname;

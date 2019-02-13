@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.senai.cinema.models.Filme;
+import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.services.FilmeService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -58,6 +59,17 @@ public class FilmeResource {
 	@PutMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
 	public Filme update(@RequestBody Filme filme) {
 		return filmeService.update(filme);
+	}
+	
+	@GetMapping
+	public String listarSecoesPorFilme(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException { 
+
+		Filme filme = filmeService.findById(idFilme);
+		
+		List<Secao> secoes = filmeService.listAllSecoesByFilme(filme);
+
+		request.setAttribute("secoes", secoes);
+		return "listagem-de-secoes-por-filme";
 	}
 
 }

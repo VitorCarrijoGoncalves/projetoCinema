@@ -34,7 +34,7 @@ public class FilmeFormResource {
 		String genero = request.getParameter("genero");
 		String sinopse = request.getParameter("sinopse");
 		String duracao = request.getParameter("duracao");
-		String tipo = request.getParameter("tipo");
+//		String status = request.getParameter("status");
 
 		Filme filme = new Filme();
 		

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.repositories.SecaoRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -49,6 +50,10 @@ public class SecaoService {
 	
 	public List<Secao> findAll() {
 		return secaoRepository.findAll();
+	}
+	
+	public List<Ingresso> listAllIngressosBySecao(Secao secao) throws ObjectNotFoundException {
+		return secao.getIngressos();
 	}
 	
 //	public Page<Secao> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.senai.cinema.models.Sala;
+import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.repositories.SalaRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -49,6 +50,10 @@ public class SalaService {
 	
 	public List<Sala> findAll() {
 		return salaRepository.findAll();
+	}
+
+	public List<Secao> listAllSecoesBySala(Sala sala) {
+		return sala.getSecoes();
 	}
 	
 //	public Page<Sala> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
