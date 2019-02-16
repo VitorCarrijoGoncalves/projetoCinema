@@ -26,7 +26,7 @@ public class SalaResource {
 	@Autowired
 	private SalaService salaService;
 	
-	@GetMapping("/sala")
+	@GetMapping
 	public String salas(HttpServletRequest request) { 
 
 		List<Sala> salas = salaService.findAll();
@@ -61,9 +61,11 @@ public class SalaResource {
 		salaService.deleteById(Integer.parseInt(idSala));
 	}
 	
-	@GetMapping("/sala/secoes")
-	public String listarSecoesPorSala(@PathVariable Integer idSala, HttpServletRequest request) throws ObjectNotFoundException { 
+	@GetMapping("/secoes")
+	public String listarSecoesPorSala(HttpServletRequest request) throws ObjectNotFoundException { 
 
+		Integer idSala = Integer.parseInt(request.getParameter("idSala"));
+		
 		Sala sala = salaService.findById(idSala);
 		
 		List<Secao> secoes = salaService.listAllSecoesBySala(sala);

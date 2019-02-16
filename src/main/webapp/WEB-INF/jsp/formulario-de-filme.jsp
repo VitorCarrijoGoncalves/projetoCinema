@@ -31,7 +31,7 @@
 		</ol><!--breadcrum end-->
 	
 		<div class="section section-custom billinfo"> 
-			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post">
+			<form id="validationForm" action="/formulario-de-filme" method="post">
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">
 				 <div class="alert alert-success" id="mensagem-sucesso">
@@ -60,16 +60,19 @@
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
-<!-- 								<input type="text" id="timepicker" class="form-control" /> -->
 								<input type="text" id="duracao" name="duracao" class="form-control">
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
 								<label for="regular1" class="control-label">
-									Tipo
+									Status
 								</label>
-								<input type="text" id="tipo" name="tipo" class="form-control">
+								<select class="select-simple form-control pmd-select2" id="idUsuario" name="idUsuario">
+									<option value="NULL"></option>
+									<option value="TRUE">Filme em Lançamento</option>
+									<option value="FALSE">Filme fora de Lançamento</option>
+								</select>
 							</div>
 						</div>
 					</div>

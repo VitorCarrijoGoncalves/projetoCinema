@@ -29,7 +29,7 @@ public class UsuarioResource {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@GetMapping("/usuario")
+	@GetMapping
 	public String usuarios(HttpServletRequest request) { 
 
 		List<Usuario> usuarios = usuarioService.findAll();

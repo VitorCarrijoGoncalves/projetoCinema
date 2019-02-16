@@ -26,7 +26,7 @@ public class FilmeFormResource {
 //		return filmeService.save(filme);
 //	}
 	
-	@PostMapping(value = "/novo-cadastro")
+	@PostMapping(value = "/formulario-de-filme")
 	public String save(HttpServletRequest request)
 			throws ParseException, IllegalStateException, IOException {
 

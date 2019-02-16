@@ -64,9 +64,9 @@
 						<tbody>
 						
 					<c:forEach var="filme" items="${filmes}">
+							<input type="hidden" id="idFilme" name="idFilme" value="${filme.id }">
 						<tr>
 							<td></td>
-							<input type="hidden" id="idFilme" name="idFilme">
 <%-- 							<td id="idFilme">${filme.id }</td> --%>
 							<td id="nome">${ filme.nome }</td>
 							<td id="genero">${ filme.genero }</td>
@@ -78,7 +78,7 @@
 							<td id="status">Filme fora de Lançamento</td>
 							<td><a href="/filme/secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 						</tr>
-				</c:forEach>
+					</c:forEach>
 						
 						</tbody>
 					</table>
@@ -156,7 +156,7 @@ $(document).ready(function() {
 		var idFilme = tableRow.find("#idFilme").text();
 		if (confirm("Deseja excluir?")) { 
 
-			console.log(idUsuario);
+			console.log(idFilme);
 			$.ajax({
 				url : "/filme/delete-usuario",
 				type : "DELETE",
