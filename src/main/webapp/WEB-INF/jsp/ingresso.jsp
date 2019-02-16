@@ -128,11 +128,8 @@
 $(document).ready(function() {
 	
 	$("#btn-delete").click(function(e) {
-		e.preventDefault();// quando a pessoa clicar em alguns deste bot�es, a tela
-		// n�o sobe para cima 
+		e.preventDefault();
 
-		// o closest serve para pegar o elemento mais perto de onde eu cliquei na p�g
-		// o text pega o texto da tag
 		var tableRow = $(this).closest("tr");
 		var idIngresso = tableRow.find("#idIngresso").text();
 		if (confirm("Deseja excluir?")) { 
@@ -153,7 +150,7 @@ $(document).ready(function() {
 			});
 
 		} else {
-			// apenas fechar o modal
+			
 		}
 
 

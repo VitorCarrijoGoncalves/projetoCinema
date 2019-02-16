@@ -26,7 +26,7 @@ public class SalaResource {
 	@Autowired
 	private SalaService salaService;
 	
-	@GetMapping
+	@GetMapping("/sala")
 	public String salas(HttpServletRequest request) { 
 
 		List<Sala> salas = salaService.findAll();
@@ -61,7 +61,7 @@ public class SalaResource {
 		salaService.deleteById(Integer.parseInt(idSala));
 	}
 	
-	@GetMapping
+	@GetMapping("/sala/secoes")
 	public String listarSecoesPorSala(@PathVariable Integer idSala, HttpServletRequest request) throws ObjectNotFoundException { 
 
 		Sala sala = salaService.findById(idSala);

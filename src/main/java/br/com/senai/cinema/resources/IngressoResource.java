@@ -25,7 +25,7 @@ public class IngressoResource {
 	@Autowired
 	private IngressoService ingressoService;
 	
-	@GetMapping
+	@GetMapping("/ingresso")
 	public String ingressos(HttpServletRequest request) { 
 
 		List<Ingresso> ingressos = ingressoService.findAll();

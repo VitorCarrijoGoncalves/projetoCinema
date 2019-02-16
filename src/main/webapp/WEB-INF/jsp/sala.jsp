@@ -39,7 +39,7 @@
 				<div id="card">
 					<h2>Descrição</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
+				<p>Esta é a tabela de visualização de registros já cadastrados no sistema, aonde
 				posso alterar, ou deletar algum registro, caso seja necessário</p>
 			</div> <!-- table card title and description end -->
 			
@@ -118,7 +118,7 @@
 $(document).ready(function() {
 	
 	$("#btn-delete").click(function(e) {
-		e.preventDefault();// quando a pessoa clicar em alguns deste bot�es, a tela
+		e.preventDefault();
 		
 		var tableRow = $(this).closest("tr");
 		var idSala = tableRow.find("#idSala").text();
@@ -140,7 +140,7 @@ $(document).ready(function() {
 			});
 
 		} else {
-			// apenas fechar o modal
+			l
 		}
 
 

@@ -26,7 +26,7 @@ public class SecaoResource {
 	@Autowired
 	private SecaoService secaoService;
 	
-	@GetMapping
+	@GetMapping("/secao")
 	public String secoes(HttpServletRequest request) { 
 
 		List<Secao> secoes = secaoService.findAll();
@@ -61,7 +61,7 @@ public class SecaoResource {
 		secaoService.deleteById(Integer.parseInt(idSecao));
 	}
 	
-	@GetMapping
+	@GetMapping("/secao/ingressos")
 	public String listarIngressosPorSecao(@PathVariable Integer idSecao, HttpServletRequest request) throws ObjectNotFoundException { 
 
 		Secao secao = secaoService.findById(idSecao);

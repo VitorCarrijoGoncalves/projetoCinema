@@ -26,7 +26,7 @@ public class FilmeResource {
 	@Autowired
 	private FilmeService filmeService;
 	
-	@GetMapping
+	@GetMapping("/filme")
 	public String filmes(HttpServletRequest request) { 
 
 		List<Filme> filmes = filmeService.findAll();
@@ -61,7 +61,7 @@ public class FilmeResource {
 		return filmeService.update(filme);
 	}
 	
-	@GetMapping
+	@GetMapping("/filme/secoes")
 	public String listarSecoesPorFilme(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException { 
 
 		Filme filme = filmeService.findById(idFilme);
