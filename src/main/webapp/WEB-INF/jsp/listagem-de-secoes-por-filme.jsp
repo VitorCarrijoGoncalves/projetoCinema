@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de SeÁıes Por Filme</title>
+<title>Listagem de Se√ß√µes Por Filme</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -22,13 +24,13 @@
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Listagem de Ingressos por SeÁ„o</span>
+			<span>Listagem de Ingressos por Se√ß√£o</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
 		  <li><a href="/home">Home</a></li>
-		  <li><a href="/filme">VisualizaÁ„o</a></li>
+		  <li><a href="/filme">Visualiza√ß√£o</a></li>
 		  <li class="active">Ingressos</li>
 		</ol><!--breadcrum end-->
 	
@@ -38,10 +40,10 @@
 			<!-- table card title and description -->
 			<div class="col-md-3">
 				<div id="card">
-					<h2>DescriÁ„o</h2>
+					<h2>Descri√ß√£o</h2>
 				</div>
-				<p>Esta È a tabela de visualizaÁ„o de registros j· cadastrados no sistema, aonde
-				posso alterar, ou deletar algum registro, caso seja necess·rio</p>
+				<p>Esta √© a tabela de visualiza√ß√£o de registros j√° cadastrados no sistema, aonde
+				posso alterar, ou deletar algum registro, caso seja necess√°rio</p>
 			</div> <!-- table card title and description end -->
 			
 			<div class="col-md-9">

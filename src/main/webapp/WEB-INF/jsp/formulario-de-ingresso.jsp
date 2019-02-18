@@ -1,6 +1,8 @@
 <!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -37,7 +39,7 @@
 	    				Ingresso cadastrado com sucesso!
 	  				</div>
 	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Ingresso n„o cadastrado!
+    					 Ingresso n√£o cadastrado!
   					</div>
 					<form class="form-horizontal" role="form" method="post" action="/formulario-de-ingresso/novo-cadastro">
 						<div class="form-group pmd-textfield">
@@ -52,7 +54,7 @@
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
-							<label for="inputPassword3" class="col-sm-2 control-label">SeÁ„o</label>
+							<label for="inputPassword3" class="col-sm-2 control-label">Se√ß√£o</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
 									<select class="select-simple form-control pmd-select2" id="idSecao" name="idSecao">

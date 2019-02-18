@@ -60,7 +60,6 @@
 									<thead>
 										<tr>
 											<th></th>
-											<!-- 								<th>ID</th> -->
 											<th>NOME</th>
 											<th>GÊNERO</th>
 											<th>SINOPSE</th>
@@ -72,20 +71,16 @@
 									<tbody>
 										<c:forEach var="filme" items="${filmes}">
 											<tr id="tr_${filme.id }">
-												<td><input type="hidden" id="idFilme" name="idFilme"
-													value="${filme.id }"></td>
-												<%-- 							<td id="idFilme">${filme.id }</td> --%>
+												<td><input type="hidden" id="idFilme" name="idFilme" value="${filme.id }"></td>
 												<td id="td_nome">${ filme.nome }</td>
 												<td id="td_genero">${ filme.genero }</td>
-												<td><a href="#" data-target="#bs-dialog"
-													data-toggle="modal"><i
-														class="material-icons md-dark pmd-sm">content_paste</i></a></td>
+												<td id="td_sinopse">S<input type="hidden" value="${filme.sinopse }"></td>
 												<td id="td_duracao">${ filme.duracao }</td>
 												<c:if test="${filme.status } == TRUE">
 													<td id="td_status">Filme em Lançamento</td>
 												</c:if>
 												<td id="td_status">Filme fora de Lançamento</td>
-												<td><a href="/filme/secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+												<td><a href="/filme/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 											</tr>
 
 										</c:forEach>
@@ -102,18 +97,6 @@
 			<!-- table card end -->
 		</div>
 
-	</div>
-
-	<div tabindex="-1" class="modal fade" id="bs-dialog"
-		style="display: none;" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<%-- 				<p>${filme.sinopse }</p> --%>
-					<p>jkhjkhjk</p>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<div tabindex="-1" class="modal fade" id="form-dialog"
@@ -134,33 +117,26 @@
 								name="nomeModal">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="first-name">Gênero</label> <input type="text"
-								class="mat-input form-control" id="generoModal"
-								name="generoModal">
+							<label for="first-name">Gênero</label> <input type="text" class="mat-input form-control" id="generoModal" name="generoModal">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="first-name">Duração</label> <input type="text"
-								class="mat-input form-control" id="duracaoModal"
-								name="duracaoModal">
+							<label for="first-name">Duração</label> <input type="text" class="mat-input form-control" id="duracaoModal" name="duracaoModal">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="first-name">Status</label> <select
-								class="select-simple form-control pmd-select2" id="statusModal"
-								name="statusModal">
+							<label for="first-name">Status</label> 
+							<select class="select-simple form-control pmd-select2" id="statusModal" name="statusModal">
 								<option value="TRUE">Lançamento</option>
 								<option value="FALSE">Não-Lançamento</option>
 							</select>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Sinopse</label>
-							<textarea required class="form-control" id="sinopseModal"
-								name="sinopseModal"></textarea>
+							<textarea required class="form-control" id="sinopseModal" name="sinopseModal"></textarea>
 						</div>
 					</form>
 				</div>
 				<div class="pmd-modal-action">
-					<button id="btn-update" class="btn pmd-ripple-effect btn-primary"
-						type="submit">Salvar Alterações</button>
+					<button id="btn-update" class="btn pmd-ripple-effect btn-primary" type="submit">Salvar Alterações</button>
 				</div>
 			</div>
 		</div>
@@ -175,10 +151,6 @@
 			$("#btn-delete").click(function(e) {
 				e.preventDefault();
 
-// 				var tableRow = $(this).closest("tr");
-				// 		var idFilme = tableRow.find("#idFilme").text();
-
-				// 				var idFilme = $('.select-checkbox').children().val();
 				var idFilme = $("#idFilme").val();
 
 				if (confirm("Deseja excluir?")) {
@@ -213,13 +185,6 @@
 
 			$("#btn-update").click(function(e) {
 
-				// 				var idFilme = $("#idFilmeModal").val();
-				// 				var nome = $("#nomeModal").val();
-				// 				var genero = $("#generoModal").val();
-				// 				var duracao =$("#duracaoModal").val();
-				// 				var status = $("#statusModal").val();
-				// 				var sinopse = $("#sinopseModal").val();
-
 				var filme = {
 					id : $("#idFilmeModal").val(),
 					nome : $("#nomeModal").val(),
@@ -228,8 +193,9 @@
 					status : $("#statusModal").val(),
 					sinopse : $("#sinopseModal").val()
 				};
+				
 				console.log(filme);
-				debugger;
+				
 				$.ajax({
 					method : "PUT",
 					contentType : 'application/json',
@@ -239,13 +205,37 @@
 					success : function(filme) {
 						var objFilme = new Object();
 						objFilme = JSON.parse(filme);
-						//atualizar a tela
-						console.log(objFilme);
+
+						//limpar a tela
+						$("#idFilmeModal").val("");
+						$("#nomeModal").val("");
+						$("#generoModal").val("");
+						$("#duracaoModal").val("");
+						$("#statusModal").val("");
+						$("#sinopseModal").val("");
+						console.log("Objeto filme depois do sucesso: ", objFilme);
 					},
 					error : function(errResponse) {
 						console.log("error", errResponse);
 					}
 				});
+			});
+
+			$('#listagem-de-secoes').click(function () {
+				
+				$.ajax({
+					method : "GET",
+					contentType : 'application/json',
+					url : "/filme/secoes/" + $("#idFilme").val(),
+					dataType : "json",
+					success : function() {
+						
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+				
 			});
 
 		});

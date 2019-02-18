@@ -1,6 +1,8 @@
 <!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -38,7 +40,7 @@
 	    				Filme cadastrado com sucesso!
 	  				</div>
 	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Filme não cadastrado!
+    					 Filme nÃ£o cadastrado!
   					</div>
 					<div class="group-fields clearfix row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -53,13 +55,13 @@
 					<div class="group-fields clearfix row">
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
-								<label>Gênero</label>
+								<label>GÃªnero</label>
 								<input type="text" id="genero" name="genero" class="form-control">
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
-								<label>Duração</label>
+								<label>DuraÃ§Ã£o</label>
 								<input type="text" id="duracao" name="duracao" class="form-control">
 							</div>
 						</div>
@@ -70,8 +72,8 @@
 								</label>
 								<select class="select-simple form-control pmd-select2" id="idUsuario" name="idUsuario">
 									<option value="NULL"></option>
-									<option value="TRUE">Filme em Lançamento</option>
-									<option value="FALSE">Filme fora de Lançamento</option>
+									<option value="TRUE">Filme em LanÃ§amento</option>
+									<option value="FALSE">Filme fora de LanÃ§amento</option>
 								</select>
 							</div>
 						</div>

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,37 +36,30 @@ public class SecaoResource {
 		return "secao";
 	}
 	
-//	@GetMapping("/listagem")
-//	public List<Secao> Secaos() {
-//		return  secaoService.findAll();
-//	}
-	
-	@GetMapping("/listagem/{id}")
-	public Secao getSecao(@PathVariable(value="id") Integer id) throws ObjectNotFoundException {
-		return  secaoService.findById(id);
+	@DeleteMapping(value = "/delete/{id}")
+	public ResponseEntity<?> delete(@PathVariable("id") String id) throws NumberFormatException, ObjectNotFoundException {
+		Secao secao = secaoService.findById(Integer.parseInt(id));
+		if (secao != null) {
+			secaoService.delete(secao);
+		}
+		return ResponseEntity.ok().body("excluido");
 	}
 	
-	@DeleteMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-	public void delete(@RequestBody Secao secao) {
-		secaoService.delete(secao);
-	}
-	
-	@PutMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-	public Secao update(@RequestBody Secao secao) {
-		return secaoService.update(secao);
-	}
-	
-	@DeleteMapping("/delete-secao") // @RequestBody = obj vem no corpo da requisição
-	public void deleteById(HttpServletRequest request) {
-		String idSecao = request.getParameter("idSecao");
-		secaoService.deleteById(Integer.parseInt(idSecao));
-	}
-	
-	@GetMapping("/ingressos")
-	public String listarIngressosPorSecao(HttpServletRequest request) throws ObjectNotFoundException { 
-
-		Integer idSecao = Integer.parseInt(request.getParameter("idSecao"));
+	@PutMapping("/update/{id}")
+	public ResponseEntity<?> updateReturningJson(@PathVariable Integer id, @RequestBody Secao secao) throws ObjectNotFoundException {
+		Secao objSecao = secaoService.findById(id);
+		objSecao.setDataHora(secao.getDataHora());
+		objSecao.setValorDoIngresso(secao.getValorDoIngresso());
+		objSecao.setIdSala(secao.getIdSala());
+		objSecao.setIdFilme(secao.getIdFilme());
+		secaoService.update(objSecao);
 		
+		return ResponseEntity.ok().body("atualizado");
+	}
+	
+	@GetMapping("/ingressos/{id}")
+	public String listAllIngressosBySecao(@PathVariable Integer idSecao, HttpServletRequest request) throws ObjectNotFoundException { 
+
 		Secao secao = secaoService.findById(idSecao);
 		
 		List<Ingresso> ingressos = secaoService.listAllIngressosBySecao(secao);

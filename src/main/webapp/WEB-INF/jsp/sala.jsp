@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -53,22 +55,19 @@
 						<thead>
 							<tr>
 								<th></th>
-<!-- 								<th>Id</th> -->
-								<th>Número</th>
-								<th>Qtde. de Lugares</th>
-								<th>Seções</th>
+								<th>NÚMERO</th>
+								<th>QTDE. DE LUGARES</th>
+								<th>SEÇÕES</th>
 							</tr>
 						</thead>
 						<tbody>
 							
 						<c:forEach var="sala" items="${salas}">
-							<tr>
-								<td></td>
-								<input type="hidden" id="idSala" name="idSala">
-<%-- 								<td id="idSala">${sala.id }</td> --%>
+							<tr id="tr_${sala.id }">
+								<td><input type="hidden" id="idSala" name="idSala" value="${sala.id }"></td>
 								<td id="numero">${ sala.numero }</td>
 								<td id="quantidadeDeLugares">${ sala.quantidadeDeLugares }</td>
-								<td><a href="/sala/secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+								<td><a href="/sala/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 							</tr>
 					</c:forEach>
 							
@@ -103,7 +102,7 @@
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit">Salvar Alterações</button>
+				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit" id="btn-update">Salvar Alterações</button>
 			</div>
 		</div>
 	</div>
@@ -119,70 +118,85 @@ $(document).ready(function() {
 	
 	$("#btn-delete").click(function(e) {
 		e.preventDefault();
-		
-		var tableRow = $(this).closest("tr");
-		var idSala = tableRow.find("#idSala").text();
-		if (confirm("Deseja excluir?")) { 
 
+		var idSala = $("#idSala").val();
+
+		if (confirm("Deseja excluir?")) {
 			console.log(idSala);
+
 			$.ajax({
-				url : "/sala/delete-sala",
+				url : window.location + "/delete/" + idSala,
 				type : "DELETE",
-				data : {
-					idSala : idSala
-				},
-				success : function(data) {
-					tableRow.remove();
+				success : function() {
+					$('#tr_' + idSala).remove();
 				},
 				error : function(data) {
-					
+
 				}
 			});
 
 		} else {
-			l
-		}
 
+		}
 
 	});
 
-});
-
-</script>
-
-
-<script>
-
-$(document).ready(function() {
+	$("#open_modal").click(function(e) {
+		e.preventDefault();
+		$("#idSalaModal").val($("#idSala").val());
+		$("#numeroModal").val($("#numero").text());
+		$("#quantidadeDeLugaresModal").val($("#quantidadeDeLugares").text());
+	});
 
 	$("#btn-update").click(function(e) {
-		e.preventDefault();
+
+		var sala = {
+				id : $("#idSalaModal").val(),
+				numero : $("#numeroModal").val(),
+				quantidadeDeLugares : $("#quantidadeDeLugaresModal").val()
+			};
 	
-		var idSala = $(this).closest("tr").find("#idSala").text();
-		var numero = $(this).closest("tr").find("#numero").text();
-		var quantidadeDeLugares = $(this).closest("tr").find("#quantidadeDeLugares").text();
 		
-		$("#idSalaModal").val(idSala);
-		$("#numeroModal").val(nome);
-		$("#quantidadeDeLugaresModal").val(login);
+		console.log(sala);
 		
-		console.log(idSala);
 		$.ajax({
 			method : "PUT",
-			url : "/sala/update-sala",
-			data : {
-				"idSala" : idSala
-			},
-			success : function(response) {
+			contentType : 'application/json',
+			url : "/sala/update/" + $("#idSalaModal").val(),
+			dataType : "json",
+			data : JSON.stringify(sala),
+			success : function(sala) {
 				var objSala = new Object();
-				objSala = JSON.parse(response);
-				console.log(objSala);
+				objSala = JSON.parse(sala);
+
+				//limpar a tela
+				$("#idSalaModal").val("");
+				$("#numeroModal").val("");
+				$("#quantidadeDeLugaresModal").val("");
+				console.log("Objeto sala depois do sucesso: ", objSala);
 			},
 			error : function(errResponse) {
-				console.log("error",errResponse);
+				console.log("error", errResponse);
 			}
 		});
 		
+		
+	});
+
+	$('#listagem-de-secoes').click(function () {
+		
+		$.ajax({
+			method : "GET",
+			contentType : 'application/json',
+			url : "/sala/secoes/" + $("#idSala").val(),
+			dataType : "json",
+			success : function() {
+				
+			},
+			error : function(errResponse) {
+				console.log("error", errResponse);
+			}
+		});
 		
 	});
 

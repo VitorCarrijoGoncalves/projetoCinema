@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -53,7 +55,6 @@
 						<thead>
 							<tr>
 								<th></th>
-<!-- 								<th>Id</th> -->
 								<th>Data</th>
 								<th>Valor</th>
 								<th>Filme</th>
@@ -64,15 +65,13 @@
 						<tbody>
 						
 						<c:forEach var="secao" items="${secoes}">
-						<tr>
-							<td></td>
-							<input type="hidden" id="idSecao" name="idSecao">
-<%-- 							<td id="idSecao">${secao.id }</td> --%>
+						<tr id="tr_${secao.id }">
+							<td><input type="hidden" id="idSecao" name="idSecao" value="${secao.id }"></td>
 							<td id="data">${ secao.dataHora }</td>
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>
-							<td><a href="/secao/ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+							<td><a href="/secao/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
 						</tr>
 				</c:forEach>
 							
@@ -131,87 +130,97 @@
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 
 <script>
+		$(document).ready(function() {
 
+			$("#btn-delete").click(function(e) {
+				e.preventDefault();
 
-$(document).ready(function() {
-	
-	$("#btn-delete").click(function(e) {
-		e.preventDefault(); 
+				var idSecao = $("#idSecao").val();
 
-		var tableRow = $(this).closest("tr");
-		var idSecao = tableRow.find("#idSecao").text();
-		if (confirm("Deseja excluir?")) { 
+				if (confirm("Deseja excluir?")) {
+					console.log(idSecao);
 
-			console.log(idSecao);
-			$.ajax({
-				url : "/secao/delete-secao",
-				type : "DELETE",
-				data : {
-					idSecao : idSecao
-				},
-				success : function(data) {
-					tableRow.remove();
-				},
-				error : function(data) {
-					
+					$.ajax({
+						url : window.location + "/delete/" + idSecao,
+						type : "DELETE",
+						success : function() {
+							$('#tr_' + idSecao).remove();
+						},
+						error : function(data) {
+
+						}
+					});
+
+				} else {
+
 				}
+
 			});
 
-		} else {
-			
-		}
+			$("#open_modal").click(function(e) {
+				e.preventDefault();
+				$("#idSecaoModal").val($("#idSecao").val());
+				$("#dataModal").val($("#data").text());
+				$("#valorDoIngressoModal").val($("#valorDoIngresso").text());
+				$("#salaModal").val($("#sala").text());
+				$("#filmeModal").val($("#filme").text());
+			});
 
+			$("#btn-update").click(function(e) {
 
-	});
+				var secao = {
+					id : $("#idSecaoModal").val(),
+					data : $("#dataModal").val(),
+					genero : $("#valorDoIngressoModal").val(),
+					duracao : $("#salaModal").val(),
+					status : $("#filmeModal").val(),
+				};
+				
+				console.log(secao);
+				
+				$.ajax({
+					method : "PUT",
+					contentType : 'application/json',
+					url : "/secao/update/" + $("#idSecaoModal").val(),
+					dataType : "json",
+					data : JSON.stringify(secao),
+					success : function(secao) {
+						var objSecao = new Object();
+						objSecao = JSON.parse(secao);
 
-});
+						//limpar a tela
+				$("#idSecaoModal").val("");
+				$("#dataModal").val("");
+				$("#valorDoIngressoModal").val("");
+				$("#salaModal").val("");
+				$("#filmeModal").val("");
+						console.log("Objeto seção depois do sucesso: ", objSecao);
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+			});
 
+			$('#listagem-de-ingressos').click(function () {
+				
+				$.ajax({
+					method : "GET",
+					contentType : 'application/json',
+					url : "/secao/ingressos/" + $("#idSecao").val(),
+					dataType : "json",
+					success : function() {
+						
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+				
+			});
 
-</script>
-
-
-<script>
-
-$(document).ready(function() {
-
-	$("#btn-update").click(function(e) {
-		e.preventDefault();
-	
-		var idSecao = $(this).closest("tr").find("#idSecao").text();
-		var filme = $(this).closest("tr").find("#filme").text();
-		var sala = $(this).closest("tr").find("#sala").text();
-		var data = $(this).closest("tr").find("#data").text();
-		var valorDoIngresso = $(this).closest("tr").find("#valorDoIngresso").text();
-		
-		$("#idSecaoModal").val(idSecao);
-		$("#filmeModal").val(nome);
-		$("#salaModal").val(sala);
-		$("#dataModal").val(data);
-		$("#valorDoIngressoModal").val(valorDoIngresso);
-		
-		console.log(idSecao);
-		$.ajax({
-			method : "PUT",
-			url : "/secao/update-secao",
-			data : {
-				"idSecao" : idSecao
-			},
-			success : function(response) {
-				var objSecao = new Object();
-				objSecao = JSON.parse(response);
-				console.log(objSecao);
-			},
-			error : function(errResponse) {
-				console.log("error",errResponse);
-			}
 		});
-		
-		
-	});
-
-});
-
-</script>
+	</script>
 
 </body>
 </html>

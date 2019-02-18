@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,37 +36,29 @@ public class SalaResource {
 		return "sala";
 	}
 	
-//	@GetMapping("/listagem")
-//	public List<Sala> Salas() {
-//		return  salaService.findAll();
-//	}
-	
-	@GetMapping("/listagem/{id}")
-	public Sala getSala(@PathVariable(value="id") Integer id) throws ObjectNotFoundException {
-		return  salaService.findById(id);
+	@DeleteMapping(value = "/delete/{id}")
+	public ResponseEntity<?> deleteById(@PathVariable("id") String id) throws NumberFormatException, ObjectNotFoundException {
+		Sala sala = salaService.findById(Integer.parseInt(id));
+		if (sala != null) {
+			salaService.delete(sala);
+		}
+		return ResponseEntity.ok().body("excluido");
 	}
 	
-	@DeleteMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-	public void delete(@RequestBody Sala sala) {
-		salaService.delete(sala);
-	}
-	
-	@PutMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-	public Sala update(@RequestBody Sala sala) {
-		return salaService.update(sala);
-	}
-	
-	@DeleteMapping("/delete-sala") // @RequestBody = obj vem no corpo da requisição
-	public void deleteById(HttpServletRequest request) {
-		String idSala = request.getParameter("idSala");
-		salaService.deleteById(Integer.parseInt(idSala));
-	}
-	
-	@GetMapping("/secoes")
-	public String listarSecoesPorSala(HttpServletRequest request) throws ObjectNotFoundException { 
-
-		Integer idSala = Integer.parseInt(request.getParameter("idSala"));
+	@PutMapping("/update/{id}")
+	public ResponseEntity<?> updateReturningJson(@PathVariable Integer id, @RequestBody Sala sala) throws ObjectNotFoundException {
+		Sala objsala = salaService.findById(id);
+		objsala.setNumero(sala.getNumero());
+		objsala.setQuantidadeDeLugares(sala.getQuantidadeDeLugares());
+//		objsala.setSecoes(sala.getSecoes());
+		salaService.update(objsala);
 		
+		return ResponseEntity.ok().body("atualizado");
+	}
+	
+	@GetMapping("/secoes/{id}")
+	public String listAllSecoesBySala(@PathVariable Integer idSala, HttpServletRequest request) throws ObjectNotFoundException { 
+
 		Sala sala = salaService.findById(idSala);
 		
 		List<Secao> secoes = salaService.listAllSecoesBySala(sala);

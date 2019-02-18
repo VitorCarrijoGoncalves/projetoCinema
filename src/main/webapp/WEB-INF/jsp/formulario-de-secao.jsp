@@ -1,13 +1,15 @@
 <!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Form Examples | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Cadastro de Seções</title>
+<title>Cadastro de SeÃ§Ãµes</title>
 
 <jsp:include page="includes/include-formulario-head.jsp"/>
 
@@ -22,7 +24,7 @@
 	
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Cadastro de Seções</span>
+			<span>Cadastro de SeÃ§Ãµes</span>
 		</h1>
 			
 		<ol class="breadcrumb text-left">
@@ -34,10 +36,10 @@
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
 					 <div class="alert alert-success" id="mensagem-sucesso">
-	    				Seção cadastrada com sucesso!
+	    				SeÃ§Ã£o cadastrada com sucesso!
 	  				</div>
 	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Seção não cadastrada!
+    					 SeÃ§Ã£o nÃ£o cadastrada!
   					</div>
 					<form class="form-horizontal" role="form" method="post" action="/formulario-de-secao/novo-cadastro">
 						<div class="form-group pmd-textfield">

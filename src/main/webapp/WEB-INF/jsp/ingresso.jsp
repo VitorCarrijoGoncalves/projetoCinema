@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -39,7 +41,7 @@
 				<div id="card">
 					<h2>Descrição</h2>
 				</div>
-				<p>Esta é a tabela de visualização de filmes já cadastrados no sistema, aonde
+				<p>Esta é a tabela de visualização de registros já cadastrados no sistema, aonde
 				posso alterar, ou deletar algum registro, caso seja necessário</p>
 			</div> <!-- table card title and description end -->
 			

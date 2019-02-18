@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 
 <!-- Scripts Starts -->
 <script src="/assets/js/jquery-1.12.2.min.js"></script>
@@ -94,7 +95,7 @@ $(document).ready(function() {
 			$(this).closest('.dataTables_wrapper').find('.custom-select-info').hide();
 		}
 	} );
-	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Listagem de Usuários</h2>');
+	$("div.data-table-title").html('<h2 class="pmd-card-title-text">Registros</h2>');
 	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">delete</i></button><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button"><i class="material-icons pmd-sm">more_vert</button>');
 	
 } );

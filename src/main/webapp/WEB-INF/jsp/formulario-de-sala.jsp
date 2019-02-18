@@ -1,6 +1,8 @@
 <!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -37,11 +39,11 @@
 	    				Sala cadastrada com sucesso!
 	  				</div>
 	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Sala não cadastrada!
+    					 Sala nÃ£o cadastrada!
   					</div>
 					<form class="form-horizontal" role="form" method="post" action="/formulario-de-sala/novo-cadastro">
 						<div class="form-group pmd-textfield">
-							<label for="inputEmail3" class="col-sm-2 control-label">Número</label>
+							<label for="inputEmail3" class="col-sm-2 control-label">NÃºmero</label>
 							<div class="col-sm-10">
 								<input class="form-control input-sm" name="numero" id="numero" type="text">
 							</div>

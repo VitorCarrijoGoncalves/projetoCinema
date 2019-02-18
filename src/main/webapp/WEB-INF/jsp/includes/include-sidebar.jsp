@@ -1,5 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 <nav class="navbar navbar-inverse navbar-fixed-top pmd-navbar pmd-z-depth">
 
 	<div class="container-fluid">
@@ -192,7 +194,7 @@
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="/formulario-de-filme">Cadastro</a></li>
-				<li><a href="/filme">Visualização</a></li>
+				<li><a href="/filme">VisualizaÃ§Ã£o</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
@@ -203,7 +205,7 @@
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="/formulario-de-ingresso">Cadastro</a></li>
-				<li><a href="/ingresso">Visualização</a></li>
+				<li><a href="/ingresso">VisualizaÃ§Ã£o</a></li>
 			</ul>
 		</li>
 		
@@ -219,7 +221,7 @@
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="/formulario-de-sala">Cadastro</a></li>
-				<li><a href="/sala">Visualização</a></li>
+				<li><a href="/sala">VisualizaÃ§Ã£o</a></li>
 			</ul>
 		</li>
 		<li class="dropdown pmd-dropdown"> 
@@ -229,12 +231,12 @@
 	 M1.059,8.47h6.99v3.177h-6.99V8.47z M9.108,11.647V8.47h3.599v3.177H9.108z M13.766,11.647V8.47h3.176v3.177H13.766z M16.942,7.412
 	h-3.176V4.235h3.176V7.412L16.942,7.412z"/>
 </svg></i> 
-				<span class="media-body">Seções</span>
+				<span class="media-body">SeÃ§Ãµes</span>
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="formulario-de-secao">Cadastro</a></li>
-				<li><a href="/secao">Visualização</a></li>
+				<li><a href="/secao">VisualizaÃ§Ã£o</a></li>
 			</ul>
 		</li>
 	
@@ -254,12 +256,12 @@
 					<text transform="matrix(1 0 0 1 -0.0154 1202.2578)" font-family="'HelveticaNeue-Bold'" font-size="186.0251">Created by Richard Wearn</text>
 					<text transform="matrix(1 0 0 1 -0.0154 1388.2891)" font-family="'HelveticaNeue-Bold'" font-size="186.0251">from the Noun Project</text>
 				</svg></i> 
-				<span class="media-body">Usuários</span>
+				<span class="media-body">UsuÃ¡rios</span>
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
 				<li><a href="/formulario-de-usuario">Cadastro</a></li>
-				<li><a href="/usuario">Visualização</a></li>
+				<li><a href="/usuario">VisualizaÃ§Ã£o</a></li>
 			</ul>
 		</li>
 		<li> 
