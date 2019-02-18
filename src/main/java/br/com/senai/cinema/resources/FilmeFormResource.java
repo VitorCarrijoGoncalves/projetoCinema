@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +27,8 @@ public class FilmeFormResource {
 //		return filmeService.save(filme);
 //	}
 	
-	@PostMapping(value = "/formulario-de-filme")
-	public String save(HttpServletRequest request)
+	@PostMapping(value = "/novo-cadastro")
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
 
 		String nome = request.getParameter("nome");
@@ -44,8 +45,9 @@ public class FilmeFormResource {
 		filme.setDuracao(duracao);
 		filme.setStatus(true);
 		filmeService.save(filme);
-		
+		response.sendRedirect("/formulario-de-filme");
 		return "formulario-de-filme";
+//		return "redirect:formulario-de-filme";
 	}
 
 }

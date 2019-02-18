@@ -31,7 +31,7 @@
 		</ol><!--breadcrum end-->
 	
 		<div class="section section-custom billinfo"> 
-			<form id="validationForm" action="/formulario-de-filme" method="post">
+			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post">
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">
 				 <div class="alert alert-success" id="mensagem-sucesso">
