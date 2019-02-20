@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.repositories.UsuarioRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -49,6 +50,10 @@ public class UsuarioService {
 	
 	public List<Usuario> findAll() {
 		return usuarioRepository.findAll();
+	}
+	
+	public List<Ingresso> listAllIngressosByUsuario(Usuario usuario) {
+		return usuario.getIngressos();
 	}
 	
 //	public Page<Usuario> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {

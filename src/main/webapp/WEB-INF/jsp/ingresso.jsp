@@ -55,7 +55,6 @@
 						<thead>
 							<tr>
 								<th></th>
-<!-- 								<th>ID</th> -->
 								<th>NOME</th>
 								<th>DATA</th>
 								<th>VALOR</th>
@@ -66,10 +65,12 @@
 						<tbody>
 							
 				<c:forEach var="ingresso" items="${ingressos}">
-						<tr>
-							<td></td>
-							<input type="hidden" id="idIngresso" name="idIngresso">
-<%-- 							<td id="idIngresso">${ingresso.id }</td> --%>
+						<tr id="tr_${ingresso.id }">
+							<td>
+								<input type="hidden" id="idIngresso" name="idIngresso" value="${ingresso.id }">
+								<input type="hidden" id="idUsuario" name="idUsuario" value="${ingresso.idUsuario }">
+								<input type="hidden" id="idSecao" name="idSecao" value="${ingresso.idSecao }">
+							</td>
 							<td id="nome">${ ingresso.idUsuario.nome }</td>
 							<td id="data">${ ingresso.idSecao.dataHora }</td>
 							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td>
@@ -100,14 +101,14 @@
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Nome</label>
 							<input type="hidden" id="idIngressoModal" name="idIngressoModal">
-							<select class="select-simple form-control pmd-select2" id="nomeModal" name="nomeModal">
+							<select class="select-simple form-control pmd-select2" id="idUsuarioModal" name="idUsuarioModal">
 								<option></option>
 								<option>aaaa</option>
 							</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Seção</label>
-						<select class="select-simple form-control pmd-select2" id="secaoModal" name="secaoModal">
+						<select class="select-simple form-control pmd-select2" id="idSecaoModal" name="idSecaoModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
@@ -125,83 +126,74 @@
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 
 <script>
+		$(document).ready(function() {
 
+			$("#btn-delete").click(function(e) {
+				e.preventDefault();
 
-$(document).ready(function() {
-	
-	$("#btn-delete").click(function(e) {
-		e.preventDefault();
+				var idIngresso = $("#idIngresso").val();
 
-		var tableRow = $(this).closest("tr");
-		var idIngresso = tableRow.find("#idIngresso").text();
-		if (confirm("Deseja excluir?")) { 
+				if (confirm("Deseja excluir?")) {
+					console.log(idIngresso);
 
-			console.log(idIngresso);
-			$.ajax({
-				url : "/ingresso/delete-usuario",
-				type : "DELETE",
-				data : {
-					idIngresso : idIngresso
-				},
-				success : function(data) {
-					tableRow.remove();
-				},
-				error : function(data) {
-					
+					$.ajax({
+						url : window.location + "/delete/" + idIngresso,
+						type : "DELETE",
+						success : function() {
+							$('#tr_' + idIngresso).remove();
+						},
+						error : function(data) {
+
+						}
+					});
+
+				} else {
+
 				}
+
 			});
 
-		} else {
-			
-		}
+			$("#open_modal").click(function(e) {
+				e.preventDefault();
+				$("#idIngressoModal").val($("#idIngresso").val());
+				$("#idUsuarioModal").val($("#idUsuario").text());
+				$("#idSecaoModal").val($("#idSecao").text());
+			});
 
+			$("#btn-update").click(function(e) {
 
-	});
+				var ingresso = {
+					id : $("#idIngressoModal").val(),
+					nome : $("#idUsuarioModal").val(),
+					genero : $("#idSecaoModal").val()
+				};
+				
+				console.log(ingresso);
+				
+				$.ajax({
+					method : "PUT",
+					contentType : 'application/json',
+					url : "/ingresso/update/" + $("#idIngressoModal").val(),
+					dataType : "json",
+					data : JSON.stringify(ingresso),
+					success : function(ingresso) {
+						var objIngresso = new Object();
+						objIngresso = JSON.parse(ingresso);
 
-});
+						//limpar a tela
+						$("#idIngressoModal").val("");
+						$("#nomeModal").val("");
+						$("#secaoModal").val("");
+						console.log("Objeto ingresso depois do sucesso: ", objIngresso);
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+			});
 
-
-</script>
-
-
-<script>
-
-$(document).ready(function() {
-
-	$("#btn-update").click(function(e) {
-		e.preventDefault();
-	
-		var idIngresso = $(this).closest("tr").find("#idIngresso").text();
-		var nome = $(this).closest("tr").find("#nome").text();
-		var secao = $(this).closest("tr").find("#secao").text();
-		
-		$("#idIngressoModal").val(idIngresso);
-		$("#nomeModal").val(nome);
-		$("#secaoModal").val(login);
-		
-		console.log(idIngresso);
-		$.ajax({
-			method : "PUT",
-			url : "/ingresso/update-ingresso",
-			data : {
-				"idIngresso" : idIngresso
-			},
-			success : function(response) {
-				var objIngresso = new Object();
-				objIngresso = JSON.parse(response);
-				console.log(objIngresso);
-			},
-			error : function(errResponse) {
-				console.log("error",errResponse);
-			}
 		});
-		
-		
-	});
-
-});
-
-</script>
+	</script>
 
 </body>
 </html>

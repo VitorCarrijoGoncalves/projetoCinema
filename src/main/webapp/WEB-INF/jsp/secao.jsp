@@ -66,7 +66,11 @@
 						
 						<c:forEach var="secao" items="${secoes}">
 						<tr id="tr_${secao.id }">
-							<td><input type="hidden" id="idSecao" name="idSecao" value="${secao.id }"></td>
+							<td>
+								<input type="hidden" id="idSecao" name="idSecao" value="${secao.id }">
+								<input type="hidden" id="idFilme" name="idFilme" value="${secao.idFilme }">
+								<input type="hidden" id="idSala" name="idSala" value="${secao.idSala }">
+							</td>
 							<td id="data">${ secao.dataHora }</td>
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
@@ -96,15 +100,15 @@
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Filme</label>
-						<input type="hidden" id="idSecaoModal" name="idSecaoModal">
-						<select class="select-simple form-control pmd-select2" id="filmeModal" name="filmeModal">
+<!-- 						<input type="hidden" id="idSecaoModal" name="idSecaoModal"> -->
+						<select class="select-simple form-control pmd-select2" id="idFilmeModal" name="idFilmeModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Sala</label>
-						<select class="select-simple form-control pmd-select2" id="salaModal" name="salaModal">
+						<select class="select-simple form-control pmd-select2" id="idSalaModal" name="idSalaModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
@@ -162,8 +166,8 @@
 				$("#idSecaoModal").val($("#idSecao").val());
 				$("#dataModal").val($("#data").text());
 				$("#valorDoIngressoModal").val($("#valorDoIngresso").text());
-				$("#salaModal").val($("#sala").text());
-				$("#filmeModal").val($("#filme").text());
+				$("#idSalaModal").val($("#idSala").text());
+				$("#idFilmeModal").val($("#idFilme").text());
 			});
 
 			$("#btn-update").click(function(e) {
@@ -172,8 +176,8 @@
 					id : $("#idSecaoModal").val(),
 					data : $("#dataModal").val(),
 					genero : $("#valorDoIngressoModal").val(),
-					duracao : $("#salaModal").val(),
-					status : $("#filmeModal").val(),
+					duracao : $("#idSalaModal").val(),
+					status : $("#idFilmeModal").val(),
 				};
 				
 				console.log(secao);
@@ -189,11 +193,11 @@
 						objSecao = JSON.parse(secao);
 
 						//limpar a tela
-				$("#idSecaoModal").val("");
-				$("#dataModal").val("");
-				$("#valorDoIngressoModal").val("");
-				$("#salaModal").val("");
-				$("#filmeModal").val("");
+						$("#idSecaoModal").val("");
+						$("#dataModal").val("");
+						$("#valorDoIngressoModal").val("");
+						$("#idSalaModal").val("");
+						$("#idFilmeModal").val("");
 						console.log("Objeto seção depois do sucesso: ", objSecao);
 					},
 					error : function(errResponse) {

@@ -55,24 +55,23 @@
 						<thead>
 							<tr>
 								<th></th>
-<!-- 								<th>ID</th> -->
 								<th>LOGIN</th>
 								<th>NOME</th>
 								<th>E-MAIL</th>
 								<th>SENHA</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 						
 				<c:forEach var="usuario" items="${usuarios}">
-						<input type="hidden" id="idUsuario" name="idUsuario">
-					<tr>
-						<td></td>
-<%-- 						<td id="idUsuario">${usuario.id }</td> --%>
+					<tr id="tr_${usuario.id }">
+						<td><input type="hidden" id="idUsuario" name="idUsuario" value="${usuario.id }"></td>
 						<td id="login">${ usuario.login }</td>
 						<td id="nome">${ usuario.nome }</td>
 						<td id="email">${ usuario.email }</td>
 						<td id="senha">${ usuario.senha }</td>
+						<td><a href="/usuario/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 					</tr>
 				</c:forEach>
 				
@@ -124,86 +123,98 @@
 <jsp:include page="includes/include-footer.jsp"/>
 <jsp:include page="includes/include-listagem-scripts.jsp"/>
 
-
 <script>
+		$(document).ready(function() {
 
-$(document).ready(function() {
-	
-	$("#btn-delete").click(function(e) {
-		e.preventDefault();
+			$("#btn-delete").click(function(e) {
+				e.preventDefault();
 
-		var tableRow = $(this).closest("tr");
-		var idUsuario = tableRow.find("#idUsuario").text();
-		if (confirm("Deseja excluir?")) { 
+				var idUsuario = $("#idUsuario").val();
 
-			console.log(idUsuario);
-			$.ajax({
-				url : "/usuario/delete-usuario",
-				type : "DELETE",
-				data : {
-					idUsuario : idUsuario
-				},
-				success : function(data) {
-					tableRow.remove();
-				},
-				error : function(data) {
-					
+				if (confirm("Deseja excluir?")) {
+					console.log(idUsuario);
+
+					$.ajax({
+						url : window.location + "/delete/" + idUsuario,
+						type : "DELETE",
+						success : function() {
+							$('#tr_' + idUsuario).remove();
+						},
+						error : function(data) {
+
+						}
+					});
+
+				} else {
+
 				}
+
 			});
 
-		} else {
-			
-		}
+			$("#open_modal").click(function(e) {
+				e.preventDefault();
+				$("#idUsuarioModal").val($("#idUsuario").val());
+				$("#nomeModal").val($("#nome").text());
+				$("#loginModal").val($("#login").text());
+				$("#emailModal").val($("#email").text());
+				$("#senhaModal").val($("#senha").text());
+			});
 
+			$("#btn-update").click(function(e) {
 
-	});
+				var usuario = {
+					id : $("#idUsuarioModal").val(),
+					nome : $("#nomeModal").val(),
+					login : $("#loginModal").val(),
+					email : $("#emailModal").val(),
+					senha : $("#senhaModal").val()
+				};
+				
+				console.log(usuario);
+				
+				$.ajax({
+					method : "PUT",
+					contentType : 'application/json',
+					url : "/usuario/update/" + $("#idUsuarioModal").val(),
+					dataType : "json",
+					data : JSON.stringify(usuario),
+					success : function(usuario) {
+						var objUsuario = new Object();
+						objUsuario = JSON.parse(usuario);
 
-});
+						//limpar a tela
+						$("#idUsuarioModal").val("");
+						$("#nomeModal").val("");
+						$("#loginModal").val("");
+						$("#emailModal").val("");
+						$("#senhaModal").val("");
+						console.log("Objeto usuário depois do sucesso: ", objUsuario);
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+			});
 
-</script>
+			$('#listagem-de-ingressos').click(function () {
+				
+				$.ajax({
+					method : "GET",
+					contentType : 'application/json',
+					url : "/usuario/ingressos/" + $("#idUsuario").val(),
+					dataType : "json",
+					success : function() {
+						
+					},
+					error : function(errResponse) {
+						console.log("error", errResponse);
+					}
+				});
+				
+			});
 
-<script>
-
-$(document).ready(function() {
-
-	$("#btn-update").click(function(e) {
-		e.preventDefault();
-	
-		var idUsuario = $(this).closest("tr").find("#idUsuario").text();
-		var nome = $(this).closest("tr").find("#nome").text();
-		var login = $(this).closest("tr").find("#login").text();
-		var email = $(this).closest("tr").find("#email").text();
-		var senha = $(this).closest("tr").find("#senha").text();
-		
-		$("#idUsuarioModal").val(idUsuario);
-		$("#nomeModal").val(nome);
-		$("#loginModal").val(login);
-		$("#emailModal").val(email);
-		$("#senhaModal").val(senha);
-		
-		console.log(idUsuario);
-		$.ajax({
-			method : "PUT",
-			url : "/usuario/update-usuario",
-			data : {
-				"idUsuario" : idUsuario
-			},
-			success : function(response) {
-				var objUsuario = new Object();
-				objUsuario = JSON.parse(response);
-				console.log(objUsuario);
-			},
-			error : function(errResponse) {
-				console.log("error",errResponse);
-			}
 		});
-		
-		
-	});
-
-});
-
-</script>
+	</script>
 
 </body>
 </html>
