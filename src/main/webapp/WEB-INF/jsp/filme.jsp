@@ -10,7 +10,7 @@
 	content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no"
 	name="viewport">
-<title>Listagem de Filmes</title>
+<title>Filme | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp" />
 <body>
@@ -110,26 +110,26 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal">
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<div class="form-group pmd-textfield pmd-textfield">
 							<label for="first-name">Nome</label> <input type="hidden"
 								id="idFilmeModal" name="idFilmeModal"> <input
 								type="text" class="mat-input form-control" id="nomeModal"
 								name="nomeModal">
 						</div>
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<div class="form-group pmd-textfield pmd-textfield">
 							<label for="first-name">Gênero</label> <input type="text" class="mat-input form-control" id="generoModal" name="generoModal">
 						</div>
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<div class="form-group pmd-textfield pmd-textfield">
 							<label for="first-name">Duração</label> <input type="text" class="mat-input form-control" id="duracaoModal" name="duracaoModal">
 						</div>
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<div class="form-group pmd-textfield pmd-textfield">
 							<label for="first-name">Status</label> 
 							<select class="select-simple form-control pmd-select2" id="statusModal" name="statusModal">
 								<option value="TRUE">Lançamento</option>
 								<option value="FALSE">Não-Lançamento</option>
 							</select>
 						</div>
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+						<div class="form-group pmd-textfield pmd-textfield">
 							<label class="control-label">Sinopse</label>
 							<textarea required class="form-control" id="sinopseModal" name="sinopseModal"></textarea>
 						</div>
@@ -221,6 +221,24 @@
 				});
 			});
 
+// 			$('#open_modal').click(function () {
+				
+// 				$.ajax({
+// 					method : "GET",
+// 					contentType : 'application/json',
+// 					url : "/filme/get-sinopse/" + $("#idFilme").val(),
+// 					dataType : "json",
+// 					success : function() {
+// 						var sinopse = JSON.parse(response);
+// 						$("#sinopseModal").val(sinopse);
+// 					},
+// 					error : function(errResponse) {
+// 						console.log("error", errResponse);
+// 					}
+// 				});
+				
+// 			});
+
 			$('#listagem-de-secoes').click(function () {
 				
 				$.ajax({
@@ -229,7 +247,7 @@
 					url : "/filme/secoes/" + $("#idFilme").val(),
 					dataType : "json",
 					success : function() {
-						
+
 					},
 					error : function(errResponse) {
 						console.log("error", errResponse);

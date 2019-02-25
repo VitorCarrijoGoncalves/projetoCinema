@@ -35,11 +35,6 @@ public class IngressoFormResource {
 	@Autowired
 	private SecaoService secaoService;
 	
-//	@PostMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-//	public Ingresso save(@RequestBody Ingresso Ingresso) {
-//		return ingressoService.save(Ingresso);
-//	}
-	
 	@GetMapping
 	public String listarUsuariosESecoes(HttpServletRequest request, HttpServletResponse response) { 
 

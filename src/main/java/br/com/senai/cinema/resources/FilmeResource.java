@@ -67,5 +67,16 @@ public class FilmeResource {
 		request.setAttribute("secoes", secoes);
 		return "listagem-de-secoes-por-filme";
 	}
+	
+	@GetMapping("/get-sinopse/{id}")
+	public String getSinopse(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException {
+		
+		Filme filme = filmeService.findById(idFilme);
+		
+		String sinopse = filme.getSinopse();
+
+		request.setAttribute("sinopse", sinopse);	
+		return "filme";
+	}
 
 }

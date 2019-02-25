@@ -86,4 +86,9 @@ public class SiteController {
 		return "listagem-de-ingressos-por-secao";
 	}
 	
+	@RequestMapping(value="/usuario/ingressos")
+	public String listagemDeIngressosPorUsuario() {
+		return "listagem-de-ingressos-por-usuario";
+	}
+	
 }

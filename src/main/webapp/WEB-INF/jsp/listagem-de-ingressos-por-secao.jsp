@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Ingressos Por Seção</title>
+<title>Listagem de Ingressos Por Seção | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 

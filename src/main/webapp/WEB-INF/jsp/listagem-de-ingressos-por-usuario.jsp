@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Ingressos Por Seção</title>
+<title>Listagem de Ingressos Por Usuário | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -24,7 +24,7 @@
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Listagem de Ingressos por Seção</span>
+			<span>Listagem de Ingressos por Usuário</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
@@ -54,19 +54,23 @@
 							<thead>
 								<tr>
 									<th></th>
-									<th>ID</th>
-									<th>NOME</th>
+									<th>FILME</th>
+									<th>DATA</th>
+									<th>INGRESSO</th>
+									<th>SALA</th>
 								</tr>
 							</thead>
 						<tbody>
 						
-					<c:forEach var="ingresso" items="${ingressos}">
+<%-- 					<c:forEach var="ingresso" items="${ingressos}"> --%>
 						<tr>
 							<td></td>
-							<td id="idUsuario">${ingresso.idUsuario.id }</td>
-							<td id="nome">${ ingresso.idUsuario.nome }</td>
+							<td id="filme">fdsf</td>
+							<td id="data">dsfsdf</td>]
+							<td id="ingresso">fsf</td>
+							<td id="sala">dsfsdf</td>
 						</tr>
-				</c:forEach>
+<%-- 				</c:forEach> --%>
 						
 						</tbody>
 					</table>

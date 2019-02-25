@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Login | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Login | Cinema Perto de Você</title>
+<title>Login | Cinema Propeller</title>
 
 <jsp:include page="includes/include-login-head.jsp"/>
 

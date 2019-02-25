@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Seções</title>
+<title>Seção | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -98,7 +98,7 @@
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Filme</label>
 <!-- 						<input type="hidden" id="idSecaoModal" name="idSecaoModal"> -->
 						<select class="select-simple form-control pmd-select2" id="idFilmeModal" name="idFilmeModal">
@@ -106,18 +106,18 @@
 							<option>aaaa</option>
 						</select>
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Sala</label>
 						<select class="select-simple form-control pmd-select2" id="idSalaModal" name="idSalaModal">
 							<option></option>
 							<option>aaaa</option>
 						</select>
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Data</label>
 						<input type="date" class="form-control" id="dataModal" name="dataModal" />
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Valor do Ingresso</label>
 						<input type="text" class="mat-input form-control" id="valorDoIngressoModal" name="valorDoIngressoModal">
 					</div>

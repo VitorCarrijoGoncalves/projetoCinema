@@ -57,7 +57,7 @@ public class SecaoResource {
 		return ResponseEntity.ok().body("atualizado");
 	}
 	
-	@GetMapping("/ingressos/{id}")
+	@GetMapping(value="/secao/ingressos/{id}")
 	public String listAllIngressosBySecao(@PathVariable Integer idSecao, HttpServletRequest request) throws ObjectNotFoundException { 
 
 		Secao secao = secaoService.findById(idSecao);

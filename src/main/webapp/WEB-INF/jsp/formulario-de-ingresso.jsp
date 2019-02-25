@@ -35,12 +35,6 @@
 		<div class="section section-custom billinfo"> 
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
-					 <div class="alert alert-success" id="mensagem-sucesso">
-	    				Ingresso cadastrado com sucesso!
-	  				</div>
-	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Ingresso não cadastrado!
-  					</div>
 					<form class="form-horizontal" role="form" method="post" action="/formulario-de-ingresso/novo-cadastro">
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Nome</label>

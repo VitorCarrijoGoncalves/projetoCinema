@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Salas</title>
+<title>Sala | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -90,12 +90,12 @@
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Número</label>
 						<input type="hidden" id="idSalaModal" name="idSalaModal">
 						<input type="text" class="mat-input form-control" id="numeroModal" name="numeroModal">
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Quantidade de Lugares</label>
 						<input type="text" class="mat-input form-control" id="quantidadeDeLugaresModal" name="quantidadeDeLugaresModal">
 					</div>

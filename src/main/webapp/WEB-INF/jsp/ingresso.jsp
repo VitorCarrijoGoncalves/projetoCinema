@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Listagem de Ingressos</title>
+<title>Ingresso | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -98,7 +98,7 @@
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Nome</label>
 							<input type="hidden" id="idIngressoModal" name="idIngressoModal">
 							<select class="select-simple form-control pmd-select2" id="idUsuarioModal" name="idUsuarioModal">
@@ -106,7 +106,7 @@
 								<option>aaaa</option>
 							</select>
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Seção</label>
 						<select class="select-simple form-control pmd-select2" id="idSecaoModal" name="idSecaoModal">
 							<option></option>

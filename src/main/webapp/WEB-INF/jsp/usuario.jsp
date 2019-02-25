@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Usuário | Cinema Perto de Você</title>
+<title>Usuário | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -59,7 +59,7 @@
 								<th>NOME</th>
 								<th>E-MAIL</th>
 								<th>SENHA</th>
-								<th></th>
+								<th>INGRESSOS</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -94,20 +94,20 @@
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Nome Completo</label>
 						<input type="hidden" id="idUsuarioModal" name="idUsuarioModal">
 						<input type="text" class="mat-input form-control" id="nomeModal" name="nomeModal">
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Nome de Usuário</label>
 						<input type="text" class="mat-input form-control" id="loginModal" name="loginModal">
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">E-mail</label>
 						<input type="text" class="mat-input form-control" id="emailModal" name="emailModal">
 					</div>
-					<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Senha</label>
 						<input type="text" class="mat-input form-control" id="senhaModal" name="senhaModal">
 					</div>
