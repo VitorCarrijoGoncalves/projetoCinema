@@ -22,11 +22,6 @@ public class FilmeFormResource {
 	@Autowired
 	private FilmeService filmeService;
 	
-//	@PostMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-//	public Filme save(@RequestBody Filme filme) {
-//		return filmeService.save(filme);
-//	}
-	
 	@PostMapping(value = "/novo-cadastro")
 	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
@@ -35,7 +30,6 @@ public class FilmeFormResource {
 		String genero = request.getParameter("genero");
 		String sinopse = request.getParameter("sinopse");
 		String duracao = request.getParameter("duracao");
-//		String status = request.getParameter("status");
 
 		Filme filme = new Filme();
 		
@@ -47,7 +41,6 @@ public class FilmeFormResource {
 		filmeService.save(filme);
 		response.sendRedirect("/formulario-de-filme");
 		return "formulario-de-filme";
-//		return "redirect:formulario-de-filme";
 	}
 
 }

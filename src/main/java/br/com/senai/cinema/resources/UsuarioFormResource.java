@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,13 +22,8 @@ public class UsuarioFormResource {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-//	@PostMapping("/cadastro") // @RequestBody = obj vem no corpo da requisição
-//	public Usuario save(@RequestBody Usuario usuario) {
-//		return usuarioService.save(usuario);
-//	}
-	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request)
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
 
 		String login = request.getParameter("login");
@@ -42,7 +38,7 @@ public class UsuarioFormResource {
 		usuario.setEmail(email);
 		usuario.setSenha(senha);
 		usuarioService.save(usuario);
-		
+		response.sendRedirect("/formulario-de-usuario");
 		return "formulario-de-usuario";
 	}
 

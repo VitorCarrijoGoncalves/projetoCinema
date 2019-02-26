@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,13 +22,8 @@ public class SalaFormResource {
 	@Autowired
 	private SalaService salaService;
 	
-//	@PostMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-//	public Sala save(@RequestBody Sala sala) {
-//		return salaService.save(sala);
-//	}
-	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request)
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
 
 		String numero = request.getParameter("numero");
@@ -38,7 +34,7 @@ public class SalaFormResource {
 		sala.setNumero(numero);
 		sala.setQuantidadeDeLugares(Long.parseLong(quantidadeDeLugares));
 		salaService.save(sala);
-		
+		response.sendRedirect("/formulario-de-filme");
 		return "formulario-de-sala";
 	}
 

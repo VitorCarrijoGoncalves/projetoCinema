@@ -1,6 +1,7 @@
 package br.com.senai.cinema.models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,7 +22,9 @@ public class Secao {
 	@SequenceGenerator(name="secao_seq", sequenceName="secao_seq", allocationSize=1, initialValue=1)
 	private Integer id;
 	
-	private String dataHora;
+	private String data;
+	
+	private String hora;
 	
 	private float valorDoIngresso;
 	
@@ -47,12 +50,12 @@ public class Secao {
 		this.id = id;
 	}
 
-	public String getDataHora() {
-		return dataHora;
+	public String getData() {
+		return data;
 	}
 
-	public void setDataHora(String dataHora) {
-		this.dataHora = dataHora;
+	public void setData(String data) {
+		this.data = data;
 	}
 	
 	public float getValorDoIngresso() {
@@ -87,6 +90,14 @@ public class Secao {
 		this.ingressos = ingressos;
 	}
 
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -111,11 +122,6 @@ public class Secao {
 			return false;
 		return true;
 	}
-	
-//	public String getDadosFilme() {
-//		return this.getIdFilme().getNome() + " - Sala: " + this.getIdSala().getNumero() + " Data: " + this.getHoraDeInicio();
-//	}
-	
 	
 	
 }

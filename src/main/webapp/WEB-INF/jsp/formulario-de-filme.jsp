@@ -36,12 +36,6 @@
 			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post">
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">
-				 <div class="alert alert-success" id="mensagem-sucesso">
-	    				Filme cadastrado com sucesso!
-	  				</div>
-	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Filme não cadastrado!
-  					</div>
 					<div class="group-fields clearfix row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
@@ -53,7 +47,7 @@
 						</div>
 					</div>
 					<div class="group-fields clearfix row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Gênero</label>
 								<input type="text" id="genero" name="genero" class="form-control">
@@ -63,18 +57,6 @@
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
 								<input type="text" id="duracao" name="duracao" class="form-control">
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">
-									Status
-								</label>
-								<select class="select-simple form-control pmd-select2" id="idUsuario" name="idUsuario">
-									<option value="NULL"></option>
-									<option value="TRUE">Filme em Lançamento</option>
-									<option value="FALSE">Filme fora de Lançamento</option>
-								</select>
 							</div>
 						</div>
 					</div>

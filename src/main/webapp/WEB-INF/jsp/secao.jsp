@@ -56,6 +56,7 @@
 							<tr>
 								<th></th>
 								<th>Data</th>
+								<th>Hora</th>
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
@@ -71,7 +72,8 @@
 								<input type="hidden" id="idFilme" name="idFilme" value="${secao.idFilme }">
 								<input type="hidden" id="idSala" name="idSala" value="${secao.idSala }">
 							</td>
-							<td id="data">${ secao.dataHora }</td>
+							<td id="data" >${ secao.data }</td>
+							<td id="hora">${secao.hora }</td>
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>
@@ -116,6 +118,10 @@
 					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Data</label>
 						<input type="date" class="form-control" id="dataModal" name="dataModal" />
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield">
+						<label for="first-name">Hora</label>
+						<input type="time" class="form-control" id="horaModal" name="horaModal" />
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Valor do Ingresso</label>
@@ -165,6 +171,7 @@
 				e.preventDefault();
 				$("#idSecaoModal").val($("#idSecao").val());
 				$("#dataModal").val($("#data").text());
+				$("#horaModal").val($("#hora").text());
 				$("#valorDoIngressoModal").val($("#valorDoIngresso").text());
 				$("#idSalaModal").val($("#idSala").text());
 				$("#idFilmeModal").val($("#idFilme").text());
@@ -175,9 +182,10 @@
 				var secao = {
 					id : $("#idSecaoModal").val(),
 					data : $("#dataModal").val(),
-					genero : $("#valorDoIngressoModal").val(),
-					duracao : $("#idSalaModal").val(),
-					status : $("#idFilmeModal").val(),
+					hora : $("#horaModal").val(),
+					ingresso : $("#valorDoIngressoModal").val(),
+					sala : $("#idSalaModal").val(),
+					filme : $("#idFilmeModal").val()
 				};
 				
 				console.log(secao);
@@ -195,6 +203,7 @@
 						//limpar a tela
 						$("#idSecaoModal").val("");
 						$("#dataModal").val("");
+						$("#horaModal").val("");
 						$("#valorDoIngressoModal").val("");
 						$("#idSalaModal").val("");
 						$("#idFilmeModal").val("");

@@ -35,11 +35,6 @@ public class SecaoFormResource {
 	@Autowired
 	private SalaService salaService;
 	
-//	@PostMapping("/listagem") // @RequestBody = obj vem no corpo da requisição
-//	public Secao save(@RequestBody Secao secao) {
-//		return SecaoService.save(secao);
-//	}
-	
 	@GetMapping
 	public String listarFilmesESalas(HttpServletRequest request, HttpServletResponse response) { 
 
@@ -52,12 +47,16 @@ public class SecaoFormResource {
 	}
 	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request)
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException, NumberFormatException, ObjectNotFoundException {
 
 		String idFilme = request.getParameter("idFilme");
 		String idSala = request.getParameter("idSala");
-		String dataHora = request.getParameter("data");
+		String data = request.getParameter("data");
+		
+//	    Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data); 
+		
+		String hora = request.getParameter("hora");
 		float valorDoIngresso = Float.parseFloat(request.getParameter("valorDoIngresso"));
 		
 		Filme filme = filmeService.findById(Integer.parseInt(idFilme));
@@ -67,10 +66,11 @@ public class SecaoFormResource {
 		
 		secao.setIdFilme(filme);
 		secao.setIdSala(sala);
-		secao.setDataHora(dataHora);
+		secao.setData(data);
+		secao.setHora(hora);
 		secao.setValorDoIngresso(valorDoIngresso);
 		secaoService.save(secao);
-		
+		response.sendRedirect("/formulario-de-secao");
 		return "formulario-de-secao";
 	}
 

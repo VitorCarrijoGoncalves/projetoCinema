@@ -47,7 +47,7 @@ public class IngressoFormResource {
 	}
 	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request)
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException, NumberFormatException, ObjectNotFoundException {
 
 		String idUsuario = request.getParameter("idUsuario");
@@ -61,7 +61,7 @@ public class IngressoFormResource {
 		ingresso.setIdUsuario(usuario);
 		ingresso.setIdSecao(secao);
 		ingressoService.save(ingresso);
-		
+		response.sendRedirect("/formulario-de-ingresso");
 		return "formulario-de-ingresso";
 	}
 	

@@ -57,6 +57,7 @@
 								<th></th>
 								<th>NOME</th>
 								<th>DATA</th>
+								<th>HORA</th>
 								<th>VALOR</th>
 								<th>FILME</th>
 								<th>SALA</th>
@@ -72,7 +73,8 @@
 								<input type="hidden" id="idSecao" name="idSecao" value="${ingresso.idSecao }">
 							</td>
 							<td id="nome">${ ingresso.idUsuario.nome }</td>
-							<td id="data">${ ingresso.idSecao.dataHora }</td>
+							<td id="data">${ ingresso.idSecao.data }</td>
+							<td id="hora">${ ingresso.idSecao.hora }</td>
 							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td>
 							<td id="filme">${ ingresso.idSecao.idFilme.nome }</td>
 							<td id="sala">${ ingresso.idSecao.idSala.numero }</td>
