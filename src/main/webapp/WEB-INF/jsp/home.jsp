@@ -23,27 +23,36 @@
 	<div class="container-fluid">
 		<div class="row" id="card-masonry">
 		 
-		 <!-- Today's Site Activity -->
-		 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+		 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+		 
+		 
+		 
+		 <div class="pmd-card pmd-card-default pmd-z-depth">
+					<div class="pmd-card-title">
+					  <div class="media-left">
+						<a class="avatar-list-img" href="javascript:void(0);">
+							<img src="http://propeller.in/components/list/img/40x40.png" width="40" height="40">
+						</a>
+					  </div>
+					  <div class="media-body media-middle">
+						<h3 class="pmd-card-title-text">Two-line item</h3>
+						<span class="pmd-card-subtitle-text">Secondary text</span>
+					  </div>
+					</div>
+					<div class="pmd-card-media">
+						<img src="http://propeller.in/assets/images/profile-pic.png" width="1184" height="666" class="img-responsive">
+					</div>
+					<div class="pmd-card-title">
+						<h2 class="pmd-card-title-text">Title goes here</h2>
+						<span class="pmd-card-subtitle-text">Secondary text</span>	
+					</div>	
+					<div class="pmd-card-body">
+						Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.
+					</div>
+				</div>
+		 
 			
-		 </div> <!--end Today's Site Activity -->
-		 
-		 
-		 
-		 <!--Statistics-->
-		 <div class="col-xs-12 col-sm-12 col-md-6">
-			
-		 </div><!-- end statistics-->
-		 
-		  <!-- User details-->
-		 <div class="col-xs-12 col-sm-12 col-md-6">
-			
-		 </div><!-- end User Details-->
-		 
-		 <!--Browser Usage card-->
-		 <div class="col-lg-4 col-sm-6 col-xs-12 value-added-service-card">
-			
-		 </div><!--end Browser Usage card-->
+		 </div>
 		 
 	</div>
 </div>

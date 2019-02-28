@@ -56,7 +56,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
-								<input type="text" id="duracao" name="duracao" class="form-control">
+								<input type="time" id="duracao" name="duracao" class="form-control">
 							</div>
 						</div>
 					</div>
