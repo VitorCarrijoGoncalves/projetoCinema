@@ -33,7 +33,7 @@
 		</ol><!--breadcrum end-->
 	
 		<div class="section section-custom billinfo"> 
-			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post">
+			<form id="validationForm" action="/formulario-de-filme/novo-cadastro" method="post" enctype="multipart/form-data">
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">
 					<div class="group-fields clearfix row">
@@ -65,6 +65,14 @@
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							  <label class="control-label">Sinopse</label>
 							  <textarea required class="form-control" id="sinopse" name="sinopse"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="group-fields clearfix row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group pmd-textfield pmd-textfield-floating-label">
+<!-- 							  <label class="control-label">Capa do Filme</label> -->
+							  <input type="file" class="form-control" id="capaDoFilme" name="capaDoFilme">
 							</div>
 						</div>
 					</div>
