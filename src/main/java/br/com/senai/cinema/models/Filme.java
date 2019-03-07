@@ -10,9 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Transient;
-
-import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Filme {
@@ -32,8 +29,7 @@ public class Filme {
 	
 	private boolean status;
 	
-	@Transient
-	private MultipartFile capaDoFilme;
+	private String capaDoFilme;
 	
 	@OneToMany(
 			mappedBy = "idFilme",
@@ -91,11 +87,11 @@ public class Filme {
 		this.status = status;
 	}
 	
-	public MultipartFile getCapaDoFilme() {
+	public String getCapaDoFilme() {
 		return capaDoFilme;
 	}
 
-	public void setCapaDoFilme(MultipartFile capaDoFilme) {
+	public void setCapaDoFilme(String capaDoFilme) {
 		this.capaDoFilme = capaDoFilme;
 	}
 

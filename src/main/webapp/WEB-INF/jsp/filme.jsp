@@ -54,8 +54,7 @@
 					<div class="component-box">
 						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
 							<div class="table-responsive">
-								<table id="example-checkbox"
-									class="table pmd-table table-hover table-striped display responsive nowrap"
+								<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap"
 									cellspacing="0" width="100%">
 									<thead>
 										<tr>

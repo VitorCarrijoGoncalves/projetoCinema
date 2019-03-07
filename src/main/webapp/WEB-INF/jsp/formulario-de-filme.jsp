@@ -71,7 +71,6 @@
 					<div class="group-fields clearfix row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-<!-- 							  <label class="control-label">Capa do Filme</label> -->
 							  <input type="file" class="form-control" id="capaDoFilme" name="capaDoFilme">
 							</div>
 						</div>

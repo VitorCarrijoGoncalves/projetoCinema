@@ -1,5 +1,6 @@
 package br.com.senai.cinema.resources;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -16,16 +17,18 @@ import org.springframework.web.multipart.MultipartFile;
 import br.com.senai.cinema.models.Filme;
 import br.com.senai.cinema.services.FilmeService;
 
-//@RestController
 @Controller
 @RequestMapping(value="/formulario-de-filme")
 public class FilmeFormResource {
+	
+	private static final String UPLOAD_URL = "/opt/clientes/cinema/static/filmes/";
+	private static final String BASE_PATH = "/static/filmes/";
 	
 	@Autowired
 	private FilmeService filmeService;
 	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request, HttpServletResponse response, @RequestParam MultipartFile capa)
+	public String save(HttpServletRequest request, HttpServletResponse response, @RequestParam("capaDoFilme") MultipartFile capa)
 			throws ParseException, IllegalStateException, IOException {
 
 		String nome = request.getParameter("nome");
@@ -42,19 +45,12 @@ public class FilmeFormResource {
 		filme.setStatus(true);
 		
 		
-//		String uploadUrl = (UPLOAD_URL + gerarNome(false) + "/");
-//		if (!(new File(uploadUrl).exists())) {
-//
-//			new File(uploadUrl).mkdir(); // criando um diretorio
-//
-//		}
-//			
-//		String fileName = gerarNome(true);
-//		File file = new File(uploadUrl + fileName);
-//		String fullStaticPath = BASE_PATH + gerarNome(false) + "/" + file.getName();
-//		imagem.transferTo(file);
-//
-//		blog.setLinkDaImagem(fullStaticPath);
+		String uploadUrl = (UPLOAD_URL + filmeService.gerarNome() + "/");
+		File file = new File(uploadUrl);
+		String fullStaticPath = BASE_PATH + filmeService.gerarNome() + "/";
+		capa.transferTo(file);
+
+		filme.setCapaDoFilme(fullStaticPath);
 		
 		
 		filmeService.save(filme);
@@ -63,9 +59,4 @@ public class FilmeFormResource {
 	}
 	
 	
-	public String gerarNome(boolean isArquivo) {
-		return isArquivo ? String.valueOf(new java.util.Date().getTime()) + ".jpg" : String.valueOf(new java.util.Date().getTime()) ;
-	}
-	
-
 }
