@@ -75,7 +75,7 @@
 												<td id="td_genero">${ filme.genero }</td>
 												<td id="td_sinopse">S<input type="hidden" value="${filme.sinopse }"></td>
 												<td id="td_duracao">${ filme.duracao }</td>
-												<c:if test="${filme.status } == TRUE">
+												<c:if test="${filme.status == TRUE}">
 													<td id="td_status">Filme em Lançamento</td>
 												</c:if>
 												<td id="td_status">Filme fora de Lançamento</td>

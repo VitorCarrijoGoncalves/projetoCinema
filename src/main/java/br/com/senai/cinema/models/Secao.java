@@ -23,8 +23,6 @@ public class Secao {
 	
 	private String data;
 	
-	private String hora;
-	
 	private float valorDoIngresso;
 	
 	@ManyToOne
@@ -87,14 +85,6 @@ public class Secao {
 
 	public void setIngressos(List<Ingresso> ingressos) {
 		this.ingressos = ingressos;
-	}
-
-	public String getHora() {
-		return hora;
-	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
 	}
 
 	@Override

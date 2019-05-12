@@ -1,6 +1,5 @@
 package br.com.senai.cinema.resources;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import br.com.senai.cinema.models.Filme;
 import br.com.senai.cinema.services.FilmeService;
@@ -21,14 +18,11 @@ import br.com.senai.cinema.services.FilmeService;
 @RequestMapping(value="/formulario-de-filme")
 public class FilmeFormResource {
 	
-	private static final String UPLOAD_URL = "/opt/clientes/cinema/static/filmes/";
-	private static final String BASE_PATH = "/static/filmes/";
-	
 	@Autowired
 	private FilmeService filmeService;
 	
 	@PostMapping(value = "/novo-cadastro")
-	public String save(HttpServletRequest request, HttpServletResponse response, @RequestParam("capaDoFilme") MultipartFile capa)
+	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
 
 		String nome = request.getParameter("nome");
@@ -45,12 +39,11 @@ public class FilmeFormResource {
 		filme.setStatus(true);
 		
 		
-		String uploadUrl = (UPLOAD_URL + filmeService.gerarNome() + "/");
-		File file = new File(uploadUrl);
-		String fullStaticPath = BASE_PATH + filmeService.gerarNome() + "/";
-		capa.transferTo(file);
-
-		filme.setCapaDoFilme(fullStaticPath);
+//		String uploadUrl = (UPLOAD_URL + filmeService.gerarNome() + "/");
+//		File file = new File(uploadUrl);
+//		String fullStaticPath = BASE_PATH + filmeService.gerarNome() + "/";
+//		capa.transferTo(file);
+//		filme.setCapaDoFilme(fullStaticPath);
 		
 		
 		filmeService.save(filme);

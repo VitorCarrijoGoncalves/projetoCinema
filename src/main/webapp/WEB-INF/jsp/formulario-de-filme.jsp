@@ -56,7 +56,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">       
 								<label>Duração</label>
-								<input type="time" id="duracao" name="duracao" class="form-control">
+								<input type="text" id="duracao" name="duracao" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -65,13 +65,6 @@
 							<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							  <label class="control-label">Sinopse</label>
 							  <textarea required class="form-control" id="sinopse" name="sinopse"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="group-fields clearfix row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							  <input type="file" class="form-control" id="capaDoFilme" name="capaDoFilme">
 							</div>
 						</div>
 					</div>

@@ -21,7 +21,6 @@ import br.com.senai.cinema.services.SalaService;
 import br.com.senai.cinema.services.SecaoService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
-//@RestController
 @Controller
 @RequestMapping(value="/formulario-de-secao")
 public class SecaoFormResource {
@@ -67,7 +66,6 @@ public class SecaoFormResource {
 		secao.setIdFilme(filme);
 		secao.setIdSala(sala);
 		secao.setData(data);
-		secao.setHora(hora);
 		secao.setValorDoIngresso(valorDoIngresso);
 		secaoService.save(secao);
 		response.sendRedirect("/formulario-de-secao");

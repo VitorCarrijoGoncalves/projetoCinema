@@ -21,7 +21,6 @@ import br.com.senai.cinema.services.SecaoService;
 import br.com.senai.cinema.services.UsuarioService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
-//@RestController
 @Controller
 @RequestMapping(value="/ingressos")
 public class IngressoFormResource {
@@ -52,6 +51,7 @@ public class IngressoFormResource {
 
 		String idUsuario = request.getParameter("idUsuario");
 		String idSecao = request.getParameter("idSecao");
+		String tipoIngresso = request.getParameter("tipoIngresso");
 
 		Ingresso ingresso = new Ingresso();
 		
@@ -60,6 +60,8 @@ public class IngressoFormResource {
 		
 		ingresso.setIdUsuario(usuario);
 		ingresso.setIdSecao(secao);
+		ingresso.setTipoIngresso(tipoIngresso);
+		
 		ingressoService.save(ingresso);
 		response.sendRedirect("/formulario-de-ingresso");
 		return "formulario-de-ingresso";

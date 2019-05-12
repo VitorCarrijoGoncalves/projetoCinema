@@ -60,6 +60,17 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Tipo de Ingresso</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<select class="select-simple form-control pmd-select2" name="tipoIngresso">
+										<option value="Inteira">Inteira</option>
+										<option value="Meia">Meia</option>
+									</select>
+								</div>
+							</div>
+						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="submit" class="btn btn-primary pmd-checkbox-ripple-effect">Enviar</button>

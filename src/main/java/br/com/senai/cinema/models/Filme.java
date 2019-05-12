@@ -29,8 +29,6 @@ public class Filme {
 	
 	private boolean status;
 	
-	private String capaDoFilme;
-	
 	@OneToMany(
 			mappedBy = "idFilme",
 			cascade = CascadeType.REMOVE, 
@@ -85,14 +83,6 @@ public class Filme {
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
-	
-	public String getCapaDoFilme() {
-		return capaDoFilme;
-	}
-
-	public void setCapaDoFilme(String capaDoFilme) {
-		this.capaDoFilme = capaDoFilme;
 	}
 
 	public List<Secao> getSecoes() {

@@ -9,27 +9,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.senai.cinema.models.Filme;
-import br.com.senai.cinema.services.FilmeService;
+import br.com.senai.cinema.models.Secao;
+import br.com.senai.cinema.services.SecaoService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
-@RequestMapping(value="/filmes")
-public class UsuarioRestController {
+@RequestMapping(value="/sessoes")
+public class SecaoRestController {
 	
 	@Autowired
-	private FilmeService filmeService;
+	private SecaoService sessaoService;
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Filme> find(@PathVariable Integer id) throws ObjectNotFoundException {
-		Filme filme = filmeService.findById(id);
-		return ResponseEntity.ok().body(filme);
+	public ResponseEntity<Secao> find(@PathVariable Integer id) throws ObjectNotFoundException {
+		Secao sessao = sessaoService.findById(id);
+		return ResponseEntity.ok().body(sessao);
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Filme>> findAll() {
-		List<Filme> filmes = filmeService.findAll();
-		return ResponseEntity.ok().body(filmes);
+	public ResponseEntity<List<Secao>> findAll() {
+		List<Secao> sessoes = sessaoService.findAll();
+		return ResponseEntity.ok().body(sessoes);
 	}
 
 }

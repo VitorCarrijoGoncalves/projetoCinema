@@ -49,7 +49,6 @@ public class SecaoResource {
 	public ResponseEntity<?> updateReturningJson(@PathVariable Integer id, @RequestBody Secao secao) throws ObjectNotFoundException {
 		Secao objSecao = secaoService.findById(id);
 		objSecao.setData(secao.getData());
-		objSecao.setHora(secao.getHora());
 		objSecao.setValorDoIngresso(secao.getValorDoIngresso());
 		objSecao.setIdSala(secao.getIdSala());
 		objSecao.setIdFilme(secao.getIdFilme());

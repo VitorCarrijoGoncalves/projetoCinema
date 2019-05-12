@@ -21,6 +21,9 @@ public class Ingresso {
 	@ManyToOne
 	private Secao idSecao;
 	
+	// para definir se o ingresso de tipo inteira e meia
+	private String tipoIngresso;
+	
 	//private String lugar; exemplo = 1a, 2b, 3c ...
 
 	public Integer getId() {
@@ -45,6 +48,14 @@ public class Ingresso {
 
 	public void setIdSecao(Secao idSecao) {
 		this.idSecao = idSecao;
+	}
+
+	public String getTipoIngresso() {
+		return tipoIngresso;
+	}
+
+	public void setTipoIngresso(String tipoIngresso) {
+		this.tipoIngresso = tipoIngresso;
 	}
 	
 }
