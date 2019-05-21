@@ -18,14 +18,18 @@ public class Usuario {
 	@GeneratedValue(generator="usuario_seq", strategy=GenerationType.SEQUENCE)
 	@SequenceGenerator(name="usuario_seq", sequenceName="usuario_seq", allocationSize=1, initialValue=1)
 	private Integer id;
-	
-	private String login;
 
 	private String senha;
 
 	private String nome;
 	
 	private String email;
+	
+	private String sexo;
+	
+	private String idade;
+	
+	private String estadoCivil;
 
 	@OneToMany(
 			mappedBy = "idUsuario",
@@ -41,14 +45,6 @@ public class Usuario {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getSenha() {
@@ -83,29 +79,28 @@ public class Usuario {
 		this.ingressos = ingressos;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public String getSexo() {
+		return sexo;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getIdade() {
+		return idade;
+	}
+
+	public void setIdade(String idade) {
+		this.idade = idade;
+	}
+
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(String estadoCivil) {
+		this.estadoCivil = estadoCivil;
 	}
 	
 }

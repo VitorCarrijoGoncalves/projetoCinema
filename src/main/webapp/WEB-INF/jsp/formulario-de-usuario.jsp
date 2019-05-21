@@ -48,14 +48,7 @@
 								<input class="form-control input-sm" name="nome" id="nome" type="text">
 							</div>
 						</div>
-						<div class="form-group pmd-textfield">
-							<label for="inputPassword3" class="col-sm-2 control-label">Nome de Usuário</label>
-							<div class="col-sm-10">
-								<div class="fg-line">
-									<input class="form-control input-sm" name="login" id="login" type="text">
-								</div>
-							</div>
-						</div>
+
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
 							<div class="col-sm-10">
@@ -67,6 +60,39 @@
 							<div class="col-sm-10">
 								<div class="fg-line">
 									<input class="form-control input-sm" name="senha" id="senha" type="password">
+								</div>
+							</div>
+						</div>
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Idade</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<input class="form-control input-sm" name="idade" type="text">
+								</div>
+							</div>
+						</div>
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Sexo</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<select class="select-simple form-control pmd-select2" name="sexo">
+										<option></option>
+										<option value="MASCULINO">Masculino</option>
+										<option value="FEMININO">Feminino</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Estado Civíl</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<select class="select-simple form-control pmd-select2" name="estadoCivil">
+										<option></option>
+										<option value="CASADO">Casado</option>
+										<option value="SOLTEIRO">Solteiro</option>
+										<option value="VIUVO">Viúvo</option>
+									</select>
 								</div>
 							</div>
 						</div>

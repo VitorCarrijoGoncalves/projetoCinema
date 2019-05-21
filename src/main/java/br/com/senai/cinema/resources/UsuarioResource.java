@@ -40,8 +40,10 @@ public class UsuarioResource {
 		Usuario objUsuario = usuarioService.findById(id);
 		objUsuario.setNome(usuario.getNome());
 		objUsuario.setEmail(usuario.getEmail());
-		objUsuario.setLogin(usuario.getLogin());
 		objUsuario.setSenha(usuario.getSenha());
+		objUsuario.setIdade(usuario.getIdade());
+		objUsuario.setSexo(usuario.getSexo());
+		objUsuario.setEstadoCivil(usuario.getEstadoCivil());
 		usuarioService.update(objUsuario);
 		
 		return ResponseEntity.ok().body("atualizado");

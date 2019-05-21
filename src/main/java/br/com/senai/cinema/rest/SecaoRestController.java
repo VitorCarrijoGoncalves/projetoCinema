@@ -14,22 +14,22 @@ import br.com.senai.cinema.services.SecaoService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
-@RequestMapping(value="/sessoes")
+@RequestMapping(value="/secoes")
 public class SecaoRestController {
 	
 	@Autowired
-	private SecaoService sessaoService;
+	private SecaoService secaoService;
 	
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Secao> find(@PathVariable Integer id) throws ObjectNotFoundException {
-		Secao sessao = sessaoService.findById(id);
-		return ResponseEntity.ok().body(sessao);
+		Secao secao = secaoService.findById(id);
+		return ResponseEntity.ok().body(secao);
 	}
 	
 	@GetMapping
 	public ResponseEntity<List<Secao>> findAll() {
-		List<Secao> sessoes = sessaoService.findAll();
-		return ResponseEntity.ok().body(sessoes);
+		List<Secao> secoes = secaoService.findAll();
+		return ResponseEntity.ok().body(secoes);
 	}
 
 }

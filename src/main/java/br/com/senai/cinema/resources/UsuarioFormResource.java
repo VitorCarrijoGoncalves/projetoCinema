@@ -26,17 +26,21 @@ public class UsuarioFormResource {
 	public String save(HttpServletRequest request, HttpServletResponse response)
 			throws ParseException, IllegalStateException, IOException {
 
-		String login = request.getParameter("login");
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
+		String sexo = request.getParameter("sexo");
+		String idade = request.getParameter("idade");
+		String estadoCivil = request.getParameter("estadoCivil");
 
 		Usuario usuario = new Usuario();
 		
-		usuario.setLogin(login);
 		usuario.setNome(nome);
 		usuario.setEmail(email);
 		usuario.setSenha(senha);
+		usuario.setSexo(sexo);
+		usuario.setIdade(idade);
+		usuario.setEstadoCivil(estadoCivil);
 		usuarioService.save(usuario);
 		response.sendRedirect("/formulario-de-usuario");
 		return "formulario-de-usuario";
