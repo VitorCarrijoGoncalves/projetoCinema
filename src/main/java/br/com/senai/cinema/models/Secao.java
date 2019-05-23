@@ -22,6 +22,7 @@ public class Secao {
 	private Integer id;
 	
 	private String data;
+//	private Date data;
 	
 	private float valorDoIngresso;
 	

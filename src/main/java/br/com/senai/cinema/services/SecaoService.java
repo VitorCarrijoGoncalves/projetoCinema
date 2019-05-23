@@ -1,10 +1,12 @@
 package br.com.senai.cinema.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.dto.SecaoDTO;
 import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.repositories.SecaoRepository;
@@ -50,6 +52,28 @@ public class SecaoService {
 	
 	public List<Secao> findAll() {
 		return secaoRepository.findAll();
+	}
+	
+	public List<SecaoDTO> fromDTO() {
+		
+		List<SecaoDTO> secoesDto = new ArrayList<SecaoDTO>();
+		
+		for (Secao secao : secaoRepository.findAll()) {
+			
+			SecaoDTO secaoDto = new SecaoDTO();
+			
+			secaoDto.setId(secao.getId());
+			secaoDto.setValorDoIngresso(secao.getValorDoIngresso());
+			secaoDto.setData(secao.getData());
+			secaoDto.setNumeroDaSala(secao.getIdSala().getNumero());
+			secaoDto.setNomeDoFilme(secao.getIdFilme().getNome());
+			
+			secoesDto.add(secaoDto);
+			
+		}
+		
+		return secoesDto;
+		
 	}
 	
 	public List<Ingresso> listAllIngressosBySecao(Secao secao) throws ObjectNotFoundException {

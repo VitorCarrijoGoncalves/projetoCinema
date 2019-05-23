@@ -1,10 +1,12 @@
 package br.com.senai.cinema.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.dto.FilmeDTO;
 import br.com.senai.cinema.models.Filme;
 import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.repositories.FilmeRepository;
@@ -51,15 +53,38 @@ public class FilmeService {
 	public List<Filme> findAll() {
 		return filmeRepository.findAll();
 	}
-
+	
+	public List<FilmeDTO> fromDTO() {
+		
+		List<FilmeDTO> filmesDto = new ArrayList<FilmeDTO>();
+		
+		for (Filme filme : filmeRepository.findAll()) {
+			
+			FilmeDTO filmeDto = new FilmeDTO();
+			
+			filmeDto.setId(filme.getId());
+			filmeDto.setDuracao(filme.getDuracao());
+			filmeDto.setGenero(filme.getGenero());
+			filmeDto.setNome(filme.getNome());
+			filmeDto.setSinopse(filme.getSinopse());
+			filmeDto.setStatus(filme.isStatus());
+			
+			filmesDto.add(filmeDto);
+			
+		}
+		
+		return filmesDto;
+		
+	}
+	
 	public List<Secao> listAllSecoesByFilme(Filme filme) {
 		return filme.getSecoes();
 	}
 	
-	public String gerarNome() {
-		return String.valueOf(new java.util.Date().getTime()) + ".jpg";
-	}
-	
+//	public String gerarNome() {
+//		return String.valueOf(new java.util.Date().getTime()) + ".jpg";
+//	}
+//	
 //	public Page<Filme> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 //		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 //		return filmeRepository.findAll(pageRequest);

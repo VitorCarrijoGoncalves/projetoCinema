@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.senai.cinema.dto.FilmeDTO;
 import br.com.senai.cinema.models.Filme;
 import br.com.senai.cinema.services.FilmeService;
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -26,10 +27,27 @@ public class FilmeRestController {
 		return ResponseEntity.ok().body(filme);
 	}
 	
+//	@GetMapping
+//	public ResponseEntity<List<Filme>> findAll() {
+//		List<Filme> filmes = filmeService.findAll();
+//		return ResponseEntity.ok().body(filmes);
+//	}
+	
 	@GetMapping
-	public ResponseEntity<List<Filme>> findAll() {
-		List<Filme> filmes = filmeService.findAll();
-		return ResponseEntity.ok().body(filmes);
+	public ResponseEntity<List<FilmeDTO>> findAllDTO() {
+		List<FilmeDTO> filmesDto = filmeService.fromDTO();
+		return ResponseEntity.ok().body(filmesDto);
 	}
+	
+//	@GetMapping
+//	public ResponseEntity<List<Filme>> post(String estadoCivil, String sexo) {
+//		return null;
+//	}
+//	
+//	@GetMapping
+//	public ResponseEntity<List<Filme>> get() {
+//		return null;
+//	}
+	
 
 }

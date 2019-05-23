@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.senai.cinema.dto.SecaoDTO;
 import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.services.SecaoService;
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -26,10 +27,16 @@ public class SecaoRestController {
 		return ResponseEntity.ok().body(secao);
 	}
 	
+//	@GetMapping
+//	public ResponseEntity<List<Secao>> findAll() {
+//		List<Secao> secoes = secaoService.findAll();
+//		return ResponseEntity.ok().body(secoes);
+//	}
+	
 	@GetMapping
-	public ResponseEntity<List<Secao>> findAll() {
-		List<Secao> secoes = secaoService.findAll();
-		return ResponseEntity.ok().body(secoes);
+	public ResponseEntity<List<SecaoDTO>> findAllDTO() {
+		List<SecaoDTO> secoesDto = secaoService.fromDTO();
+		return ResponseEntity.ok().body(secoesDto);
 	}
 
 }

@@ -50,7 +50,6 @@ public class SalaResource {
 		Sala objsala = salaService.findById(id);
 		objsala.setNumero(sala.getNumero());
 		objsala.setQuantidadeDeLugares(sala.getQuantidadeDeLugares());
-//		objsala.setSecoes(sala.getSecoes());
 		salaService.update(objsala);
 		
 		return ResponseEntity.ok().body("atualizado");
