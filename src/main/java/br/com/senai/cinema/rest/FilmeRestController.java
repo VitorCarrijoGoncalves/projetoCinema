@@ -36,8 +36,9 @@ public class FilmeRestController {
 	@GetMapping
 	public ResponseEntity<List<FilmeDTO>> findAllDTO() {
 		List<FilmeDTO> filmesDto = filmeService.fromDTO();
-		return ResponseEntity.ok().body(filmesDto);
+		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
 	}
+	
 	
 //	@GetMapping
 //	public ResponseEntity<List<Filme>> post(String estadoCivil, String sexo) {

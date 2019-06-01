@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.dto.UsuarioDTO;
 import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.repositories.UsuarioRepository;
@@ -27,6 +28,18 @@ public class UsuarioService {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Usuario.class.getName());
 		}
 		return Usuario;
+	}
+	
+	public Usuario findByEmail(String email) throws ObjectNotFoundException {
+		
+		Usuario usuario = usuarioRepository.findByEmail(email);
+		
+		if (usuario == null) {
+			throw new ObjectNotFoundException("Objeto não encontrado! Email = " + email + ", Tipo: " + Usuario.class.getName());
+		}
+		
+		return usuario;
+		
 	}
 	
 	public Usuario update(Usuario obj) {
@@ -54,6 +67,34 @@ public class UsuarioService {
 	
 	public List<Ingresso> listAllIngressosByUsuario(Usuario usuario) {
 		return usuario.getIngressos();
+	}
+	
+	public Usuario fromUsuario(UsuarioDTO loginDto) throws ObjectNotFoundException {
+		
+		Usuario usuario = findByEmail(loginDto.getEmail());
+		
+		return usuario;
+		
+	}
+	
+	public boolean validarUsuarioLogin(UsuarioDTO usuarioDto) throws ObjectNotFoundException {
+		
+		// Fazer validação para que não possa cadastrar mais de um usuário com o mesmo email
+		
+		Usuario usuario = findByEmail(usuarioDto.getEmail());
+		
+		if (usuario != null) {
+			
+			if (usuarioDto.getSenha().equals(usuario.getSenha())) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		} else {
+			return false;
+		}
+		
 	}
 	
 //	public Page<Usuario> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {

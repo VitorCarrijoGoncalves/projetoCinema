@@ -69,14 +69,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group pmd-textfield">
-							<label for="inputPassword3" class="col-sm-2 control-label">Hora</label>
-							<div class="col-sm-10">
-								<div class="fg-line">
-									<input type="time" name="hora" id="hora" class="form-control" />
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="form-group pmd-textfield"> -->
+<!-- 							<label for="inputPassword3" class="col-sm-2 control-label">Hora</label> -->
+<!-- 							<div class="col-sm-10"> -->
+<!-- 								<div class="fg-line"> -->
+<!-- 									<input type="time" name="hora" id="hora" class="form-control" /> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<div class="form-group pmd-textfield">
 							<label for="inputPassword3" class="col-sm-2 control-label">Valor do Ingresso</label>
 							<div class="col-sm-10">

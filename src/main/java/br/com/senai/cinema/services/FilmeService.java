@@ -81,6 +81,24 @@ public class FilmeService {
 		return filme.getSecoes();
 	}
 	
+	public List<FilmeDTO> getFilmesEmCartaz(List<FilmeDTO> filmesDto) {
+		
+		List<FilmeDTO> filmesEmCartaz = new ArrayList<FilmeDTO>();
+		
+		for (FilmeDTO filmeDto : filmesDto) {
+			
+			if (filmeDto.isStatus()) {
+				
+				filmesEmCartaz.add(filmeDto);
+				
+			}
+			
+		}
+		
+		return filmesEmCartaz;
+		
+	}
+	
 //	public String gerarNome() {
 //		return String.valueOf(new java.util.Date().getTime()) + ".jpg";
 //	}
