@@ -29,7 +29,11 @@ public class UsuarioRestController {
 	public ResponseEntity<UsuarioDTO> loginApp(@RequestBody UsuarioDTO usuarioDTO) throws Exception {
 		
 		boolean resultado = usuarioService.validarUsuarioLogin(usuarioDTO);
-		usuarioService.fromUsuario(usuarioDTO);
+		
+		// Aqui eu pego o usuário que está logando no app
+		Usuario usuario = usuarioService.fromUsuario(usuarioDTO);
+		// Aqui eu pego o usuário que está logando no app
+		
 		String[] detalhes = {"detalhe 1","detalhe 2"};
 		
 		if(!resultado) {
@@ -58,7 +62,7 @@ public class UsuarioRestController {
 		}
 		
 		
-		
 	}
+	
 
 }

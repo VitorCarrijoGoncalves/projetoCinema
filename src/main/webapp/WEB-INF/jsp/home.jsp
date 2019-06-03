@@ -27,10 +27,7 @@
 						<div class="pmd-card-title">
 						  <div class="media-left">
 							<a class="avatar-list-img" href="javascript:void(0);">
-<!-- 								<img src="http://propeller.in/components/list/img/40x40.png" width="40" height="40"> -->
-								<c:forEach items="${filmes}" var="filme">
-								<img src="${filme.capaDoFilme }" width="40" height="40">
-								</c:forEach>
+								<img src="http://propeller.in/components/list/img/40x40.png" width="40" height="40">
 							</a>
 						  </div>
 						  <div class="media-body media-middle">
@@ -53,7 +50,7 @@
 			</div>
 		</div>
 
-	</div><!--end content area-->
+	</div>
 
 <jsp:include page="includes/include-footer.jsp"/>
 

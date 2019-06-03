@@ -81,9 +81,9 @@ public class UsuarioService {
 		return usuario.getIngressos();
 	}
 	
-	public Usuario fromUsuario(UsuarioDTO loginDto) throws ObjectNotFoundException {
+	public Usuario fromUsuario(UsuarioDTO usuarioDTO) throws ObjectNotFoundException {
 		
-		Usuario usuario = findByEmail(loginDto.getEmail());
+		Usuario usuario = findByEmail(usuarioDTO.getEmail());
 		
 		return usuario;
 		
