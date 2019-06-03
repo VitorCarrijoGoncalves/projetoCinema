@@ -42,6 +42,18 @@ public class UsuarioService {
 		
 	}
 	
+	public boolean existeUsuarioCadastrado(String email) {
+		
+		Usuario usuario = usuarioRepository.findByEmail(email);
+		
+		if (usuario != null) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+	
 	public Usuario update(Usuario obj) {
 		if (obj.getId() != null) {
 			return usuarioRepository.save(obj); // id nulo, objeto inserido, id diferente de nulo, objeto a ser atualizado
@@ -93,6 +105,18 @@ public class UsuarioService {
 			
 		} else {
 			return false;
+		}
+		
+	}
+
+	public boolean validarCadastroDeUsuario(Usuario usuario) {
+		
+		boolean resultado = existeUsuarioCadastrado(usuario.getEmail());
+		
+		if (!resultado) {
+			return false;
+		} else {
+			return true;
 		}
 		
 	}
