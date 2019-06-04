@@ -56,7 +56,7 @@
 							<tr>
 								<th></th>
 								<th>Data</th>
-								<th>Hora</th>
+<!-- 								<th>Hora</th> -->
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
@@ -73,7 +73,7 @@
 								<input type="hidden" id="idSala" name="idSala" value="${secao.idSala }">
 							</td>
 							<td id="data" >${ secao.data }</td>
-							<td id="hora">${secao.hora }</td>
+<%-- 							<td id="hora">${secao.hora }</td> --%>
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>

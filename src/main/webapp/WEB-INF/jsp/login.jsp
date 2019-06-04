@@ -29,10 +29,10 @@
 				
 				<div class="pmd-card-body">
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Login</label>
+                        <label for="inputError1" class="control-label pmd-input-group-label">E-mail</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
-                            <input type="text" class="form-control" id="exampleInputAmount">
+                            <input type="text" class="form-control" id="email" name="email">
                         </div>
                     </div>
                     
@@ -40,7 +40,7 @@
                         <label for="inputError1" class="control-label pmd-input-group-label">Senha</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
-                            <input type="text" class="form-control" id="exampleInputAmount">
+                            <input type="text" class="form-control" id="senha" name="senha">
                         </div>
                     </div>
                 </div>

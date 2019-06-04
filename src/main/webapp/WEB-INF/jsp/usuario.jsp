@@ -55,10 +55,11 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>LOGIN</th>
 								<th>NOME</th>
 								<th>E-MAIL</th>
 								<th>SENHA</th>
+								<th>SEXO</th>
+								<th>ESTADO CIVIL</th>
 								<th>INGRESSOS</th>
 							</tr>
 						</thead>
@@ -67,10 +68,11 @@
 				<c:forEach var="usuario" items="${usuarios}">
 					<tr id="tr_${usuario.id }">
 						<td><input type="hidden" id="idUsuario" name="idUsuario" value="${usuario.id }"></td>
-						<td id="login">${ usuario.login }</td>
 						<td id="nome">${ usuario.nome }</td>
 						<td id="email">${ usuario.email }</td>
 						<td id="senha">${ usuario.senha }</td>
+						<td id="sexo">${ usuario.sexo }</td>
+						<td id="estadoCivil">${ usuario.estadoCivil }</td>
 						<td><a href="/usuario/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
 					</tr>
 				</c:forEach>
