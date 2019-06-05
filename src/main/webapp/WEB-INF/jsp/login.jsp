@@ -19,7 +19,7 @@
 <div class="logincard">
   	<div class="pmd-card card-default pmd-z-depth">
 		<div class="login-card">
-			<form>	
+			<form action="/login" method="post">	
 				<div class="pmd-card-title card-header-border text-center">
 					<div class="loginlogo">
 						<img src="themes/images/logo-icon.png" alt="Logo">
@@ -32,7 +32,7 @@
                         <label for="inputError1" class="control-label pmd-input-group-label">E-mail</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">perm_identity</i></div>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <input type="text" class="form-control" name="email" required="required">
                         </div>
                     </div>
                     
@@ -40,7 +40,7 @@
                         <label for="inputError1" class="control-label pmd-input-group-label">Senha</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="material-icons md-dark pmd-sm">lock_outline</i></div>
-                            <input type="text" class="form-control" id="senha" name="senha">
+                            <input type="text" class="form-control" name="senha" required="required">
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 							</label>
 						</div>
 					</div>
-					<a href="/home" type="button" class="btn pmd-ripple-effect btn-primary btn-block">Login</a>
+					<button type="submit" class="btn pmd-ripple-effect btn-primary btn-block">Login</button>
 				</div>
 			</form>
 		</div>
