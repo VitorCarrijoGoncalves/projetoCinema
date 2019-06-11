@@ -6,14 +6,25 @@ public class UsuarioDTO {
 		super();
 	}
 
-	public UsuarioDTO(String email, String senha) {
+	public UsuarioDTO(Integer id, String email, String senha) {
+		this.id = id;
 		this.email = email;
 		this.senha = senha;
 	}
+	
+	private Integer id;
 
 	private String email;
 	
 	private String senha;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;
@@ -33,7 +44,7 @@ public class UsuarioDTO {
 
 	@Override
 	public String toString() {
-		return "LoginDTO [email=" + email + ", senha=" + senha + "]";
+		return "UsuarioDTO [id=" + id + ", email=" + email + ", senha=" + senha + "]";
 	}
 	
 }

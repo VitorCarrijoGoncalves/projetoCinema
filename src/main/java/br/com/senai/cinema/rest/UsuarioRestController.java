@@ -31,7 +31,7 @@ public class UsuarioRestController {
 		boolean resultado = usuarioService.validarUsuarioLogin(usuarioDTO);
 		
 		// Aqui eu pego o usuário que está logando no app
-		Usuario usuario = usuarioService.fromUsuario(usuarioDTO);
+		//Usuario usuario = usuarioService.fromUsuario(usuarioDTO);
 		// Aqui eu pego o usuário que está logando no app
 		
 		String[] detalhes = {"detalhe 1","detalhe 2"};

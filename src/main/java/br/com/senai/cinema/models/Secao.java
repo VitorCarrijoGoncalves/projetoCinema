@@ -22,7 +22,8 @@ public class Secao {
 	private Integer id;
 	
 	private String data;
-//	private Date data;
+	
+	private String hora;
 	
 	private float valorDoIngresso;
 	
@@ -55,7 +56,15 @@ public class Secao {
 	public void setData(String data) {
 		this.data = data;
 	}
-	
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
 	public float getValorDoIngresso() {
 		return valorDoIngresso;
 	}
@@ -112,6 +121,5 @@ public class Secao {
 			return false;
 		return true;
 	}
-	
-	
+
 }

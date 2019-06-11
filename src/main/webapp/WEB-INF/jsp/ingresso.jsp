@@ -61,6 +61,7 @@
 								<th>VALOR</th>
 								<th>FILME</th>
 								<th>SALA</th>
+								<th>TIPO DE INGRESSO</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -73,8 +74,22 @@
 								<input type="hidden" id="idSecao" name="idSecao" value="${ingresso.idSecao }">
 							</td>
 							<td id="nome">${ ingresso.idUsuario.nome }</td>
-							<td id="data">${ ingresso.idSecao.data }</td> <!-- Exibir aqui data e hora do filme em formato em portugues -->
-							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td>
+							<td id="data">${ ingresso.idSecao.data }</td>
+							<td id="hora">${ ingresso.idSecao.hora }</td> 
+							
+							<c:choose>
+							    <c:when test="${ingresso.tipoIngresso == 'Meia'}">
+							        <td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso / 2 }</td>
+							    </c:when>    
+							    <c:otherwise>
+							        <td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td>
+							    </c:otherwise>
+							</c:choose>
+							
+							
+<%-- 							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td> --%>
+							
+							
 							<td id="filme">${ ingresso.idSecao.idFilme.nome }</td>
 							<td id="sala">${ ingresso.idSecao.idSala.numero }</td>
 							<td id="tipoIngresso">${ ingresso.tipoIngresso}</td>

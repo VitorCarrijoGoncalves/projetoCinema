@@ -65,6 +65,7 @@ public class SecaoService {
 			secaoDto.setId(secao.getId());
 			secaoDto.setValorDoIngresso(secao.getValorDoIngresso());
 			secaoDto.setData(secao.getData());
+			secaoDto.setHora(secao.getHora());
 			secaoDto.setNumeroDaSala(secao.getIdSala().getNumero());
 			secaoDto.setNomeDoFilme(secao.getIdFilme().getNome());
 			
@@ -80,9 +81,14 @@ public class SecaoService {
 		return secao.getIngressos();
 	}
 	
-//	public Page<Secao> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
-//		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return secaoRepository.findAll(pageRequest);
-//	} // método utilizado para fazer a paginação(exibição) das Secaos, por página
+	public String convertData(String data) {
+		
+		String ano = data.substring(0, 4);
+		String mes = data.substring(5, 7);
+		String dia = data.substring(8, 10);
+		String novaData = dia + "/" + mes + "/" + ano;
+		return novaData;
+		
+	}
 	
 }

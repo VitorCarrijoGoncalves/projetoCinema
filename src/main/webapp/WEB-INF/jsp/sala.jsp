@@ -57,7 +57,7 @@
 								<th></th>
 								<th>NÚMERO</th>
 								<th>QTDE. DE LUGARES</th>
-								<th>SEÇÕES</th>
+<!-- 								<th>SEÇÕES</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -67,7 +67,7 @@
 								<td><input type="hidden" id="idSala" name="idSala" value="${sala.id }"></td>
 								<td id="numero">${ sala.numero }</td>
 								<td id="quantidadeDeLugares">${ sala.quantidadeDeLugares }</td>
-								<td><a href="/sala/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+<!-- 								<td><a href="/sala/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
 							</tr>
 					</c:forEach>
 							

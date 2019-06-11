@@ -53,8 +53,6 @@ public class SecaoFormResource {
 		String idSala = request.getParameter("idSala");
 		String data = request.getParameter("data");
 		
-//	    Date date = new SimpleDateFormat("dd/MM/yyyy").parse(data); 
-		
 		String hora = request.getParameter("hora");
 		float valorDoIngresso = Float.parseFloat(request.getParameter("valorDoIngresso"));
 		
@@ -65,7 +63,8 @@ public class SecaoFormResource {
 		
 		secao.setIdFilme(filme);
 		secao.setIdSala(sala);
-		secao.setData(data);
+		secao.setData(secaoService.convertData(data));
+		secao.setHora(hora);
 		secao.setValorDoIngresso(valorDoIngresso);
 		secaoService.save(secao);
 		response.sendRedirect("/formulario-de-secao");

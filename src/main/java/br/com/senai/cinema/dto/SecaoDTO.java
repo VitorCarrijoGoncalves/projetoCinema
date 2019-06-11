@@ -6,6 +6,8 @@ public class SecaoDTO {
 	
 	private String data;
 	
+	private String hora;
+	
 	private float valorDoIngresso;
 	
 	private String numeroDaSala;
@@ -26,6 +28,14 @@ public class SecaoDTO {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 
 	public float getValorDoIngresso() {
@@ -54,8 +64,8 @@ public class SecaoDTO {
 
 	@Override
 	public String toString() {
-		return "SecaoDTO [id=" + id + ", data=" + data + ", valorDoIngresso=" + valorDoIngresso + ", numeroDaSala="
-				+ numeroDaSala + ", nomeDoFilme=" + nomeDoFilme + "]";
+		return "SecaoDTO [id=" + id + ", data=" + data + ", hora=" + hora + ", valorDoIngresso=" + valorDoIngresso
+				+ ", numeroDaSala=" + numeroDaSala + ", nomeDoFilme=" + nomeDoFilme + "]";
 	}
-	
+
 }

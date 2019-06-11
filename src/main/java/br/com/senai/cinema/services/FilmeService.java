@@ -99,13 +99,4 @@ public class FilmeService {
 		
 	}
 	
-//	public String gerarNome() {
-//		return String.valueOf(new java.util.Date().getTime()) + ".jpg";
-//	}
-//	
-//	public Page<Filme> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
-//		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return filmeRepository.findAll(pageRequest);
-//	} // método utilizado para fazer a paginação(exibição) das Filmes, por página
-	
 }

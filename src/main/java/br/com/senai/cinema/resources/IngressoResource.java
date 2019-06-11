@@ -24,7 +24,7 @@ public class IngressoResource {
 
 	@Autowired
 	private IngressoService ingressoService;
-
+	
 	@GetMapping
 	public String ingressos(HttpServletRequest request) {
 

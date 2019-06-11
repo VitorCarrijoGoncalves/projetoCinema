@@ -98,6 +98,7 @@ public class UsuarioService {
 		if (usuario != null) {
 			
 			if (usuarioDto.getSenha().equals(usuario.getSenha())) {
+				usuarioDto.setId(usuario.getId());
 				return true;
 			} else {
 				return false;
@@ -114,9 +115,9 @@ public class UsuarioService {
 		boolean resultado = existeUsuarioCadastrado(usuario.getEmail());
 		
 		if (!resultado) {
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		}
 		
 	}

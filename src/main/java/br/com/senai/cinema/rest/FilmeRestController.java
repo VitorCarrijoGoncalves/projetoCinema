@@ -27,28 +27,10 @@ public class FilmeRestController {
 		return ResponseEntity.ok().body(filme);
 	}
 	
-//	@GetMapping
-//	public ResponseEntity<List<Filme>> findAll() {
-//		List<Filme> filmes = filmeService.findAll();
-//		return ResponseEntity.ok().body(filmes);
-//	}
-	
 	@GetMapping
 	public ResponseEntity<List<FilmeDTO>> findAllDTO() {
 		List<FilmeDTO> filmesDto = filmeService.fromDTO();
 		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
 	}
 	
-	
-//	@GetMapping
-//	public ResponseEntity<List<Filme>> post(String estadoCivil, String sexo) {
-//		return null;
-//	}
-//	
-//	@GetMapping
-//	public ResponseEntity<List<Filme>> get() {
-//		return null;
-//	}
-	
-
 }

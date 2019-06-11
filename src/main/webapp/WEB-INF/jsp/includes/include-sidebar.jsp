@@ -231,7 +231,7 @@
 	 M1.059,8.47h6.99v3.177h-6.99V8.47z M9.108,11.647V8.47h3.599v3.177H9.108z M13.766,11.647V8.47h3.176v3.177H13.766z M16.942,7.412
 	h-3.176V4.235h3.176V7.412L16.942,7.412z"/>
 </svg></i> 
-				<span class="media-body">Seções</span>
+				<span class="media-body">Sessões</span>
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">

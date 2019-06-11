@@ -55,11 +55,12 @@
 						<thead>
 							<tr>
 								<th></th>
-								<th>LOGIN</th>
 								<th>NOME</th>
 								<th>E-MAIL</th>
-								<th>SENHA</th>
-								<th>INGRESSOS</th>
+								<th>IDADE</th>
+								<th>SEXO</th>
+								<th>ESTADO CIVÍL</th>
+<!-- 								<th>SENHA</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -67,11 +68,13 @@
 				<c:forEach var="usuario" items="${usuarios}">
 					<tr id="tr_${usuario.id }">
 						<td><input type="hidden" id="idUsuario" name="idUsuario" value="${usuario.id }"></td>
-						<td id="login">${ usuario.login }</td>
 						<td id="nome">${ usuario.nome }</td>
 						<td id="email">${ usuario.email }</td>
-						<td id="senha">${ usuario.senha }</td>
-						<td><a href="/usuario/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+						<td id="idade">${ usuario.idade }</td>
+						<td id="sexo">${ usuario.sexo }</td>
+						<td id="estadoCivil">${ usuario.estadoCivil }</td>
+<%-- 						<td id="senha">${ usuario.senha }</td> --%>
+<!-- 						<td><a href="/usuario/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
 					</tr>
 				</c:forEach>
 				
@@ -100,17 +103,33 @@
 						<input type="text" class="mat-input form-control" id="nomeModal" name="nomeModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield">
-						<label for="first-name">Nome de Usuário</label>
-						<input type="text" class="mat-input form-control" id="loginModal" name="loginModal">
-					</div>
-					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">E-mail</label>
 						<input type="text" class="mat-input form-control" id="emailModal" name="emailModal">
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield">
-						<label for="first-name">Senha</label>
-						<input type="text" class="mat-input form-control" id="senhaModal" name="senhaModal">
+						<label for="first-name">Idade</label>
+						<input type="text" class="mat-input form-control" id="idadeModal" name="idadeModal">
 					</div>
+					<div class="form-group pmd-textfield pmd-textfield">
+						<label for="first-name">Sexo</label>
+						<select class="select-simple form-control pmd-select2" id="sexoModal" name="sexoModal">
+							<option value="MASCULINO">Masculino</option>
+							<option value="FEMININO">Feminino</option>
+						</select>
+					</div>
+					<div class="form-group pmd-textfield pmd-textfield">
+						<label for="first-name">Estado Civíl</label>
+						<select class="select-simple form-control pmd-select2" id="estadoCivilModal" name="estadoCivilModal">
+							<option value="SOLTEIRO">Solteiro</option>
+							<option value="CASADO">Casado</option>
+							<option value="VIUVO">Viúvo</option>
+							<option value="DIVORCIADO">Divorciado</option>
+						</select>
+					</div>
+<!-- 					<div class="form-group pmd-textfield pmd-textfield"> -->
+<!-- 						<label for="first-name">Senha</label> -->
+<!-- 						<input type="text" class="mat-input form-control" id="senhaModal" name="senhaModal"> -->
+<!-- 					</div> -->
 				</form>
 			</div>
 			<div class="pmd-modal-action">
@@ -196,22 +215,22 @@
 				});
 			});
 
-			$('#listagem-de-ingressos').click(function () {
+// 			$('#listagem-de-ingressos').click(function () {
 				
-				$.ajax({
-					method : "GET",
-					contentType : 'application/json',
-					url : "/usuario/ingressos/" + $("#idUsuario").val(),
-					dataType : "json",
-					success : function() {
+// 				$.ajax({
+// 					method : "GET",
+// 					contentType : 'application/json',
+// 					url : "/usuario/ingressos/" + $("#idUsuario").val(),
+// 					dataType : "json",
+// 					success : function() {
 						
-					},
-					error : function(errResponse) {
-						console.log("error", errResponse);
-					}
-				});
+// 					},
+// 					error : function(errResponse) {
+// 						console.log("error", errResponse);
+// 					}
+// 				});
 				
-			});
+// 			});
 
 		});
 	</script>

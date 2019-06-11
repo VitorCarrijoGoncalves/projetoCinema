@@ -64,7 +64,7 @@
 											<th>SINOPSE</th>
 											<th>DURAÇÃO</th>
 											<th>STATUS</th>
-											<th>SEÇÕES</th>
+<!-- 											<th>SEÇÕES</th> -->
 										</tr>
 									</thead>
 									<tbody>
@@ -73,13 +73,17 @@
 												<td><input type="hidden" id="idFilme" name="idFilme" value="${filme.id }"></td>
 												<td id="td_nome">${ filme.nome }</td>
 												<td id="td_genero">${ filme.genero }</td>
-												<td id="td_sinopse">S<input type="hidden" value="${filme.sinopse }"></td>
+												<td id="td_sinopse">Sinopse<input type="hidden" value="${filme.sinopse }"></td>
 												<td id="td_duracao">${ filme.duracao }</td>
-												<c:if test="${filme.status == TRUE}">
-													<td id="td_status">Filme em Lançamento</td>
-												</c:if>
-												<td id="td_status">Filme fora de Lançamento</td>
-												<td><a href="/filme/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td>
+												<c:choose>
+												    <c:when test="${filme.status == true}">
+												        <td id="td_status">Filme em Lançamento</td> 
+												    </c:when>    
+												    <c:otherwise>
+												        <td id="td_status">Filme fora de Lançamento</td> 
+												    </c:otherwise>
+												</c:choose>
+<!-- 												<td><a href="/filme/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
 											</tr>
 
 										</c:forEach>
@@ -125,7 +129,7 @@
 							<label for="first-name">Status</label> 
 							<select class="select-simple form-control pmd-select2" id="statusModal" name="statusModal">
 								<option value="TRUE">Lançamento</option>
-								<option value="FALSE">Não-Lançamento</option>
+								<option value="FALSE">Fora de Lançamento</option>
 							</select>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield">

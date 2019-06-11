@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Form Examples | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Cadastro de Seções</title>
+<title>Cadastro de Sessões</title>
 
 <jsp:include page="includes/include-formulario-head.jsp"/>
 
@@ -24,7 +24,7 @@
 	
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Cadastro de Seções</span>
+			<span>Cadastro de Sessões</span>
 		</h1>
 			
 		<ol class="breadcrumb text-left">
@@ -42,7 +42,9 @@
 								<select class="select-simple form-control pmd-select2" id="idFilme" name="idFilme">
 									<option></option>
 									<c:forEach var="filme" items="${filmes}">
-										<option value="${filme.id }">${filme.nome }</option>
+										<c:if test="${filme.status == true }">
+											<option value="${filme.id }">${filme.nome }</option>
+										</c:if>
 									</c:forEach>
 								</select>
 							</div>
@@ -69,14 +71,14 @@
 								</div>
 							</div>
 						</div>
-<!-- 						<div class="form-group pmd-textfield"> -->
-<!-- 							<label for="inputPassword3" class="col-sm-2 control-label">Hora</label> -->
-<!-- 							<div class="col-sm-10"> -->
-<!-- 								<div class="fg-line"> -->
-<!-- 									<input type="time" name="hora" id="hora" class="form-control" /> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
+						<div class="form-group pmd-textfield">
+							<label for="inputPassword3" class="col-sm-2 control-label">Hora</label>
+							<div class="col-sm-10">
+								<div class="fg-line">
+									<input class="form-control input-sm" name="hora" type="text">
+								</div>
+							</div>
+						</div>
 						<div class="form-group pmd-textfield">
 							<label for="inputPassword3" class="col-sm-2 control-label">Valor do Ingresso</label>
 							<div class="col-sm-10">

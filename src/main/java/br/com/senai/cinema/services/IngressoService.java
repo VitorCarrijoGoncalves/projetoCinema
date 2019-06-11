@@ -5,8 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.senai.cinema.dto.IngressoDTO;
 import br.com.senai.cinema.models.Ingresso;
+import br.com.senai.cinema.models.Secao;
+import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.repositories.IngressoRepository;
+import br.com.senai.cinema.repositories.SecaoRepository;
+import br.com.senai.cinema.repositories.UsuarioRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Service
@@ -14,6 +19,12 @@ public class IngressoService {
 
 	@Autowired
 	private IngressoRepository ingressoRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private SecaoRepository secaoRepository;
 	
 	public Ingresso save(Ingresso obj) {
 		obj.setId(null); // o Objeto novo a ser inserido precisa o ter p id nulo
@@ -51,9 +62,36 @@ public class IngressoService {
 		return ingressoRepository.findAll();
 	}
 	
-//	public Page<Ingresso> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
-//		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-//		return ingressoRepository.findAll(pageRequest);
-//	} // método utilizado para fazer a paginação(exibição) das Ingressos, por página
+	public boolean validarIngresso(IngressoDTO ingressoDTO) {
+		
+		Usuario usuario = usuarioRepository.findById(ingressoDTO.getIdUsuario());
+		Secao secao = secaoRepository.findById(ingressoDTO.getIdSecao());
+		
+		if (usuario == null || secao == null) {
+			return false;
+		} else {
+			return true;
+		}
+		
+		
+	}
+	
+	public Ingresso convertIngresso(IngressoDTO ingressoDTO) {
+		
+		Ingresso ingresso = new Ingresso();
+		
+		Usuario usuario = usuarioRepository.findById(ingressoDTO.getIdUsuario());
+		
+		ingresso.setIdUsuario(usuario);
+		
+		Secao secao = secaoRepository.findById(ingressoDTO.getIdSecao());
+		
+		ingresso.setIdSecao(secao);
+		
+		ingresso.setTipoIngresso(ingressoDTO.getTipoIngresso());
+		
+		return ingresso;
+		
+	}
 	
 }

@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Data Table | Propeller - Admin Dashboard">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Seção | Cinema Propeller</title>
+<title>Sessão | Cinema Propeller</title>
 
 <jsp:include page="includes/include-listagem-head.jsp"/>
 
@@ -24,7 +24,7 @@
 <div class="container-fluid full-width-container data-tables">
 		<!-- Title -->
 		<h1 class="section-title" id="services">
-			<span>Seções</span>
+			<span>Sessões</span>
 		</h1><!-- End Title -->
 	
 		<!--breadcrum start-->
@@ -60,7 +60,7 @@
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
-								<th>Ingressos</th>
+<!-- 								<th>Ingressos</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -77,7 +77,7 @@
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>
-							<td><a href="/secao/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td>
+<!-- 							<td><a href="/secao/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td> -->
 						</tr>
 				</c:forEach>
 							
