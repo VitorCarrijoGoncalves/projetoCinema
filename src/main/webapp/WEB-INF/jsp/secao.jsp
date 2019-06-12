@@ -96,7 +96,7 @@
 		<div class="modal-content">
 			<div class="modal-header bordered">
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-				<h2 class="pmd-card-title-text">Alterar Seção</h2>
+				<h2 class="pmd-card-title-text">Alterar Sessão</h2>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
@@ -215,22 +215,22 @@
 				});
 			});
 
-			$('#listagem-de-ingressos').click(function () {
+// 			$('#listagem-de-ingressos').click(function () {
 				
-				$.ajax({
-					method : "GET",
-					contentType : 'application/json',
-					url : "/secao/ingressos/" + $("#idSecao").val(),
-					dataType : "json",
-					success : function() {
+// 				$.ajax({
+// 					method : "GET",
+// 					contentType : 'application/json',
+// 					url : "/secao/ingressos/" + $("#idSecao").val(),
+// 					dataType : "json",
+// 					success : function() {
 						
-					},
-					error : function(errResponse) {
-						console.log("error", errResponse);
-					}
-				});
+// 					},
+// 					error : function(errResponse) {
+// 						console.log("error", errResponse);
+// 					}
+// 				});
 				
-			});
+// 			});
 
 		});
 	</script>

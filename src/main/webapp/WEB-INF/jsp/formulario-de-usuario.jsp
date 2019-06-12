@@ -35,12 +35,12 @@
 		<div class="section section-custom billinfo"> 
 			<div class="pmd-card pmd-z-depth">
 				<div class="pmd-card-body">	
-					 <div class="alert alert-success" id="mensagem-sucesso">
-	    				Usuário cadastrado com sucesso!
-	  				</div>
-	  				  <div class="alert alert-danger" id="mensagem-erro">
-    					 Usuário não cadastrada!
-  					</div>
+<!-- 					 <div class="alert alert-success" id="mensagem-sucesso"> -->
+<!-- 	    				Usuário cadastrado com sucesso! -->
+<!-- 	  				</div> -->
+<!-- 	  				  <div class="alert alert-danger" id="mensagem-erro"> -->
+<!--     					 Usuário não cadastrada! -->
+<!--   					</div> -->
 					<form class="form-horizontal" role="form" method="post" action="/formulario-de-usuario/novo-cadastro">
 						<div class="form-group pmd-textfield">
 							<label for="inputEmail3" class="col-sm-2 control-label">Nome Completo</label>

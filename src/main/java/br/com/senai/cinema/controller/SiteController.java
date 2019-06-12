@@ -71,24 +71,24 @@ public class SiteController {
 		return "formulario-de-usuario";
 	}
 	
-	@RequestMapping(value="/filme/secoes")
-	public String listagemDeSecaoPorFilme() {
-		return "listagem-de-secoes-por-filme";
-	}
+//	@RequestMapping(value="/filme/secoes")
+//	public String listagemDeSecaoPorFilme() {
+//		return "listagem-de-secoes-por-filme";
+//	}
 	
-	@RequestMapping(value="/sala/secoes")
-	public String listagemDeSecaoPorSala() {
-		return "listagem-de-secoes-por-sala";
-	}
+//	@RequestMapping(value="/sala/secoes")
+//	public String listagemDeSecaoPorSala() {
+//		return "listagem-de-secoes-por-sala";
+//	}
 	
-	@RequestMapping(value="/secao/ingressos")
-	public String listagemDeIngressosPorSecao() {
-		return "listagem-de-ingressos-por-secao";
-	}
+//	@RequestMapping(value="/secao/ingressos")
+//	public String listagemDeIngressosPorSecao() {
+//		return "listagem-de-ingressos-por-secao";
+//	}
 	
-	@RequestMapping(value="/usuario/ingressos")
-	public String listagemDeIngressosPorUsuario() {
-		return "listagem-de-ingressos-por-usuario";
-	}
+//	@RequestMapping(value="/usuario/ingressos")
+//	public String listagemDeIngressosPorUsuario() {
+//		return "listagem-de-ingressos-por-usuario";
+//	}
 	
 }

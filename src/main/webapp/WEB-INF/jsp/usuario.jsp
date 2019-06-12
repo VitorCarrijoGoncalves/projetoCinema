@@ -174,9 +174,10 @@
 				e.preventDefault();
 				$("#idUsuarioModal").val($("#idUsuario").val());
 				$("#nomeModal").val($("#nome").text());
-				$("#loginModal").val($("#login").text());
 				$("#emailModal").val($("#email").text());
-				$("#senhaModal").val($("#senha").text());
+				$("#idadeModal").val($("#idade").text());
+				$("#sexoModal").val($("#sexo").text());
+				$("#estadoCivilModal").val($("#estadoCivil").text());
 			});
 
 			$("#btn-update").click(function(e) {
@@ -184,9 +185,10 @@
 				var usuario = {
 					id : $("#idUsuarioModal").val(),
 					nome : $("#nomeModal").val(),
-					login : $("#loginModal").val(),
 					email : $("#emailModal").val(),
-					senha : $("#senhaModal").val()
+					idade : $("#idadeModal").val(),
+					sexo : $("#sexoModal").val(),
+					estadoCivil : $("#estadoCivilModal").val()
 				};
 				
 				console.log(usuario);
@@ -204,9 +206,10 @@
 						//limpar a tela
 						$("#idUsuarioModal").val("");
 						$("#nomeModal").val("");
-						$("#loginModal").val("");
 						$("#emailModal").val("");
-						$("#senhaModal").val("");
+						$("#idadeModal").val("");
+						$("#sexoModal").val("");
+						$("#estadoCivilModal").val("");
 						console.log("Objeto usuário depois do sucesso: ", objUsuario);
 					},
 					error : function(errResponse) {
@@ -214,23 +217,6 @@
 					}
 				});
 			});
-
-// 			$('#listagem-de-ingressos').click(function () {
-				
-// 				$.ajax({
-// 					method : "GET",
-// 					contentType : 'application/json',
-// 					url : "/usuario/ingressos/" + $("#idUsuario").val(),
-// 					dataType : "json",
-// 					success : function() {
-						
-// 					},
-// 					error : function(errResponse) {
-// 						console.log("error", errResponse);
-// 					}
-// 				});
-				
-// 			});
 
 		});
 	</script>

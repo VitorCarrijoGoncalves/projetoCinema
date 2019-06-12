@@ -48,7 +48,7 @@
 							</div>
 						</div>
 						<div class="form-group pmd-textfield">
-							<label for="inputPassword3" class="col-sm-2 control-label">Seção</label>
+							<label for="inputPassword3" class="col-sm-2 control-label">Sessão</label>
 							<div class="col-sm-10">
 								<div class="fg-line">
 									<select class="select-simple form-control pmd-select2" id="idSecao" name="idSecao">
