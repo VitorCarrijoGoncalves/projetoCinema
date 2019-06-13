@@ -18,6 +18,7 @@ import br.com.senai.cinema.dto.IngressoDTO;
 import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.services.IngressoService;
 import br.com.senai.cinema.util.ErrorResponse;
+
 @RestController
 @RequestMapping(value="/ingresso")
 public class IngressoRestController {

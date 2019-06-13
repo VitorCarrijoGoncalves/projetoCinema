@@ -107,10 +107,10 @@ public class IngressoService {
 	
 	public void gerarComprovanteDePagamento(Ingresso ingresso) throws FileNotFoundException, DocumentException {
 		
-		String enderecoArquivo = "C:\\Users\\Vitor\\Downloads\\PDFs" + new Date() + ingresso.getIdUsuario().getNome() + ".pdf";
+		String enderecoArquivo = "C:\\Users\\Vitor\\Downloads\\pdf\\" + new Date() + ingresso.getIdUsuario().getNome() + ".pdf";
 		
 		Document document = new Document();
-		PdfWriter.getInstance(document, new FileOutputStream(enderecoArquivo.replaceAll(" ", "-")));
+		PdfWriter.getInstance(document, new FileOutputStream(enderecoArquivo.replaceAll(" ", "-").replaceAll(":", "")));
 		 
 		document.open();
 		Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
