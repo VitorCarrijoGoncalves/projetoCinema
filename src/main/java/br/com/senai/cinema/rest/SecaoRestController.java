@@ -38,5 +38,11 @@ public class SecaoRestController {
 		List<SecaoDTO> secoesDto = secaoService.fromDTO();
 		return ResponseEntity.ok().body(secoesDto);
 	}
-
+	
+//	@GetMapping(value="/mais-vendidos")
+//	public ResponseEntity<List<Filme>> find() {
+//		List<Filme> filmes = filmeService.getFilmeMaisVendido();
+//		return ResponseEntity.ok().body(filmes);
+//	}
+	
 }

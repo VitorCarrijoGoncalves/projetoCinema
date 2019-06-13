@@ -33,4 +33,10 @@ public class FilmeRestController {
 		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
 	}
 	
+	@GetMapping(value="/mais-vendidos")
+	public ResponseEntity<List<Filme>> find() {
+		List<Filme> filmes = filmeService.getFilmeMaisVendido();
+		return ResponseEntity.ok().body(filmes);
+	}
+	
 }

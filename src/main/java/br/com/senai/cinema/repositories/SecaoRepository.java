@@ -12,5 +12,16 @@ public interface SecaoRepository extends JpaRepository<Secao, Integer> {
 	
 	void deleteById(Integer id);
 	
+	
+	
+	
+//	@Query(value="SELECT ingresso.id, COUNT(ingresso.id)AS "
+//			+ "TOTALVENDIDO,SECAO.ID_FILME_ID AS IDFILME FROM SECAO INNER JOIN "
+//			+ "iNGRESSO ON iNGRESSO.ID_SECAO_ID = SECAO.ID INNER JOIN USUARIO ON "
+//			+ "iNGRESSO.ID_USUARIO_ID = USUARIO.ID GROUP BY SECAO.ID_FILME_ID ,ingresso.id ORDER BY ingresso.id, "
+//			+ "TOTALVENDIDO DESC LIMIT 1;", nativeQuery = true)
+//	List<Filme> findFilmeByTOP();
+	
+	
 }
 

@@ -99,4 +99,11 @@ public class FilmeService {
 		
 	}
 	
+	public List<Filme> getFilmeMaisVendido() {
+		return filmeRepository.findFilmeByTOP();
+	}
+	
+	
+	
+	
 }
