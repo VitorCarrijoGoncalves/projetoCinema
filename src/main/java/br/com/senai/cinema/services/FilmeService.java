@@ -109,7 +109,35 @@ public class FilmeService {
 	public Integer getFilmeEstciv(Usuario user) {
 		return Integer.parseInt(filmeRepository.findFilmeByTOPestciv(user.getEstadoCivil()));
 	}
-	
+	public Integer getFilmeIdade(Usuario user) {
+		String idmin = ""; 
+		String idmax = "";
+		int idade = 0;
+		idade = Integer.parseInt(user.getIdade());
+		
+		if(idade >=0 && idade <=11) {
+			idmin ="0";
+			idmax = "11";
+		}
+		else if(idade >=12 && idade <=17) {
+			idmin ="12";
+			idmax = "17";
+		}
+		else if(idade >=18 && idade <=29) {
+			idmin ="18";
+			idmax = "29";
+		}
+		else if(idade >=30 && idade <=60) {
+			idmin ="30";
+			idmax = "59";
+		}
+		else {
+			idmin = "60";
+			idmax = "110";
+		}
+		
+		return Integer.parseInt(filmeRepository.findFilmeByTOPidade(idmin, idmax));
+	}
 	
 	
 	
