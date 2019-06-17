@@ -103,6 +103,9 @@ public class FilmeService {
 	public Integer getFilmeMaisVendido() {
 		return Integer.parseInt(filmeRepository.findFilmeByTOP());
 	}
+	public Integer getFilmeSexo(Usuario user) {
+		return Integer.parseInt(filmeRepository.findFilmeByTOPSexo(user.getSexo()));
+	}
 	
 	
 	
