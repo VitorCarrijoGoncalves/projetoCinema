@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.senai.cinema.dto.FilmeDTO;
 import br.com.senai.cinema.models.Filme;
 import br.com.senai.cinema.models.Secao;
+import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.repositories.FilmeRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -99,8 +100,8 @@ public class FilmeService {
 		
 	}
 	
-	public List<Filme> getFilmeMaisVendido() {
-		return filmeRepository.findFilmeByTOP();
+	public Integer getFilmeMaisVendido() {
+		return Integer.parseInt(filmeRepository.findFilmeByTOP());
 	}
 	
 	
