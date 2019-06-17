@@ -57,16 +57,16 @@ public class FilmeResource {
 		return ResponseEntity.ok().body("atualizado");
 	}
 
-	@GetMapping("/secoes/{id}")
-	public String listAllSecoesByFilme(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException {
-		
-		Filme filme = filmeService.findById(idFilme);
-
-		List<Secao> secoes = filmeService.listAllSecoesByFilme(filme);
-
-		request.setAttribute("secoes", secoes);
-		return "listagem-de-secoes-por-filme";
-	}
+//	@GetMapping("/secoes/{id}")
+//	public String listAllSecoesByFilme(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException {
+//		
+//		Filme filme = filmeService.findById(idFilme);
+//
+//		List<Secao> secoes = filmeService.listAllSecoesByFilme(filme);
+//
+//		request.setAttribute("secoes", secoes);
+//		return "listagem-de-secoes-por-filme";
+//	}
 	
 	@GetMapping("/get-sinopse/{id}")
 	public String getSinopse(@PathVariable Integer idFilme, HttpServletRequest request) throws ObjectNotFoundException {

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.senai.cinema.dto.FilmeDTO;
 import br.com.senai.cinema.models.Filme;
-import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.repositories.FilmeRepository;
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -55,7 +54,7 @@ public class FilmeService {
 		return filmeRepository.findAll();
 	}
 	
-	public List<FilmeDTO> fromDTO() {
+	public List<FilmeDTO> convertAllFilmesfromDTO() {
 		
 		List<FilmeDTO> filmesDto = new ArrayList<FilmeDTO>();
 		
@@ -78,9 +77,32 @@ public class FilmeService {
 		
 	}
 	
-	public List<Secao> listAllSecoesByFilme(Filme filme) {
-		return filme.getSecoes();
+	public List<FilmeDTO> convertListFilmesFromDto(List<Filme> filmes) {
+		
+		List<FilmeDTO> filmesDto = new ArrayList<FilmeDTO>();
+		
+		for (Filme filme : filmes) {
+			
+			FilmeDTO filmeDto = new FilmeDTO();
+			
+			filmeDto.setId(filme.getId());
+			filmeDto.setDuracao(filme.getDuracao());
+			filmeDto.setGenero(filme.getGenero());
+			filmeDto.setNome(filme.getNome());
+			filmeDto.setSinopse(filme.getSinopse());
+			filmeDto.setStatus(filme.isStatus());
+			
+			filmesDto.add(filmeDto);
+			
+		}
+		
+		return filmesDto;
+		
 	}
+	
+//	public List<Secao> listAllSecoesByFilme(Filme filme) {
+//		return filme.getSecoes();
+//	}
 	
 	public List<FilmeDTO> getFilmesEmCartaz(List<FilmeDTO> filmesDto) {
 		

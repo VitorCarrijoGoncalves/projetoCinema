@@ -31,25 +31,25 @@ public class FilmeRestController {
 	
 	@GetMapping
 	public ResponseEntity<List<FilmeDTO>> findAllDTO() {
-		List<FilmeDTO> filmesDto = filmeService.fromDTO();
+		List<FilmeDTO> filmesDto = filmeService.convertAllFilmesfromDTO();
 		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
 	}
 	
-	@GetMapping(value="/mais-vendidos")
-	public ResponseEntity<List<Filme>> getFilmesMaisVendidos() throws ObjectNotFoundException {
+	// Converter para dto
+	
+	@GetMapping(value="/indicados")
+	public ResponseEntity<List<FilmeDTO>> getFilmesIndicados() throws ObjectNotFoundException {
 		List<Filme> filmes = new ArrayList<Filme>();
-		Usuario usuario = new Usuario();
-		usuario.setIdade("20");
-		usuario.setEstadoCivil("Casado");
-		usuario.setSexo("Masculino");
 		
-		filmes.add(filmeService.findById(filmeService.getFilmeIdade(usuario)));
-		filmes.add(filmeService.findById(filmeService.getFilmeEstciv(usuario)));
 		filmes.add(filmeService.findById(filmeService.getFilmeMaisVendido()));
-		filmes.add(filmeService.findById(filmeService.getFilmeSexo(usuario)));
+		filmes.add(filmeService.findById(filmeService.getFilmeIdade(Usuario.usuarioLogado)));
+		filmes.add(filmeService.findById(filmeService.getFilmeEstciv(Usuario.usuarioLogado)));
+		filmes.add(filmeService.findById(filmeService.getFilmeSexo(Usuario.usuarioLogado)));
 		
+		List<FilmeDTO> filmesDto = filmeService.convertListFilmesFromDto(filmes);		
 		
-		return ResponseEntity.ok().body(filmes);
+		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
+		
 	}
 	
 }

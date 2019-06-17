@@ -14,6 +14,8 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Usuario {
 	
+	public static Usuario usuarioLogado = null;
+	
 	@Id
 	@GeneratedValue(generator="usuario_seq", strategy=GenerationType.SEQUENCE)
 	@SequenceGenerator(name="usuario_seq", sequenceName="usuario_seq", allocationSize=1, initialValue=1)
