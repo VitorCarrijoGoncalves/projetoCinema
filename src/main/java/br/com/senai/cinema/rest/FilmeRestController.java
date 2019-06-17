@@ -1,5 +1,6 @@
 package br.com.senai.cinema.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senai.cinema.dto.FilmeDTO;
 import br.com.senai.cinema.models.Filme;
+import br.com.senai.cinema.models.Usuario;
 import br.com.senai.cinema.services.FilmeService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
@@ -33,10 +35,21 @@ public class FilmeRestController {
 		return ResponseEntity.ok().body(filmeService.getFilmesEmCartaz(filmesDto));
 	}
 	
-//	@GetMapping(value="/mais-vendidos")
-//	public ResponseEntity<List<Filme>> find() {
-	//	List<Filme> filmes = filmeService.getFilmeMaisVendido();
-	//	return ResponseEntity.ok().body(filmes);
-	//}
+	@GetMapping(value="/mais-vendidos")
+	public ResponseEntity<List<Filme>> getFilmesMaisVendidos() throws ObjectNotFoundException {
+		List<Filme> filmes = new ArrayList<Filme>();
+		Usuario usuario = new Usuario();
+		usuario.setIdade("20");
+		usuario.setEstadoCivil("Casado");
+		usuario.setSexo("Masculino");
+		
+		filmes.add(filmeService.findById(filmeService.getFilmeIdade(usuario)));
+		filmes.add(filmeService.findById(filmeService.getFilmeEstciv(usuario)));
+		filmes.add(filmeService.findById(filmeService.getFilmeMaisVendido()));
+		filmes.add(filmeService.findById(filmeService.getFilmeSexo(usuario)));
+		
+		
+		return ResponseEntity.ok().body(filmes);
+	}
 	
 }
