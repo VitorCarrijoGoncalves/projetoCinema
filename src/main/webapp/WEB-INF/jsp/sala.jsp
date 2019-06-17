@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -57,19 +58,24 @@
 								<th></th>
 								<th>NÚMERO</th>
 								<th>QTDE. DE LUGARES</th>
-<!-- 								<th>SEÇÕES</th> -->
+								<th>EDITAR</th>
+								<th>EXCLUIR</th>
 							</tr>
 						</thead>
 						<tbody>
 							
 						<c:forEach var="sala" items="${salas}">
+<%-- 							<tr id="tr" data-id="${sala.id}"> --%>
+<%-- 							<tr id="tr" data-id="${sala.id}" data-numero="${sala.numero}" data-quantidade="${sala.quantidadeDeLugares}"> --%>
 							<tr id="tr_${sala.id }">
-								<td><input type="hidden" id="idSala" name="idSala" value="${sala.id }"></td>
-								<td id="numero">${ sala.numero }</td>
-								<td id="quantidadeDeLugares">${ sala.quantidadeDeLugares }</td>
-<!-- 								<td><a href="/sala/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
+								<c:set var="idsala" scope="session" value="${sala.id }"/>
+								<td><input type="hidden" id="idSala${sala.id }" name="idSala" value="${sala.id }"></td>
+								<td id="numero">${sala.numero}</td>
+								<td id="quantidadeDeLugares">${sala.quantidadeDeLugares}</td>
+								<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
+								<td><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button></td>
 							</tr>
-					</c:forEach>
+						</c:forEach>
 							
 						</tbody>
 					</table>
@@ -102,7 +108,7 @@
 				</form>
 			</div>
 			<div class="pmd-modal-action">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="submit" id="btn-update">Salvar Alterações</button>
+				<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="submit" id="btn-update">Salvar Alterações</button>
 			</div>
 		</div>
 	</div>
@@ -143,10 +149,45 @@ $(document).ready(function() {
 
 	$("#open_modal").click(function(e) {
 		e.preventDefault();
-		$("#idSalaModal").val($("#idSala").val());
-		$("#numeroModal").val($("#numero").text());
-		$("#quantidadeDeLugaresModal").val($("#quantidadeDeLugares").text());
+// 		$("#idSalaModal").val($("#idSala").val());
+// 		$("#numeroModal").val($("#numero").text());
+// 		$("#quantidadeDeLugaresModal").val($("#quantidadeDeLugares").text());
+		
+		
+		
+		
+		
+		$.ajax({
+			method : "GET",
+			contentType : 'application/json',
+			url : "/sala/" + $("#idSala<c:out value='${idsala}'/>").val(),
+// 			url : "/sala/" + $("#tr").data("id"),
+// 			url : "/sala/" + 7,
+			dataType : "json",
+			success : function(sala) {
+				
+				console.log("Sala = ", sala);
+
+				//limpar a tela
+				$("#idSalaModal").val(sala.id);
+				$("#numeroModal").val(sala.numero);
+				$("#quantidadeDeLugaresModal").val(sala.quantidadeDeLugares);
+				
+			},
+			
+			error : function(errResponse) {
+				console.log("error", errResponse);
+			}
+			
+		});
+		
 	});
+	
+// 		var numero = $("#tr_sala").data("numero");
+	
+// 		console.log("Obj Data Numero ", numero);
+	
+//		Usar o getSelectedItem para setar o valor no select no modal
 
 	$("#btn-update").click(function(e) {
 
@@ -156,7 +197,6 @@ $(document).ready(function() {
 				quantidadeDeLugares : $("#quantidadeDeLugaresModal").val()
 			};
 	
-		
 		console.log(sala);
 		
 		$.ajax({
@@ -173,30 +213,17 @@ $(document).ready(function() {
 				$("#idSalaModal").val("");
 				$("#numeroModal").val("");
 				$("#quantidadeDeLugaresModal").val("");
+				
 				console.log("Objeto sala depois do sucesso: ", objSala);
-			},
-			error : function(errResponse) {
-				console.log("error", errResponse);
-			}
-		});
-		
-		
-	});
-
-	$('#listagem-de-secoes').click(function () {
-		
-		$.ajax({
-			method : "GET",
-			contentType : 'application/json',
-			url : "/sala/secoes/" + $("#idSala").val(),
-			dataType : "json",
-			success : function() {
 				
 			},
+			
 			error : function(errResponse) {
 				console.log("error", errResponse);
 			}
+			
 		});
+		
 		
 	});
 

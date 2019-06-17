@@ -41,15 +41,15 @@
 $(document).ready(function() {
 	$('#example-checkbox').DataTable({
 		responsive: false,
-		columnDefs: [ {
-			orderable: false,
-			className: 'select-checkbox',
-			targets:0,
-		} ],
-		select: {
-			style: 'multi',
-			selector: 'td:first-child'
-		},
+// 		columnDefs: [ {
+// 			orderable: false,
+// 			className: 'select-checkbox',
+// 			targets:0,
+// 		} ],
+// 		select: {
+// 			style: 'multi',
+// 			selector: 'td:first-child'
+// 		},
 		order: [ 1, 'asc' ],
 		bFilter: true,
 		bLengthChange: true,
@@ -171,7 +171,7 @@ $(document).ready(function() {
 		order: [ 1, 'asc' ],
 		bFilter: true,
 		bLengthChange: true,
-		//pagingType: "simple",
+		pagingType: "simple",
 		"paging": true,
 		"searching": true,
 		"language": {
@@ -214,7 +214,7 @@ $(document).ready(function() {
 		}
 	});
 	$("div.data-table-inverse").html('<h2 class="pmd-card-title-text">Inverse Table</h2>');
-	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button>');
+// 	$(".custom-select-action").html('<button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button>');
 	
 } );
 </script>

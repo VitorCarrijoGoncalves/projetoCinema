@@ -41,7 +41,7 @@ public class IngressoRestController {
 			Ingresso ingresso = ingressoService.convertIngresso(ingressoDTO);
 			ingressoService.save(ingresso);
 			
-			ingressoService.gerarComprovanteDePagamento(ingresso);
+//			ingressoService.gerarComprovanteDePagamento(ingresso);
 			
 			
 			return ResponseEntity.ok().body(ingresso);
