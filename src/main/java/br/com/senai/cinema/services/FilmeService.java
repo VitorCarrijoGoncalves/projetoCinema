@@ -106,6 +106,9 @@ public class FilmeService {
 	public Integer getFilmeSexo(Usuario user) {
 		return Integer.parseInt(filmeRepository.findFilmeByTOPSexo(user.getSexo()));
 	}
+	public Integer getFilmeEstciv(Usuario user) {
+		return Integer.parseInt(filmeRepository.findFilmeByTOPestciv(user.getEstadoCivil()));
+	}
 	
 	
 	
