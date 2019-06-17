@@ -45,5 +45,14 @@ public interface FilmeRepository extends JpaRepository<Filme, Integer> {
 				"				WHERE USUARIO.estado_civil = :estciv GROUP BY SECAO.ID_FILME_ID\r\n" + 
 				"				ORDER BY TOTALVENDIDO DESC LIMIT 1) as Result;", nativeQuery = true)
 		String findFilmeByTOPestciv(@Param("estciv") String estciv);
+		
+		@Query(value="SELECT idfilme from (SELECT COUNT(ingresso.id)AS TOTALVENDIDO, \r\n" + 
+				"				SECAO.ID_FILME_ID AS IDFILME  \r\n" + 
+				"				FROM SECAO  \r\n" + 
+				"				INNER JOIN iNGRESSO ON iNGRESSO.ID_SECAO_ID = SECAO.ID  \r\n" + 
+				"				INNER JOIN USUARIO  ON iNGRESSO.ID_USUARIO_ID = USUARIO.ID  \r\n" + 
+				"				WHERE USUARIO.IDADE between :idmin and :idmax GROUP BY SECAO.ID_FILME_ID\r\n" + 
+				"				ORDER BY TOTALVENDIDO DESC LIMIT 1) as Result;", nativeQuery = true)
+		String findFilmeByTOPidade(@Param("idmin") String idmin, @Param("idmax") String idmax);
 	
 }
