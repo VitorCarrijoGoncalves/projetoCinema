@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.itextpdf.text.DocumentException;
 
 import br.com.senai.cinema.dto.IngressoDTO;
 import br.com.senai.cinema.models.Ingresso;
@@ -29,7 +28,7 @@ public class IngressoRestController {
 	@PostMapping(value = "/new",
 			produces = { MediaType.APPLICATION_JSON_VALUE, 
 					 MediaType.APPLICATION_XML_VALUE})
-	public ResponseEntity<Ingresso> insereIngresso(@RequestBody IngressoDTO ingressoDTO) throws FileNotFoundException, DocumentException {
+	public ResponseEntity<Ingresso> insereIngresso(@RequestBody IngressoDTO ingressoDTO) {
 		
 		boolean resultado = ingressoService.validarIngresso(ingressoDTO);
 		String[] detalhes = {"detalhe 1","detalhe 2"};
