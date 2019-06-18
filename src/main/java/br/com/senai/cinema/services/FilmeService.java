@@ -24,11 +24,19 @@ public class FilmeService {
 	}
 	
 	public Filme findById(Integer id) throws ObjectNotFoundException {
-		Filme filme = filmeRepository.findById(id);
-		if (filme == null) {
-			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Filme.class.getName());
+
+		Filme filme = null;
+		
+		if (id != null) {
+			filme = filmeRepository.findById(id);
 		}
+		
+//		if (filme == null) {
+//			throw new ObjectNotFoundException("Objeto não encontrado! Id = " + id + ", Tipo: " + Filme.class.getName());
+//		}
+		
 		return filme;
+		
 	}
 	
 	public Filme update(Filme obj) {
@@ -149,7 +157,7 @@ public class FilmeService {
 			idmin ="18";
 			idmax = "29";
 		}
-		else if(idade >=30 && idade <=60) {
+		else if(idade >=30 && idade <=59) {
 			idmin ="30";
 			idmax = "59";
 		}
@@ -158,7 +166,14 @@ public class FilmeService {
 			idmax = "110";
 		}
 		
-		return Integer.parseInt(filmeRepository.findFilmeByTOPidade(idmin, idmax));
+//		Integer resultado = Integer.parseInt(filmeRepository.findFilmeByTOPidade(idmin, idmax));
+		
+		if (filmeRepository.findFilmeByTOPidade(idmin, idmax) != null) {
+			return Integer.parseInt(filmeRepository.findFilmeByTOPidade(idmin, idmax));
+		}
+		
+		return null;
+		
 	}
 	
 	

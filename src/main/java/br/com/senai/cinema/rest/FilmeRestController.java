@@ -42,9 +42,18 @@ public class FilmeRestController {
 		List<Filme> filmes = new ArrayList<Filme>();
 		
 		filmes.add(filmeService.findById(filmeService.getFilmeMaisVendido()));
-		filmes.add(filmeService.findById(filmeService.getFilmeIdade(Usuario.usuarioLogado)));
-		filmes.add(filmeService.findById(filmeService.getFilmeEstciv(Usuario.usuarioLogado)));
-		filmes.add(filmeService.findById(filmeService.getFilmeSexo(Usuario.usuarioLogado)));
+		
+		if (filmeService.findById(filmeService.getFilmeIdade(Usuario.usuarioLogado)) != null) {
+			filmes.add(filmeService.findById(filmeService.getFilmeIdade(Usuario.usuarioLogado)));
+		}
+		
+		if (filmeService.findById(filmeService.getFilmeEstciv(Usuario.usuarioLogado)) != null) {
+			filmes.add(filmeService.findById(filmeService.getFilmeEstciv(Usuario.usuarioLogado)));
+		}
+		
+		if (filmeService.findById(filmeService.getFilmeSexo(Usuario.usuarioLogado)) != null) {
+			filmes.add(filmeService.findById(filmeService.getFilmeSexo(Usuario.usuarioLogado)));
+		}
 		
 		List<FilmeDTO> filmesDto = filmeService.convertListFilmesFromDto(filmes);		
 		

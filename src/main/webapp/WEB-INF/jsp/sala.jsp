@@ -63,12 +63,11 @@
 						</thead>
 						<tbody>
 							
-						<c:forEach var="sala" items="${salas}">
-<%-- 							<tr id="tr" data-id="${sala.id}"> --%>
+						<c:forEach var="sala" items="${salas}" varStatus="status" >
 <%-- 							<tr id="tr" data-id="${sala.id}" data-numero="${sala.numero}" data-quantidade="${sala.quantidadeDeLugares}"> --%>
 							<tr id="tr_${sala.id }">
-								<c:set var="idsala" scope="session" value="${sala.id }"/>
-								<td><input type="hidden" id="idSala${sala.id }" name="idSala" value="${sala.id }"></td>
+								<c:set var="salaId" value="${sala.id }"  />
+								<td><input type="hidden" id="idSala" name="idSala" value="${sala.id }"></td>
 								<td id="numero">${sala.numero}</td>
 								<td id="quantidadeDeLugares">${sala.quantidadeDeLugares}</td>
 								<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
@@ -159,7 +158,7 @@ $(document).ready(function() {
 		$.ajax({
 			method : "GET",
 			contentType : 'application/json',
-			url : "/sala/" + $("#idSala<c:out value='${idsala}'/>").val(),
+			url : "/sala/" + $("#tr_<c:out value='${salaId}'/>").val(),
 // 			url : "/sala/" + $("#tr").data("id"),
 // 			url : "/sala/" + 7,
 			dataType : "json",
