@@ -14,12 +14,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.senai.cinema.models.Ingresso;
 import br.com.senai.cinema.models.Secao;
 import br.com.senai.cinema.services.SecaoService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
-//@RestController
 @Controller
 @RequestMapping(value="/secao")
 public class SecaoResource {
@@ -57,15 +55,15 @@ public class SecaoResource {
 		return ResponseEntity.ok().body("atualizado");
 	}
 	
-	@GetMapping(value="/secao/ingressos/{id}")
-	public String listAllIngressosBySecao(@PathVariable Integer idSecao, HttpServletRequest request) throws ObjectNotFoundException { 
-
-		Secao secao = secaoService.findById(idSecao);
-		
-		List<Ingresso> ingressos = secaoService.listAllIngressosBySecao(secao);
-
-		request.setAttribute("ingressos", ingressos);
-		return "listagem-de-ingressos-por-secao";
-	}
+//	@GetMapping(value="/secao/ingressos/{id}")
+//	public String listAllIngressosBySecao(@PathVariable Integer idSecao, HttpServletRequest request) throws ObjectNotFoundException { 
+//
+//		Secao secao = secaoService.findById(idSecao);
+//		
+//		List<Ingresso> ingressos = secaoService.listAllIngressosBySecao(secao);
+//
+//		request.setAttribute("ingressos", ingressos);
+//		return "listagem-de-ingressos-por-secao";
+//	}
 
 }

@@ -54,7 +54,7 @@
 									<select class="select-simple form-control pmd-select2" id="idSecao" name="idSecao">
 										<option></option>
 										<c:forEach var="secao" items="${secoes}">
-											<option value="${secao.id }">${secao.idFilme.nome } - ${secao.valorDoIngresso } - ${secao.idSala.numero } - ${secao.data } - ${secao.hora }</option>
+											<option value="${secao.id }">${secao.idFilme.nome } - ${secao.idSala.numero } - ${secao.data } - ${secao.hora }</option>
 										</c:forEach>
 									</select>
 								</div>

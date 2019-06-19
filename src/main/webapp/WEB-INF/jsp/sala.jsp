@@ -63,10 +63,8 @@
 						</thead>
 						<tbody>
 							
-						<c:forEach var="sala" items="${salas}" varStatus="status" >
-<%-- 							<tr id="tr" data-id="${sala.id}" data-numero="${sala.numero}" data-quantidade="${sala.quantidadeDeLugares}"> --%>
+						<c:forEach var="sala" items="${salas}">
 							<tr id="tr_${sala.id }">
-								<c:set var="salaId" value="${sala.id }"  />
 								<td><input type="hidden" id="idSala" name="idSala" value="${sala.id }"></td>
 								<td id="numero">${sala.numero}</td>
 								<td id="quantidadeDeLugares">${sala.quantidadeDeLugares}</td>
@@ -147,43 +145,10 @@ $(document).ready(function() {
 
 	$("#open_modal").click(function(e) {
 		e.preventDefault();
-// 		$("#idSalaModal").val($("#idSala").val());
-// 		$("#numeroModal").val($("#numero").text());
-// 		$("#quantidadeDeLugaresModal").val($("#quantidadeDeLugares").text());
-		
-		
-		
-		
-		
-		$.ajax({
-			method : "GET",
-			contentType : 'application/json',
-			url : "/sala/" + $("#tr_<c:out value='${salaId}'/>").val(),
-// 			url : "/sala/" + $("#tr").data("id"),
-// 			url : "/sala/" + 7,
-			dataType : "json",
-			success : function(sala) {
-				
-				console.log("Sala = ", sala);
-
-				//limpar a tela
-				$("#idSalaModal").val(sala.id);
-				$("#numeroModal").val(sala.numero);
-				$("#quantidadeDeLugaresModal").val(sala.quantidadeDeLugares);
-				
-			},
-			
-			error : function(errResponse) {
-				console.log("error", errResponse);
-			}
-			
-		});
-		
+		$("#idSalaModal").val($("#idSala").val());
+		$("#numeroModal").val($("#numero").text());
+		$("#quantidadeDeLugaresModal").val($("#quantidadeDeLugares").text());
 	});
-	
-// 		var numero = $("#tr_sala").data("numero");
-	
-// 		console.log("Obj Data Numero ", numero);
 	
 //		Usar o getSelectedItem para setar o valor no select no modal
 
@@ -195,7 +160,6 @@ $(document).ready(function() {
 				quantidadeDeLugares : $("#quantidadeDeLugaresModal").val()
 			};
 	
-		console.log(sala);
 		
 		$.ajax({
 			method : "PUT",
@@ -224,6 +188,7 @@ $(document).ready(function() {
 		
 		
 	});
+	
 
 });
 

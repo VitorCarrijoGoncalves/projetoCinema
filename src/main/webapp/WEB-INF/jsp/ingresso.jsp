@@ -56,12 +56,15 @@
 							<tr>
 								<th></th>
 								<th>NOME</th>
-								<th>DATA</th>
+<!-- 								<th>DATA DA COMPRA</th> -->
+								<th>DATA SESSÃO</th>
 								<th>HORA</th>
 								<th>VALOR</th>
 								<th>FILME</th>
 								<th>SALA</th>
 								<th>TIPO DE INGRESSO</th>
+								<th>EDITAR</th>
+								<th>EXCLUIR</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -74,11 +77,12 @@
 								<input type="hidden" id="idSecao" name="idSecao" value="${ingresso.idSecao }">
 							</td>
 							<td id="nome">${ ingresso.idUsuario.nome }</td>
+<%-- 							<td id="data">${ date }</td> --%>
 							<td id="data">${ ingresso.idSecao.data }</td>
 							<td id="hora">${ ingresso.idSecao.hora }</td> 
 							
 							<c:choose>
-							    <c:when test="${ingresso.tipoIngresso == 'Meia'}">
+							    <c:when test="${ingresso.tipoIngresso == 'MEIA'}">
 							        <td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso / 2 }</td>
 							    </c:when>    
 							    <c:otherwise>
@@ -86,13 +90,11 @@
 							    </c:otherwise>
 							</c:choose>
 							
-							
-<%-- 							<td id="valorDoIngresso">${ ingresso.idSecao.valorDoIngresso }</td> --%>
-							
-							
 							<td id="filme">${ ingresso.idSecao.idFilme.nome }</td>
 							<td id="sala">${ ingresso.idSecao.idSala.numero }</td>
 							<td id="tipoIngresso">${ ingresso.tipoIngresso}</td>
+							<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
+							<td><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button></td>
 						</tr>
 				</c:forEach>
 							

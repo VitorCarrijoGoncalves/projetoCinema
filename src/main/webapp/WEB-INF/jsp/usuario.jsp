@@ -60,7 +60,8 @@
 								<th>IDADE</th>
 								<th>SEXO</th>
 								<th>ESTADO CIVÍL</th>
-<!-- 								<th>SENHA</th> -->
+								<th>EDITAR</th>
+								<th>EXCLUIR</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -73,8 +74,8 @@
 						<td id="idade">${ usuario.idade }</td>
 						<td id="sexo">${ usuario.sexo }</td>
 						<td id="estadoCivil">${ usuario.estadoCivil }</td>
-<%-- 						<td id="senha">${ usuario.senha }</td> --%>
-<!-- 						<td><a href="/usuario/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
+						<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
+						<td><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button></td>
 					</tr>
 				</c:forEach>
 				

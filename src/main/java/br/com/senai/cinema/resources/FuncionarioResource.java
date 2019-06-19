@@ -21,11 +21,11 @@ public class FuncionarioResource {
 		
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
-		Object x = request.getParameter("g-recaptcha-response");
+//		Object x = request.getParameter("g-recaptcha-response");
 				
 		if(!funcionarioService.validarLogin(email, senha)) {
-			request.setAttribute("erro", "Cadastro inexistente");
-			return "/login?m=cadastro-inexistente";
+			request.setAttribute("erro", "Erro");
+			return "/login";
 		} else {
 			return "/home";
 		}

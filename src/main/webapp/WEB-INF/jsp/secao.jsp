@@ -60,7 +60,8 @@
 								<th>Valor</th>
 								<th>Filme</th>
 								<th>Sala</th>
-<!-- 								<th>Ingressos</th> -->
+								<th>EDITAR</th>
+								<th>EXCLUIR</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -77,7 +78,8 @@
 							<td id="valorDoIngresso">${ secao.valorDoIngresso }</td>
 							<td id="filme">${ secao.idFilme.nome }</td>
 							<td id="sala">${ secao.idSala.numero }</td>
-<!-- 							<td><a href="/secao/ingressos" id="listagem-de-ingressos"><i class="material-icons md-dark pmd-sm">format_list_bulleted</i></a></td> -->
+							<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
+							<td><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button></td>
 						</tr>
 				</c:forEach>
 							
@@ -102,7 +104,7 @@
 				<form class="form-horizontal">
 					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Filme</label>
-<!-- 						<input type="hidden" id="idSecaoModal" name="idSecaoModal"> -->
+						<input type="hidden" id="idSecaoModal" name="idSecaoModal">
 						<select class="select-simple form-control pmd-select2" id="idFilmeModal" name="idFilmeModal">
 							<option></option>
 							<option>aaaa</option>
@@ -117,7 +119,7 @@
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Data</label>
-						<input type="date" class="form-control" id="dataModal" name="dataModal" />
+						<input type="text" class="form-control" id="dataModal" name="dataModal" />
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield">
 						<label for="first-name">Hora</label>

@@ -61,10 +61,11 @@
 											<th></th>
 											<th>NOME</th>
 											<th>GÊNERO</th>
-											<th>SINOPSE</th>
+											<th></th>
 											<th>DURAÇÃO</th>
 											<th>STATUS</th>
-<!-- 											<th>SEÇÕES</th> -->
+											<th>EDITAR</th>
+											<th>EXCLUIR</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -73,8 +74,9 @@
 												<td><input type="hidden" id="idFilme" name="idFilme" value="${filme.id }"></td>
 												<td id="td_nome">${ filme.nome }</td>
 												<td id="td_genero">${ filme.genero }</td>
-												<td id="td_sinopse">Sinopse<input type="hidden" value="${filme.sinopse }"></td>
+												<td id="td_sinopse"><input id="sinopse" type="hidden" value="${filme.sinopse }"></td>
 												<td id="td_duracao">${ filme.duracao }</td>
+												
 												<c:choose>
 												    <c:when test="${filme.status == true}">
 												        <td id="td_status">Filme em Lançamento</td> 
@@ -83,7 +85,10 @@
 												        <td id="td_status">Filme fora de Lançamento</td> 
 												    </c:otherwise>
 												</c:choose>
-<!-- 												<td><a href="/filme/secoes" id="listagem-de-secoes"><i class="material-icons md-dark pmd-sm">personal_video</i></a></td> -->
+												
+												<td><button data-target="#form-dialog" data-toggle="modal" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="open_modal"><i class="material-icons md-dark pmd-sm">edit</i></button></td>
+												<td><button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="submit" id="btn-delete"><i class="material-icons pmd-sm">delete</i></button></td>
+												
 											</tr>
 
 										</c:forEach>
@@ -183,7 +188,7 @@
 				$("#generoModal").val($("#td_genero").text());
 				$("#duracaoModal").val($("#td_duracao").text());
 				$("#statusModal").val($("#td_status").text());
-				$("#sinopseModal").val($("#td_sinopse").text());
+				$("#sinopseModal").val($("#sinopse").val());
 			});
 
 			$("#btn-update").click(function(e) {

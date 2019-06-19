@@ -22,7 +22,7 @@ import br.com.senai.cinema.services.UsuarioService;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping(value="/ingressos")
+@RequestMapping(value="/formulario-de-ingresso")
 public class IngressoFormResource {
 
 	@Autowired

@@ -1,5 +1,6 @@
 package br.com.senai.cinema.resources;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +32,12 @@ public class IngressoResource {
 		List<Ingresso> ingressos = ingressoService.findAll();
 
 		request.setAttribute("ingressos", ingressos);
+		
+		Date date = null;
+		
+		date = new Date();
+		request.setAttribute("date", date.toString());
+		
 		return "ingresso";
 	}
 
